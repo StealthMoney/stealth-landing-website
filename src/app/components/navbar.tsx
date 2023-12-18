@@ -18,10 +18,10 @@ const Navbar: React.FC = () => {
           <button className="border border-black-700 rounded hover:border-black-500 hover:bg-black-600 px-8 py-[10px] text-white-300 text-[16px] leading-6">
             Resources
           </button>
-          <button className="bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-black-200 font-normal-200 py-[10px] px-8 rounded">
+          <button className="bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[10px] px-8 rounded">
             Log in
           </button>
-          <button className="bg-orange-100 border border-black-700 hover:bg-orange-600 text-[16px] leading-3 text-black-200 font-normal-200 px-8 py-[10px] rounded">
+          <button className="bg-orange-100 border border-black-700 hover:bg-orange-500 text-[16px] leading-3 text-white-100 font-normal-200 px-8 py-[10px] rounded">
             Get Started
           </button>
         </div>

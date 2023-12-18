@@ -29,10 +29,10 @@ const HeroSection = () => {
         to long term wealth accumulation.
       </p>
       <div className="buttons flex space-x-4 my-8">
-        <button className="bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-black-200 font-normal-200 h-[70px] px-8 rounded">
+        <button className="bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 h-[70px] px-8 rounded">
           Start Saving Now
         </button>
-        <button className="bg-orange-100 border border-black-700 hover:bg-orange-600 text-[16px] leading-3 text-black-200 font-normal-200 px-8 h-[70px] rounded">
+        <button className="bg-orange-100 border border-black-700 hover:bg-orange-500 text-[16px] leading-3 text-white-100 font-normal-200 px-8 h-[70px] rounded">
           Pre Order Wallet
         </button>
       </div>
