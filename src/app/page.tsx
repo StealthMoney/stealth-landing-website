@@ -1,8 +1,8 @@
-import Features from "./components/features";
-import Footer from "./components/footer";
-import HeroSection from "./components/hero-section";
-import HowItWorks from "./components/how-it-works";
-import WhyStealthMoney from "./components/why";
+import Features from "./components/server/features";
+import Footer from "./components/server/footer";
+import HeroSection from "./components/server/hero-section";
+import HowItWorks from "./components/server/how-it-works";
+import WhyStealthMoney from "./components/server/why";
 
 export default function Home() {
   return (
