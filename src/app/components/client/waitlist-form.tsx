@@ -57,8 +57,8 @@ export default function WaitlistForm({ joinWaitlist }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-y-8">
-      <div className="flex flex-col w-full">
+    <form onSubmit={handleSubmit} className="flex flex-col md:gap-y-8">
+      <div className="flex flex-col w-full mb-6 md:mb-0">
         <p className="text-center font-semibold uppercase mb-8 text-white-100 text-[45px]">
           Join Our Waitlist
         </p>
@@ -75,7 +75,8 @@ export default function WaitlistForm({ joinWaitlist }: Props) {
           )}
         </p>
       </div>
-      <div className="flex justify-between gap-x-8 mb-7">
+
+      <div className="flex flex-col md:flex-row justify-between gap-x-8 mb-7 gap-y-6 md:gap-y-0">
         <div className="flex flex-col w-full">
           <label className="text-white-100 mb-2 text-[14px]">
             First Name<span className="text-red-700">*</span>
@@ -106,7 +107,8 @@ export default function WaitlistForm({ joinWaitlist }: Props) {
           />
         </div>
       </div>
-      <div className="flex items-end justify-end gap-x-8">
+
+      <div className="flex flex-col md:flex-row items-end justify-end gap-x-8 gap-y-6 md:gap-y-0">
         <div className="flex flex-col items-start w-full">
           <label className="text-white-100 mb-2 text-[14px]">
             Email <span className="text-red-700">*</span>
@@ -142,8 +144,9 @@ export default function WaitlistForm({ joinWaitlist }: Props) {
           />
         </div>
       </div>
-      <div className="flex flex-col items-center w-full gap-y-24">
-        <p className="text-white-300 mb-2 text-center text-[13px] flex gap-x-1 items-center justify-center">
+
+      <div className="flex flex-col items-center w-full gap-y-4 md:gap-y-24">
+        <p className="text-white-300 mb-2 mt-2 md:mt-0 text-center text-[13px] flex gap-x-1 items-center justify-center">
           <Image src="/info.svg" alt="phone" width={20} height={20} />
           Add your phone number if you will like to join our WhatsApp group. No
           spams, we promise
@@ -154,7 +157,7 @@ export default function WaitlistForm({ joinWaitlist }: Props) {
             loading
               ? "cursor-not-allowed opacity-50"
               : "cursor-pointer hover:bg-orange-500"
-          } bg-orange-100 w-1/2 text-white-100 rounded-md h-[58px] text-[16px]`}
+          } bg-orange-100 w-full md:w-1/2 text-white-100 rounded-md h-[58px] text-[16px] mt-4 md:mt-0`}
         >
           {loading ? <Spinner /> : "Join Waitlist"}
         </button>
