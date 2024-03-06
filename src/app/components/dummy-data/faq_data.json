@@ -1,0 +1,26 @@
+[
+  {
+    "Header": "What is Stealth Money?",
+    "body": "Stealth Money is a platform that simplifies buying and saving Bitcoin directly into your self custody, hardware wallets."
+  },
+  {
+    "Header": "What is Self-Custody?",
+    "body": "Self-custody is a means of holding your Bitcoin in a self-custodial or hardware wallet by which only you have access to your Bitcoin."
+  },
+  {
+    "Header": "What is Dollar-Cost-Averaging?",
+    "body": "Dollar-cost averaging (DCA) is where you buy a fixed amount of BTC at regular intervals (weekly/monthly), no matter the price."
+  },
+  {
+    "Header": "Can someone purchase Bitcoin on my behalf?",
+    "body": "Yes, using our Gift Bitcoin feature, your loved ones can buy Bitcoin directly into your hardware wallet address."
+  },
+  {
+    "Header": "Where is my Bitcoin purchased going to?",
+    "body": "Bitcoin gifted to you is sent directly into your hardware wallet address which you provide to the sender."
+  },
+  {
+    "Header": "What is a hardware wallet?",
+    "body": "A hardware wallet, also known as a cold wallet, is a physical device created solely for offline storage of cryptocurrency private keys."
+  }
+]

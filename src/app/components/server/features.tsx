@@ -1,100 +1,125 @@
 "use client";
-
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import featuresData from "../dummy-data/features_data";
 
 const Features = () => {
   const [step, setStep] = React.useState(0);
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
+  const [currentScreenSize, setCurrentScreenSize] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+  const [startX, setStartX] = useState(0);
+  const [endX, setEndX] = useState(0);
+
+  useEffect(() => {
+    if (currentScreenSize <= 1023) {
+      return setIsMobileScreen(true);
+    }
+
+    return setIsMobileScreen(false);
+  }, [currentScreenSize]);
+
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+
+    if (isMobileScreen) {
+      intervalId = setInterval(() => {
+        setStep((prevStep) => {
+          const newStep = (prevStep + 1) % featuresData.length;
+          return newStep;
+        });
+      }, 3000);
+    }
+    return () => clearInterval(intervalId);
+  }, [isMobileScreen, step]);
+
+  function updateStep(index: number) {
+    setStep(index);
+  }
+
+  const handleTouchStart: React.TouchEventHandler<HTMLDivElement> = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove: React.TouchEventHandler<HTMLDivElement> = (e) => {
+    setEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const deltaX = endX - startX;
+
+    if (deltaX > 50) {
+      setStep((prevStep) =>
+        prevStep === 0 ? featuresData.length - 1 : prevStep - 1
+      );
+    } else if (deltaX < -50) {
+      setStep((prevStep) => (prevStep + 1) % featuresData.length);
+    }
+
+    setStartX(0);
+    setEndX(0);
+  };
 
   const switchSteps = () => {
-    if (step === 0) {
-      return (
-        <Image
-          src="/images/instant-buy.png"
-          alt="instant-buy"
-          width={500}
-          height={500}
-        />
-      );
-    } else if (step === 1) {
-      return <Image src="/images/dca.png" alt="dca" width={500} height={500} />;
-    } else if (step === 2) {
-      return (
-        <Image
-          src="/images/gift-bitcoin.png"
-          alt="gift-bitcoin"
-          width={500}
-          height={500}
-        />
-      );
-    }
+    const feature = featuresData[step];
+    return (
+      <Image
+        src={feature.image}
+        alt={feature.title.toLowerCase()}
+        width={500}
+        height={500}
+      />
+    );
   };
+
   return (
-    <section className="flex flex-col items-center my-14">
+    <section
+      className="flex flex-col items-center my-14"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <p className="text-center text-[38px] text-white-100 font-medium">
         Our Features
       </p>
       <p className="text-white-300">Highlighting our pioneering products.</p>
-      <div className="relative flex flex-col md:flex-row items-center justify-between w-full mt-14">
+      <div className="relative flex flex-col-reverse lg:flex-row items-center justify-between w-full mt-14">
         <div className="absolute left-[1px] h-[420px] w-[2px] bg-black-600"></div>
 
-        <div className="w-1/2 z-10">
-          <div
-            className={`mb-10 pr-10 pl-6 py-4 border-l-[4px] cursor-pointer ${
-              step === 0
-                ? "border-l-orange-100"
-                : "opacity-20 border-l-transparent"
-            }`}
-            onClick={() => setStep(0)}
-          >
-            <h2 className="text-xl font-medium mb-2 text-white-100">
-              Instant Purchase
-            </h2>
-            <p className="text-white-300">
-              Instantly buy Bitcoin directly into your hardware wallet -
-              effortlessly acquire Bitcoin and safeguard your assets with
-              self-custody.
-            </p>
-          </div>
-          <div
-            className={`mb-10 pr-10 pl-6 py-4 border-l-[4px] cursor-pointer ${
-              step === 1
-                ? "border-l-orange-100"
-                : "opacity-20 border-l-transparent"
-            }`}
-            onClick={() => setStep(1)}
-          >
-            <div className="flex gap-x-4 mb-3 items-center">
-              <h2 className="text-xl font-medium mb-2 text-white-100">
-                Dollar-Cost Averaging
+        <div className="lg:w-1/2 w-full z-10 mt-4 md:mt-auto lg:h-auto h-[200px] overflow-hidden">
+          {featuresData.map((feature, index) => (
+            <div
+              key={index}
+              className={`mb-10 pr-10 pl-6 py-4 lg:border-l-[4px] cursor-pointer ${
+                step === index
+                  ? "lg:border-l-orange-100"
+                  : "lg:opacity-20 lg:border-l-transparent"
+              }`}
+              onClick={() => (!isMobileScreen ? updateStep(index) : "")}
+            >
+              <div className="lg:hidden flex justify-center w-full my-4">
+                {featuresData.map((indicator, i) => (
+                  <div
+                    key={i}
+                    onClick={() => updateStep(i)}
+                    className={`rounded-full mx-2 w-[20px] h-[20px] z-10 cursor-pointer ${
+                      step === i ? "bg-orange-100" : "bg-black-500"
+                    }`}
+                  ></div>
+                ))}
+              </div>
+
+              <h2 className="text-xl font-medium mb-2 text-white-100 text-center lg:text-left">
+                {isMobileScreen ? featuresData[step].title : feature.title}
               </h2>
-              <span className="text-[12px] font-normal inline-block py-3 px-4 rounded-3xl text-white-300 border-black-600 border last:mr-0 mr-1">
-                Coming Soon
-              </span>
+              <p className="text-white-300 md:text-left text-center">
+                {isMobileScreen
+                  ? featuresData[step].description
+                  : feature.description}
+              </p>
             </div>
-            <p className="text-white-300">
-              Create a Dollar-Cost Averaging (DCA) plan to automatically buy
-              Bitcoin into your hardware wallet on set dates for a set period of
-              time.
-            </p>
-          </div>
-          <div
-            className={`mb-10 pr-10 pl-6 py-4 border-l-[4px] cursor-pointer ${
-              step === 2
-                ? "border-l-orange-100"
-                : "opacity-20 border-l-transparent"
-            }`}
-            onClick={() => setStep(2)}
-          >
-            <h2 className="text-xl font-medium mb-2 text-white-100">
-              Gift Bitcoin
-            </h2>
-            <p className="text-white-300">
-              Generate a secure payment link and share with friends and families
-              to facilitate the purchase of Bitcoin directly into your
-              self-custody hardware wallet.
-            </p>
-          </div>
+          ))}
         </div>
         <div className="flex flex-col items-center justify-center px-4">
           <picture className="p-10 bg-black-600 rounded-xl">
