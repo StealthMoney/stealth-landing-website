@@ -3,6 +3,8 @@ import Footer from "./components/server/footer";
 import HeroSection from "./components/server/hero-section";
 import HowItWorks from "./components/server/how-it-works";
 import WhyStealthMoney from "./components/server/why";
+import Faq from "./components/server/faq";
+import Card from "./components/server/card";
 
 export default function Home() {
   return (
@@ -11,7 +13,12 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <WhyStealthMoney />
-      <footer className="absolute bottom-0 translate-y-[110%] px-4 md:px-0 pb-20 w-full bg-[#111111]" id="waitlist">
+      <Faq />
+      <Card />
+      <footer
+        className="absolute bottom-0 translate-y-[110%] px-4 md:px-0 pb-20 w-full bg-[#111111]"
+        id="waitlist"
+      >
         <Footer />
       </footer>
     </main>

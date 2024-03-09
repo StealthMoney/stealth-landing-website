@@ -60,11 +60,11 @@ export default function WaitlistForm({ joinWaitlist }: Props) {
     <form onSubmit={handleSubmit} className="flex flex-col md:gap-y-8">
       <div className="flex flex-col w-full mb-6 md:mb-0">
         <p className="text-center font-semibold uppercase mb-8 text-white-100 text-[45px]">
-          Join Our Waitlist
+          Join our Beta
         </p>
         <p className="text-white-300 mb-2 text-center">
-          Join our waitlist, and be the VIP to experience all the excitement
-          when we launch! Your anticipation means the world to us. 🚀
+          Join our private testing, and be among the first to experience our
+          platform.
         </p>
         <p className="text-white-300 mb-2 text-center font-medium">
           {error && <span className="text-red-700">{error}</span>}
@@ -148,8 +148,8 @@ export default function WaitlistForm({ joinWaitlist }: Props) {
       <div className="flex flex-col items-center w-full gap-y-4 md:gap-y-24">
         <p className="text-white-300 mb-2 mt-2 md:mt-0 text-center text-[13px] flex gap-x-1 items-center justify-center">
           <Image src="/info.svg" alt="phone" width={20} height={20} />
-          Add your phone number if you will like to join our WhatsApp group. No
-          spams, we promise
+          Add your phone number and we will add you to our Signal group. No
+          spams, we promise.
         </p>
         <button
           disabled={loading}
@@ -157,9 +157,9 @@ export default function WaitlistForm({ joinWaitlist }: Props) {
             loading
               ? "cursor-not-allowed opacity-50"
               : "cursor-pointer hover:bg-orange-500"
-          } bg-orange-100 w-full md:w-1/2 text-white-100 rounded-md h-[58px] text-[16px] mt-4 md:mt-0`}
+          } bg-orange-100 w-full md:w-1/2 text-white-100 rounded-md h-[58px] text-[16px] mt-4 md:mt-0 py-2 text-center`}
         >
-          {loading ? <Spinner /> : "Join Waitlist"}
+          {loading ? <Spinner /> : "Join Beta"}
         </button>
       </div>
     </form>

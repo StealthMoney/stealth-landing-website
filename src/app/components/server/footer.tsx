@@ -36,7 +36,7 @@ const joinWaitlist = async (formData: WaitlistFormData) => {
 
 const Footer = () => {
   return (
-    <section className="flex flex-col justify-center items-center mt-10 w-full">
+    <section className="flex flex-col justify-center items-center mt-10 w-full px-6">
       <fieldset className="max-w-[1000px]">
         <WaitlistForm joinWaitlist={joinWaitlist} />
       </fieldset>
@@ -49,8 +49,8 @@ const Footer = () => {
           alt="stealth logo"
         />
         <p className="text-white-300 text-[15px] text-center max-w-[600px] leading-9">
-          Embrace Self-Custody and Dollar-Cost Averaging (DCA) as a Sustainable
-          Path to Long-term Wealth Accumulation with Bitcoin.
+          Stealth Money is a Bitcoin only platform that simplifies buying and
+          saving Bitcoin into your self-custody hardware wallets.
         </p>
         <div className="flex gap-x-8">
           <Link

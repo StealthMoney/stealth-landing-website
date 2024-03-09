@@ -22,8 +22,8 @@ const slidesData = [
   {
     title: "Hedge against Currency Devaluation",
     description:
-      "With Stealth Money, you can keep your savings in Bitcoin to avoid the risk of your money losing value compared to other currencies. Currency devaluation occurs when a country's currency loses value relative to other currencies.",
-    image: "/images/currency.png",
+      "Stealth Money simplifies saving in Bitcoin to avoid the risk of your money losing value and purchasing power. In the last decade, most African currencies have devalued against the Dollar. Bitcoin is a hedge against endless currency depreciation.",
+    image: "/images/dollar.jpg",
     indexIcon: "/03.svg",
   },
 ];
@@ -43,7 +43,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="text-white-100 flex items-center justify-between gap-x-24">
+    <div className="text-white-100 flex md:items-center md:justify-between gap-x-24 flex-col lg:flex-row">
       <picture className="border border-black-500 rounded-xl">
         <Image
           src={slidesData[currentSlide].image}
@@ -52,9 +52,9 @@ const Carousel = () => {
           height={500}
         />
       </picture>
-      <div className="max-w-lg flex flex-col gap-y-28">
+      <div className="max-w-lg flex flex-col gap-y-28 mt-5 md:mt-auto md:justify-center md:items-center justify-start">
         <div className="flex flex-col gap-4">
-          <picture>
+          <picture className="hidden lg:flex">
             <Image
               src={slidesData[currentSlide].indexIcon}
               alt={slidesData[currentSlide].title}
@@ -62,7 +62,7 @@ const Carousel = () => {
               height={50}
             />
           </picture>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:text-left text-center lg:mt-auto mt-6 lg:justify-start justify-center lg:items-start items-center">
             <p className="text-[35px]">{slidesData[currentSlide].title}</p>
             <p className="text-white-300">
               {slidesData[currentSlide].description}
@@ -72,7 +72,7 @@ const Carousel = () => {
             </button>
           </div>
         </div>
-        <div className="flex gap-8">
+        <div className="flex gap-8 lg:justify-start justify-center">
           <button
             onClick={goToPrevious}
             className="border border-black-500 p-3 rounded hover:border-white-100"
