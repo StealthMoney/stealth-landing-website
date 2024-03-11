@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import featuresData from "../dummy-data/features_data";
+import featuresData from "../../dummy-data/features_data";
 
 const Features = () => {
   const [step, setStep] = React.useState(0);

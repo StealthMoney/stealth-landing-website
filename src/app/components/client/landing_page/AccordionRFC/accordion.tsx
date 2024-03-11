@@ -2,7 +2,7 @@
 import React, { ReactNode, Ref, forwardRef } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { PlusCircledIcon } from "@radix-ui/react-icons";
-import data from "../../dummy-data/faq_data.json";
+import data from "@/app/components/dummy-data/faq_data.json";
 import "./style.css";
 
 interface AccordionTriggerProps {
