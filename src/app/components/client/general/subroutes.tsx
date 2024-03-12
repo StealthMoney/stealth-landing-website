@@ -30,25 +30,27 @@ export default function Subroutes() {
         >
           <a
             href="/resources"
-            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 active:border-orange-100 hover:text-orange-100 py-4"
+            className={`mx-2 text-nowrap hover:border-b hover:border-orange-100 hover:text-orange-100 py-4
+            ${path === "/resources" ? "border-b border-orange-100 text-orange-100" : ""}
+            `}
           >
             All Resources
           </a>
           <a
             href="#"
-            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 active:border-orange-100 hover:text-orange-100 py-4"
+            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 hover:text-orange-100 py-4"
           >
             Data Cost Averaging (DCA)
           </a>
           <a
             href="#"
-            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 active:border-orange-100 hover:text-orange-100 py-4"
+            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 hover:text-orange-100 py-4"
           >
             Bitcoin
           </a>
           <a
             href="#"
-            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 active:border-orange-100 hover:text-orange-100 py-4"
+            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 hover:text-orange-100 py-4"
           >
             Self custody
           </a>
@@ -74,8 +76,8 @@ export default function Subroutes() {
 
           <a
             href={`/resources/${number}`}
-            className={`mx-2 text-nowrap text-white-100 hover:text-orange-100 py-4 ${
-              path?.includes(number.toString()) ? "text-orange-100" : ""
+            className={`mx-2 text-nowrap hover:text-orange-100 py-4 ${
+              path?.includes(number.toString()) ? "text-orange-100" : "text-white-100"
             }`}
           >
             Bitcoin Self-Custody
