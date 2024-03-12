@@ -1,8 +1,40 @@
+"use client";
 import Image from "next/image";
 import data from "../../components/dummy-data/blog.json";
+import "../../components/server/styles/resource_page/components.css";
+import { useState, useLayoutEffect } from "react";
+
+interface BlogItem {
+  id: string;
+  header: string;
+  image: string;
+  body: string;
+  sub_contents?: SubContent[];
+}
+
+interface SubContent {
+  id: string;
+  header: string;
+  body: string;
+  image: string;
+}
 
 export default function Page({ params }: { params: { slug: string } }) {
-  const item = data.find((item) => item.id === params.slug);
+  const item: BlogItem | undefined = data.find(
+    (item) => item.id === params.slug
+  );
+
+  const [active, setActive] = useState<number | null>(null);
+
+  useLayoutEffect(() => {
+    setActive(-1);
+  }, []);
+
+  const addHeaderRefStyle = (item: BlogItem | number) => {
+    if (typeof item === "number") {
+      setActive(item);
+    }
+  };
 
   if (!item) {
     return <div>Item not found</div>;
@@ -27,7 +59,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             className="text-lg font-bold"
             id={
               item.sub_contents && item.sub_contents?.length > 0
-                ? `header${item.sub_contents?.map((item, index) => index + 1)}`
+                ? `header${item.sub_contents[0].id}`
                 : "header0"
             }
           >
@@ -39,7 +71,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             <>
               {item.sub_contents?.map((el, i) => (
                 <div key={i} className="flex flex-col gap-6 w-full">
-                  <h1 className="font-bold font-lg" id={`header${i}`}>
+                  <h1 className="font-bold font-lg" id={`header${el.id}`}>
                     {el.header}
                   </h1>
                   <p className="font-sm">{el.body}</p>
@@ -61,23 +93,41 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <div className="md:w-1/4 py-4 flex flex-col">
           <h1 className="font-bold my-2">CONTENT</h1>
-          {item.sub_contents && item.sub_contents?.length > 0 ? (
-            item.sub_contents?.map((item, index) => (
-              <>
-                <div className="w-full py-2 px-2 h-auto border-l border-[#aaaaaa]">
-                  <a key={index} className="my-2" href={`#header${index}`}>
-                    Header {index + 1}
+          <div className="w-full py-2 px-2 h-auto border-l border-[#aaaaaa]">
+            <a
+              className={`my-2 -mx-2 px-4 py-2 ${
+                active === -1 ? "active-ref" : ""
+              }`}
+              href={`#header0`}
+              onClick={() => addHeaderRefStyle(-1)}
+            >
+              Header 1
+            </a>
+          </div>
+          {item.sub_contents && item.sub_contents?.length > 0
+            ? item.sub_contents?.map((subItem, index) => (
+                <div
+                  key={subItem.id}
+                  className="w-full py-2 px-2 h-auto border-l border-[#aaaaaa]"
+                >
+                  <a
+                    className={`my-2 -mx-2 px-4 py-2 ${
+                      active === index ? "active-ref" : ""
+                    }`}
+                    href={`#header${subItem.id}`}
+                    onClick={() => addHeaderRefStyle(index)}
+                  >
+                    {`Header ${index + 2}`}
                   </a>
                 </div>
-              </>
-            ))
-          ) : (
-            <div className="w-full py-2 px-2 h-auto border-l border-[#aaaaaa]">
-              <a className="my-2" href="#header0">
-                Header 1
-              </a>
-            </div>
-          )}
+              ))
+            : null
+              // <div className="w-full py-2 px-2 h-auto border-l border-[#aaaaaa]">
+              //   <a className="my-2 -mx-2 px-4 py-2" href={`#header0`}>
+              //     Header 1
+              //   </a>
+              // </div>
+          }
         </div>
       </div>
     </section>

@@ -24,16 +24,21 @@ export default function Resources_page() {
               <h1 className="my-2 text-2xl font-bold">{items.header}</h1>
               <p>{items.body}</p>
               <div className="flex mt-5 items-center w-full">
-                <small className="mx-2">
-                  <a href="" className="text-white-100 font-bold">
-                    {items.tag}
-                  </a>
-                </small>
+                <div className="flex lg:w-2/4 w-3/4">
+                  <small className="mx-2">
+                    <a href="" className="text-white-100 font-bold">
+                      {items.tag}
+                    </a>
+                  </small>
 
-                <small className="mx-2">{items.date_created}</small>
+                  <small className="mx-2">{items.date_created}</small>
+                </div>
 
-                <div className="flex justify-end w-1/4">
-                  <a className="text-orange-100" href={`/resources/${items.id}`}>
+                <div className="flex justify-end lg:w-2/4 w-1/4">
+                  <a
+                    className="text-orange-100"
+                    href={`/resources/${items.id}`}
+                  >
                     Read more
                   </a>
                 </div>
