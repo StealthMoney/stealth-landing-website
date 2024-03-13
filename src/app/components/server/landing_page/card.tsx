@@ -8,7 +8,7 @@ export default function Card() {
           <h1 className="md:text-[32px] text-[24px]">
             Fully Control Your Bitcoin Wealth
           </h1>
-          <p>It is not your Bitcoin until you safe-custody it.</p>
+          <p>It is not your Bitcoin until you self-custody it.</p>
         </div>
       </div>
     </div>

@@ -23,39 +23,7 @@ export default function Subroutes() {
 
   return (
     <>
-      {path === "/" || path === "/resources" ? (
-        <nav
-          className="flex px-12 border-b border-[#494949] text-[#494949] w-screen justify-start -py-4 items-end 
-    overflow-x-auto"
-        >
-          <a
-            href="/resources"
-            className={`mx-2 text-nowrap hover:border-b hover:border-orange-100 hover:text-orange-100 py-4
-            ${path === "/resources" ? "border-b border-orange-100 text-orange-100" : ""}
-            `}
-          >
-            All Resources
-          </a>
-          <a
-            href="#"
-            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 hover:text-orange-100 py-4"
-          >
-            Data Cost Averaging (DCA)
-          </a>
-          <a
-            href="#"
-            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 hover:text-orange-100 py-4"
-          >
-            Bitcoin
-          </a>
-          <a
-            href="#"
-            className="mx-2 text-nowrap hover:border-b hover:border-orange-100 hover:text-orange-100 py-4"
-          >
-            Self custody
-          </a>
-        </nav>
-      ) : pathRegex.test(url) ? (
+      {pathRegex.test(url) ? (
         <nav
           className="flex mt-6 md:px-12 px-6 text-[#494949] w-screen justify-start -py-4 items-end 
         overflow-x-auto"
@@ -77,7 +45,9 @@ export default function Subroutes() {
           <a
             href={`/resources/${number}`}
             className={`mx-2 text-nowrap hover:text-orange-100 py-4 ${
-              path?.includes(number.toString()) ? "text-orange-100" : "text-white-100"
+              path?.includes(number.toString())
+                ? "text-orange-100"
+                : "text-white-100"
             }`}
           >
             Bitcoin Self-Custody

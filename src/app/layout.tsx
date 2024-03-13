@@ -25,7 +25,7 @@ export default function RootLayout({
         <Navbar />
         <Subroutes />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

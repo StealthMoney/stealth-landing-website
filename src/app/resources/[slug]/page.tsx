@@ -2,7 +2,6 @@
 import Image from "next/image";
 import data from "../../components/dummy-data/blog.json";
 import "../../components/server/styles/resource_page/components.css";
-import { useState, useLayoutEffect } from "react";
 
 interface BlogItem {
   id: string;
@@ -17,24 +16,19 @@ interface SubContent {
   header: string;
   body: string;
   image: string;
+  links?: Link[];
+}
+
+interface Link {
+  link: string;
+  title: string;
+  description?: string;
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
   const item: BlogItem | undefined = data.find(
     (item) => item.id === params.slug
   );
-
-  const [active, setActive] = useState<number | null>(null);
-
-  useLayoutEffect(() => {
-    setActive(-1);
-  }, []);
-
-  const addHeaderRefStyle = (item: BlogItem | number) => {
-    if (typeof item === "number") {
-      setActive(item);
-    }
-  };
 
   if (!item) {
     return <div>Item not found</div>;
@@ -54,7 +48,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
 
       <div className="w-full flex gap-8">
-        <div className="flex flex-col gap-6 w-3/4">
+        <div className="flex flex-col gap-6 md:w-3/4 w-full">
           <h1
             className="text-lg font-bold"
             id={
@@ -76,6 +70,27 @@ export default function Page({ params }: { params: { slug: string } }) {
                   </h1>
                   <p className="font-sm">{el.body}</p>
 
+                  {el.links && el.links.length > 0 && (
+                    <div className="w-full my-4">
+                      <h1 className="text-lg font-bold mb-5">
+                        Setup Instructions:
+                      </h1>
+                      {el.links.map((link, index) => (
+                        <div key={index} className="my-2">
+                          <h2 className="font-bold">{link.title}</h2>
+                          <p>{link.description}</p>
+                          <a
+                            href={link.link}
+                            className="text-orange-100 my-4"
+                            target="_blank"
+                          >
+                            {link.link}
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                   <div className="w-full">
                     <Image
                       className="w-full"
@@ -89,45 +104,6 @@ export default function Page({ params }: { params: { slug: string } }) {
               ))}
             </>
           )}
-        </div>
-
-        <div className="md:w-1/4 py-4 flex flex-col">
-          <h1 className="font-bold my-2">CONTENT</h1>
-          <div className="w-full py-2 px-2 h-auto border-l border-[#aaaaaa]">
-            <a
-              className={`my-2 -mx-2 px-4 py-2 ${
-                active === -1 ? "active-ref" : ""
-              }`}
-              href={`#header0`}
-              onClick={() => addHeaderRefStyle(-1)}
-            >
-              Header 1
-            </a>
-          </div>
-          {item.sub_contents && item.sub_contents?.length > 0
-            ? item.sub_contents?.map((subItem, index) => (
-                <div
-                  key={subItem.id}
-                  className="w-full py-2 px-2 h-auto border-l border-[#aaaaaa]"
-                >
-                  <a
-                    className={`my-2 -mx-2 px-4 py-2 ${
-                      active === index ? "active-ref" : ""
-                    }`}
-                    href={`#header${subItem.id}`}
-                    onClick={() => addHeaderRefStyle(index)}
-                  >
-                    {`Header ${index + 2}`}
-                  </a>
-                </div>
-              ))
-            : null
-              // <div className="w-full py-2 px-2 h-auto border-l border-[#aaaaaa]">
-              //   <a className="my-2 -mx-2 px-4 py-2" href={`#header0`}>
-              //     Header 1
-              //   </a>
-              // </div>
-          }
         </div>
       </div>
     </section>

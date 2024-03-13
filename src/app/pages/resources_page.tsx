@@ -1,5 +1,6 @@
 import Image from "next/image";
 import data from "../components/dummy-data/blog.json";
+import Footer2 from "../components/client/general/footer2";
 
 export default function Resources_page() {
   return (
@@ -10,7 +11,7 @@ export default function Resources_page() {
             key={index}
             className="flex md:flex-row flex-col gap-8 my-8 md:px-12 lg:px-24 items-center px-6 w-full"
           >
-            <div className="md:w-2/4 w-full">
+            <div className="md:w-1/4 w-full">
               <Image
                 className="w-full"
                 src={items.image}
@@ -20,9 +21,11 @@ export default function Resources_page() {
               />
             </div>
 
-            <div className=" flex flex-col gap-4 py-2">
+            <div className=" flex flex-col gap-4 py-2 md:w-3/4">
               <h1 className="my-2 text-2xl font-bold">{items.header}</h1>
-              <p>{items.body}</p>
+              <div className="h-[100px] overflow-hidden">
+                <p>{items.body}</p>
+              </div>
               <div className="flex mt-5 items-center w-full">
                 <div className="flex lg:w-2/4 w-3/4">
                   <small className="mx-2">
@@ -47,6 +50,7 @@ export default function Resources_page() {
           </div>
         );
       })}
+      <Footer2 />
     </>
   );
 }

@@ -37,7 +37,7 @@ const joinWaitlist = async (formData: WaitlistFormData) => {
 const Footer = () => {
   return (
     <footer
-      className="px-4 md:px-0 pb-20 w-full bg-[#111111]"
+      className="absolute bottom-0 translate-y-[110%] px-4 md:px-0 pb-20 w-full bg-[#111111]"
       id="waitlist"
     >
       <section className="flex flex-col justify-center items-center mt-10 w-full px-6">

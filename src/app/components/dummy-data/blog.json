@@ -2,144 +2,300 @@
   {
     "id": "1",
     "image": "/blog-image.svg",
-    "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-    "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+    "header": "What is Money",
+    "body": "Money serves three purposes: a store of value, a medium of exchange, and a unit of account. It acts as a medium of exchange, facilitating trade and economic activity. Its value is subjective, influenced by market preferences and monetary policies. Over the centuries there have been different forms of money from cowries to metals to coins and paper-printed money known as Fiat. Fiat money is government-issued currency that is not backed by a physical commodity but by the stability of the issuing government. Money has evolved from barter to physical metals, to paper money, to electronic, and now to digital. ​​Bitcoin is primarily an innovation on money.",
     "tag": "Self custody",
     "date_created": "Monday November 6, 2023",
     "sub_contents": [
       {
         "id": "1",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+        "header": "What Is the Difference Between Money and Currency?",
+        "body": "Money and currency are interrelated but different terms. Currency is one form of money. Often issued by a Fovernment, it is one type of payment that people can use within a jurisdiction. Money, however, refers more broadly to a system of perceived value, which allows for the exchange of goods and services.",
         "tag": "Self custody",
         "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
-      },
-      {
-        "id": "2",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
-        "tag": "Self custody",
-        "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
-      },
-      {
-        "id": "3",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
-        "tag": "Self custody",
-        "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
-      },
-      {
-        "id": "4",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
-        "tag": "Self custody",
-        "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
+        "image": "/blog-image2.svg"
       }
     ]
   },
   {
     "id": "2",
     "image": "/blog-image.svg",
-    "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-    "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+    "header": "Inflation & Devaluation",
+    "body": "There are over 200 countries in the world, each and everyone has experienced inflation and depreciation of their currency over the years. The US Dollar has lost over 90% of its value in the past 100 years. The Nigerian Naira was equivalent to $1 in 1985, it is now over N1000. Inflation and devaluation which can be looked at as siblings manifest every decade in different forms. You have personally experienced the price of groceries or bread being way higher than it was a decade ago. In most developing nations, the value of their currencies is much less than it was a decade ago and it is never going back to those figures. From the Ghanaian Cedi to Kenyan Shilling to Argentine Peso, to the Egyptian Pound, we have seen currencies lose so much value against the US Dollar. The world trades with the US Dollar making it the global currency reserve, when the US Government increases their money supply (like stimulus package during Covid or bailouts during financial crisis in 2008), this results in inflation all over the world and subsequent devaluation of most currencies. This leads to double jeopardy for those in developing nations (most of the world). They are getting poorer over time because the value of their earnings and savings is reducing based on economic forces that they have nothing to do with. Millions of people globally are losing their savings, pensions, and experiencing destruction of their purchasing power, the stories of Argentina, Lebanon, Zimbabwe, Venezuela are becoming more relatable as the world goes through a cost of living crisis. The average Nigerian millennial has seen the Naira lose 90% of its value in their lifetime. The endless depreciation of most local currencies means folks are getting poorer over time while earning and saving in their local currencies.",
     "tag": "Self custody",
     "date_created": "Monday November 6, 2023",
     "sub_contents": []
   },
   {
-    "id": "5",
+    "id": "3",
     "image": "/blog-image.svg",
-    "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-    "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+    "header": "What is Bitcoin",
+    "body": "Bitcoin is the remedy to persistent global inflation and devaluation. Bitcoin is a digital currency and a scarce asset at the same time. It is a currency because you can send it as value to another person or use it to pay for goods and services. It is a scarce asset because it has a fixed, limited supply which cannot be controlled or manipulated. Bitcoin is a financial invention and innovation that is designed to create financial freedom, freedom to transact and freedom to store value. Bitcoin emerged from the ashes of the global financial crisis in 2008 when a group of anonymous coders created a monetary network that would not be centrally controlled by any company or Government. This code which cannot be altered also ensures that the supply of Bitcoin is fixed and can never be more than 21 million. Bitcoin is created through proof of work consensus, a mining mechanism where powerful computer networks all around the world spend energy solving complex mathematical problems to secure and validate the system. At this point you are probably getting a bit overwhelmed so to conclude, Bitcoin is not created from thin air but through a process called mining, there will only ever be 21 million Bitcoins, we dive deeper in How Bitcoin works. The decentralized nature of Bitcoin also eliminates the potential for a single point of failure or supply manipulation, making it more resilient than traditional currencies.",
     "tag": "Self custody",
     "date_created": "Monday November 6, 2023",
     "sub_contents": [
       {
         "id": "1",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+        "header": "What are Sats",
+        "body": "Sats is short for satoshis, which is the smallest unit of Bitcoin. It's named after Satoshi Nakamoto, the pseudonymous person or group of people who developed Bitcoin. One Bitcoin (BTC) is equivalent to 100 million Satoshis. Therefore, satoshis represent a fractional part of a Bitcoin and are to Bitcoin what kobo is to the Naira, or cents is to the Dollar. For instance, instead of saying 0.00005 BTC, you could say 5,000 sats. 1,000 Sats is still 1,000 sats, the same way 1 BTC is still 1 BTC next year and beyond.",
         "tag": "Self custody",
         "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
-      },
-      {
-        "id": "2",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
-        "tag": "Self custody",
-        "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
-      },
-      {
-        "id": "3",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
-        "tag": "Self custody",
-        "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
-      },
-      {
-        "id": "4",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
-        "tag": "Self custody",
-        "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
+        "image": "/blog-image2.svg"
       }
     ]
-  },
-  {
-    "id": "3",
-    "image": "/blog-image.svg",
-    "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-    "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
-    "tag": "Self custody",
-    "date_created": "Monday November 6, 2023"
   },
   {
     "id": "4",
     "image": "/blog-image.svg",
-    "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-    "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+    "header": "What is Blockchain",
+    "body": "Blockchain is a digital database or ledger that is distributed among computers in a peer to peer network. A blockchain is the foundational data structure behind Bitcoin. A blockchain is a list of records called blocks. Each of these blocks contains data—in Bitcoin's case, each block contains transactions, representing transfers of bitcoin from one user to another. The blockchain can be thought of as a digital ledger that keeps track of every account on the network. The entire blockchain is the book that stores the record of every transaction that has ever taken place on the network between its accounts. Each block, then, is like a new page added to the ledger to update the state of accounts on the network.",
     "tag": "Self custody",
     "date_created": "Monday November 6, 2023",
     "sub_contents": [
       {
         "id": "1",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+        "header": "How Does Blockchain Works",
+        "body": "You might be familiar with spreadsheets or databases. A blockchain is somewhat similar because it is a database where information is entered and stored. But the key difference between a traditional database or spreadsheet and a blockchain is how the data is structured and accessed.",
         "tag": "Self custody",
         "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
+        "image": "/blog-image2.svg"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "image": "/blog-image.svg",
+    "header": "Features of Bitcoin",
+    "body": "Here are some of the features that make Bitcoin a unique asset class.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": [
+      {
+        "id": "1",
+        "header": "Decentralised",
+        "body": "Bitcoin's blockchain is distributed. It is stored and maintained on hundreds of thousands of computers around the world, rather than in one centralized location. In other words, decentralization acts as a checks and balances system before blocks are added to the chain. The decentralized bitcoin network is a core feature that makes Bitcoin unique.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
       },
       {
         "id": "2",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+        "header": "Permissionless",
+        "body": "Bitcoin doesn't require any third parties and can be sent and received simply via software that's run on any computer, it's incredibly difficult for anyone to ban or stop it. Bitcoin is also trustless because the system was designed so that nobody has to trust anybody else in order for the system to function.",
         "tag": "Self custody",
         "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
+        "image": "/blog-image2.svg"
       },
       {
         "id": "3",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+        "header": "Censorship Resistant",
+        "body": "Bitcoin held in self-custody cannot be seized by any Government or Organisation, unlike bank accounts which can be frozen at anytime. To stop a Bitcoin transaction a government effectively has to stop the Internet or go into an individuals home using physical force making it highly resistant to censorship.",
         "tag": "Self custody",
         "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
+        "image": "/blog-image2.svg"
       },
       {
         "id": "4",
-        "header": "Bitcoin Self-Custody Wallet: The right way to own Bitcoin sksksksk",
-        "body": "A self-custodial wallet, also known as a non-custodial or self-hosted wallet, is a type of digital wallet that allows users to have complete control over their private keys and, consequently, their digital assets.",
+        "header": "Transparent",
+        "body": "Bitcoin transactions are recorded on the public ledger blockchain. The transactions are permanently viewable, which gives transparency to the system but they are secure and fraud-resistant at the same time due to blockchain technology.",
         "tag": "Self custody",
         "date_created": "Monday November 6, 2023",
-        "image": "/blog-image1.svg"
+        "image": "/blog-image2.svg"
+      },
+      {
+        "id": "5",
+        "header": "Divisible",
+        "body": "Bitcoin is easily divisible, You can divide one bitcoin into 100 million pieces (100 million sats), whereas 1 US dollar can be broken into 100 pieces (100 cents). This means that the world will never run out of Bitcoin. It can always be divided into smaller and smaller pieces.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      },
+      {
+        "id": "6",
+        "header": "Immutable",
+        "body": "Every transaction on the Bitcoin network is stored on a block that is linked to a previous block of transactions. This blockchain technology is immutable, which means no entity can erase or alter any information on the network. Transactions on Bitcoin are verified by network nodes through cryptography and recorded in blockchain (which is essentially a public ledger).",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      },
+      {
+        "id": "7",
+        "header": "Fixed Supply",
+        "body": "Bitcoin: ​​Bitcoin's maximum supply of 21 million is also due to the mathematical rules set in the code. This limit is hardcoded into the protocol, meaning it cannot be changed by anyone, including the developers or miners. The maximum supply of 21 million bitcoins will be reached around the year 2140, after which no new bitcoins can be mined.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
       }
     ]
+  },
+  {
+    "id": "6",
+    "image": "/blog-image.svg",
+    "header": "How is Bitcoin created",
+    "body": "Bitcoin is produced through proof of work mining consensus. This process is called mining because, like gold mining, the cost of mining new bitcoin is roughly equal to the cost of a bitcoin. In other words, no one is able to print free money in bitcoin. Bitcoin mining is the process where new bitcoin are created and entered into circulation. Mining is one of the core components that secure the Bitcoin blockchain. It involves using specialized hardware, called ASICs, to perform millions of calculations per second to solve a computational puzzle. When a bitcoin is successfully mined, the miner receives a predetermined amount of bitcoin. Bitcoin mining is energy intensive and consumes alot of electricity and computing power. Bitcoin runs on a decentralized computer network or distributed ledger that tracks transactions in the cryptocurrency. When computers on the network verify and process transactions, new bitcoins are created, or mined. These networked computers, or miners, process the transaction in exchange for a payment in Bitcoin. It is easy to think that Bitcoin is created out of thin air, however a Bitcoin is created after heavy use of electricity and computing power.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": [
+      {
+        "id": "1",
+        "header": "What is Bitcoin Halving?",
+        "body": "The halving is an event which reduces the issuance rate of bitcoin by half every four years. Bitcoin's issuance schedule is precisely defined by an algorithm in Bitcoin's code. This algorithm allows a certain amount of new bitcoin to be minted in each block, as compensation for the miner of the block. This new bitcoin is called the block subsidy, and at Bitcoin’s inception, it was 50 BTC per block. However, the subsidy is cut in half in an event called the halving, which takes place every 210,000 blocks—roughly every four years.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      },
+      {
+        "id": "2",
+        "header": "Can the Bitcoin network be shutdown or hacked?",
+        "body": "Shutting down the Bitcoin network would require shutting down the entire global internet and cutting all electricity. While it's technically possible to hack or take over the entire Bitcoin network, doing so would cost billions of dollars and require a massive coordinated effort involving global chip manufacturers. This makes the probability of this happening unrealistic as there is no monetary gain from hacking the network.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "image": "/blog-image.svg",
+    "header": "Why does Bitcoin have value",
+    "body": "Bitcoin has a unique set of features that are not found in any other form of money. Arguably the defining feature of Bitcoin differentiating it from other forms of currency is its mathematical scarcity. Unlike traditional fiat currencies with an unlimited supply that is adjusted at the whim of central banks and Governments. Bitcoin is the only asset in the universe that has a mathematical scarcity. This makes Bitcoin an ideal hedge against inflation & devaluation because its scarcity makes it deflationary. Bitcoin’s creator(s) Satoshi Nakamoto intentionally limited the lifetime supply of Bitcoin to 21 million coins through the algorithm built into the Bitcoin network. This group of anonymous coders under the name Satoshi Nakamoto made the Bitcoin protocol open-source and handed it over to distributed networks around the world. This is what makes Bitcoin fully decentralised adding to its value proposition. There is no CEO, no hierarchy, no owner or central authority or anyone who can manipulate its supply. Bitcoin is incorruptible in a corrupt world, and a deflationary asset in a financial system that is inflationary by design.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": []
+  },
+  {
+    "id": "8",
+    "image": "/blog-image.svg",
+    "header": "What are Private Keys",
+    "body": "A private key is a complex string of alphanumeric characters, often converted in 12 or 24 words(seed phrase). Possession and control of the private key are the basis of the user's control over all means associated with the corresponding Bitcoin address. Therefore, never share your private key with anyone! The private key is, so to speak, the proof that someone is the owner of the Bitcoin he has in his Bitcoin wallet. If you share the private key, somebody else can dispose over your Bitcoin. If the private key is lost, it is lost forever. You may have heard of the stories where individuals lost their Bitcoin. Technically they have not lost their Bitcoin, because they are still stored in the Bitcoin blockchain, as explained previously. They lost access to them, because without the private key they cannot prove to the participants in the bitcoin network that they are the owner of the bitcoin in their wallet anymore. As such, “key management is key” and this comes mainly down to security and the confidence that one has in the custody of the private key. Your private keys should be kept securely in your safe where you keep your other important documents. You should never take a picture of your private key or upload it digitally online.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": [
+      {
+        "id": "1",
+        "header": "What is a Public Key",
+        "body": "A public key is used to receive bitcoin. When bitcoin is sent to a public key, only the owner of the corresponding private key will be able to produce a valid signature to spend that bitcoin.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      },
+      {
+        "id": "2",
+        "header": "What is an Address.",
+        "body": "An address is used to receive bitcoin and is represented as a string of letters and numbers. A Bitcoin wallet allows users to generate as many addresses as they require. Wallets also allow users to send bitcoin to a provided address. When bitcoin is sent to an address, only the owner of the private key(s) which derived that address is capable of spending the bitcoin.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "image": "/blog-image.svg",
+    "header": "What is Self Custody",
+    "body": "There is a popular saying among Bitcoiners which is 'Not your keys not your coins' which means if you do not own your private keys, you do not own the Bitcoin. The only secure way to truly own and protect your Bitcoin is through self-custody. Self-custody is the process of having to not trust anyone to hold your Bitcoin securely (not FTX or Patricia), with self-custody you are essentially your own bank. Self-custody guarantees full control of your Bitcoin private keys. Self-custody is a form of personal financial sovereignty, with self-custody there is no counterparty risk and all the responsibility lies on you to protect your Bitcoin wealth.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": []
+  },
+  {
+    "id": "10",
+    "image": "/blog-image.svg",
+    "header": "Hardware wallets",
+    "body": "A hardware wallet, also known as a cold wallet, is a physical device created solely for offline storage of cryptocurrency private keys. A hardware wallet is a digital device whose sole purpose is to generate and store public & private keys and sign transactions. Hardware wallets allow users to send and receive Bitcoin in a secure fashion. Hardware wallets are a form of cold storage, meaning that they allow a user to keep their private keys safely disconnected from the internet. Some of the popular hardware wallets are Trezor, Bitkey by Block, Blockstream Jade, Bitbox etc. They usually look like a small USB stick and are often controlled using a web browser on your computer. Hardware wallets ensure that your private keys are kept offline, away from the reach of online threats like hackers, malware, and phishing attacks.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": [
+      {
+        "id": "1",
+        "header": "Help setting up wallets",
+        "body": "We have partnered with Trezor to ensure swift delivery of your hardware wallet device within days. Kindly go through our Setting Up Your Trezor section. You can also watch simplified how-to-videos from our partner Trezor.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "image": "/blog-image.svg",
+    "header": "Bitcoin vs Crypto",
+    "body": "Hold on, you probably thought Bitcoin was a crypto? Crypto has morphed into an industry where centralised projects run by a team are marketing themselves as crypto when they are just ponzis at worst or MLMs pyramid schemes at best. A pyramid project is one that aims to get as many people as possible to buy into the project early and sell at the top to the later entrants, enriching the owners of the project and early backers. This is the status quo of over 90% of all crypto projects, pure affinity scams claiming to be the next best thing after Bitcoin. They have overshadowed the crypto industry leaving just a few utility projects like Stablecoins and others. Bitcoin has distinguished itself from the majority of crypto projects because it is truly and fully decentralised, it has a fixed limited supply making it deflationary. Saving in Bitcoin is long-term wealth building while most of Crypto is get-rich quick schemes or gambling in a virtual casino which are just not sustainable.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": [
+      {
+        "id": "1",
+        "header": "What are Stablecoins",
+        "body": "Stablecoins are in a category of their own, they are not speculative and are pegged to the value of the Dollar (eg, $100 can buy $100 of a US pegged stablecoin like USDT or USDC). However stablecoins are centralised and transactions can be frozen or seized at any time by Government request. Stablecoins are suitable for cross-border transactions and sending value since they are pegged to fiat currencies, hence the name stablecoins.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "image": "/blog-image.svg",
+    "header": "Why Bitcoin",
+    "body": "The biggest risk this century is not owning Bitcoin. The perpetual cycle of excessive money printing by Governments which results in inflation and devaluation is why you should save in Bitcoin. Bitcoin just like Gold is a hedge against the economic inevitability of currency depreciation and inflation. While gold is not easily accessible, Bitcoin is easier to own and more divisible. For the last century, Gold has served as the panacea to hyperinflation and currency debasement, Bitcoin now exists as an alternative. This is why Bitcoin is referred to as digital gold by many. Bitcoin is often compared to gold because it has similar characteristics; limited supply, rarity, durability. Beyond this, Bitcoin has a few other important features which improve upon gold's monetary properties like it is portable, easier to move around unlike Gold which is heavy(think moving $1m in Gold vs BTC). Think of a scenario where a big family has to flee a warzone and their savings are in Gold, it will be near-impossible to flee with millions of gold in such emergencies. With Bitcoin all they need is their private keys. Bitcoin is also easily verifiable as there is nothing like fake Bitcoin since every transaction is publicly authenticated and verified. Bitcoin has a limited supply of 21 million bitcoin and a fixed emission schedule. Every four years, Bitcoin’s inflation rate is cut in half, and it will eventually be reduced to zero in the year 2140. As long as one understands that when more money is printed by Governments, it causes inevitable inflation, you understand better why Bitcoin. So back to the question, Why Bitcoin; Bitcoin as an asset class is financial security in the midst of economic uncertainty. Bitcoin is an incorruptible monetary system in a very corrupt world. Bitcoin is a deflationary asset in a system that is inflationary by design. You should think of Bitcoin with a long-term perspective, something you save and accumulate to gift over to your kids as an inheritance or a pension saving scheme.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": []
+  },
+  {
+    "id": "13",
+    "image": "/blog-image.svg",
+    "header": "Setting up your Trezor",
+    "body": " Trezor is a Bitcoin hardware wallet manufacturer, It was the first Bitcoin hardware wallet, offering secure cold storage. Stealth Money has partnered with Trezor to ensure speedy delivery to our users in Nigeria. Trezor hardware wallets keep your Bitcoin safe from hackers, malware and other threats by keeping sensitive data offline. With Trezor your coins are always recoverable, no matter what happens including if you lose your hardware wallet device.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": [
+      {
+        "id": "1",
+        "header": "How does Trezor work?",
+        "body": "Trezor acts like a digital vault. It handles transactions offline, ensuring your precious Bitcoin is safe from hackers. To receive Bitcoin on your Trezor, you use the Trezor suite app to generate a receive address, confirm this address and then transfer your Sats to it. Your Bitcoin will be securely in your control.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg"
+      },
+      {
+        "id": "2",
+        "header": "What happens if I lose my wallet?",
+        "body": "Not a problem, you simply need to buy a new Trezor from us and then use your recovery seed(wallet backup) which you created when setting up your wallet to regain access to your coins on the new wallet. You can even reach out to Trezor official support for assistance.",
+        "tag": "Self custody",
+        "date_created": "Monday November 6, 2023",
+        "image": "/blog-image2.svg",
+        "links": [
+          {
+            "link": "https://www.youtube.com/watch?v=mYIzFR--5tw",
+            "title": "Why you need a hardware wallet",
+            "desription": "To set up your Trezor Safe3 Wallet, kindly watch this video from Trezor"
+          },
+          {
+            "link": "https://www.youtube.com/watch?v=n7hjt1Tlvlk",
+            "title": "Set up your new Trezor safe hardware wallet",
+            "desription": "To set up your Trezor Safe3 Wallet, kindly watch this video from Trezor"
+          },
+          {
+            "link": "https://www.youtube.com/watch?v=HuVH_9hnUu8",
+            "title": "How to setup a new Trezor hardware wallet"
+          },
+          {
+            "link": "https://www.youtube.com/watch?v=aZi9ZwfFHiA",
+            "title": "Get peace of mind with Trezor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "image": "/blog-image.svg",
+    "header": "Protecting your private keys",
+    "body": "This is the most important aspect of Bitcoin self-custody, the holy rule which states that you must protect your private keys by ensuring you alone have access to them. A private key is a complex string of alphanumeric characters, often converted in 12 or 24 words(seed phrase backup). Your private keys are like a password that have the sole access to your Bitcoin. If someone else gains access to your private keys, they have complete control over the wallet and the funds. As long as your private key remains secure and undisclosed, your funds are safeguarded and accessible worldwide via the internet. You MUST NEVER SHOW YOUR PRIVATE KEYS TO ANYBODY. You can store your private keys in a safe at home or personal deposit box in a bank. Another method of storing your private key is to split the 12 or 24 words backup phrase in separate locations you have access to. You may also inscribe your private keys onto a stainless steel pad and keep in a safe place. All the security measures around protecting your private key center around ensuring no other person has access to your private keys. You should never take a picture of your private key or upload it online.",
+    "tag": "Self custody",
+    "date_created": "Monday November 6, 2023",
+    "sub_contents": []
   }
 ]
