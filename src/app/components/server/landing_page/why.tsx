@@ -1,8 +1,6 @@
 "use client";
-
-import Image from "next/image";
 import React from 'react';
-import Carousel from "./carousel";
+import Carousel from "../../client/landing_page/carousel";
 
 const WhyStealthMoney = () => {
   return (

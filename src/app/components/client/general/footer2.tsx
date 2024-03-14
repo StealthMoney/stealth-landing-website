@@ -1,45 +1,9 @@
-import { baseUrl } from "@/config";
 import Image from "next/image";
 import Link from "next/link";
-import WaitlistForm from "../client/waitlist-form";
 
-export type WaitlistFormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber?: string;
-};
-
-const joinWaitlist = async (formData: WaitlistFormData) => {
-  "use server";
-  const url = baseUrl + "/waitlists";
-  const config = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  };
-  const response = await fetch(url, config);
-  if (response.status !== 201) {
-    const error = await response.json();
-    if (error?.message?.toLowerCase() === "error.alreadyexist") {
-      return { error: "You are already on the waitlist." };
-    }
-    return {
-      error: "Something went wrong. Please try again later.",
-    };
-  }
-  const data = await response.json();
-  return { success: data };
-};
-
-const Footer = () => {
+export default function Footer2() {
   return (
-    <section className="flex flex-col justify-center items-center mt-10 w-full px-6">
-      <fieldset className="max-w-[1000px]">
-        <WaitlistForm joinWaitlist={joinWaitlist} />
-      </fieldset>
+    <>
       <div className="w-full h-[1px] bg-black-500 my-28"></div>
       <div className="flex flex-col items-center gap-y-10">
         <Image
@@ -77,8 +41,6 @@ const Footer = () => {
       <p className="text-white-300 text-[13px] tracking-wide text-center mt-28">
         Stealth Money <span className="text-[16px]">©</span> is in Beta.
       </p>
-    </section>
+    </>
   );
-};
-
-export default Footer;
+}

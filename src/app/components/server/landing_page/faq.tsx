@@ -1,4 +1,4 @@
-import AccordionDemo from "../client/AccordionRFC/accordion";
+import AccordionDemo from "../../client/landing_page/AccordionRFC/accordion";
 
 export default function Faq() {
   return (

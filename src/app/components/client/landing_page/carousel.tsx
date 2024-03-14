@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { BackwardArrowIcon, ForwardArrowIcon } from "./arrow-icon";
+import { BackwardArrowIcon, ForwardArrowIcon } from "../general/arrow-icon";
 
 const slidesData = [
   {

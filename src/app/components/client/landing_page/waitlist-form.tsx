@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { WaitlistFormData } from "../server/footer";
+import { WaitlistFormData } from "../general/footer";
 import Image from "next/image";
 import { revalidatePath } from "next/cache";
 

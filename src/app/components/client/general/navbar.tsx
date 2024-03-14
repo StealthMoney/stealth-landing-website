@@ -34,10 +34,15 @@ const Navbar: React.FC = () => {
     return (
       <div className="flex flex-col w-3/4 fixed top-20 right-2 z-10 h-1/4 py-2 px-6 bg-black-700">
         <button className="md:block bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[16px] my-3 px-8 rounded">
+          <Link href={"/resources"}>Bitcoin Education</Link>
+        </button>
+        <button className="md:block bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[16px] my-3 px-8 rounded">
           <Link href={"http://app.stealth.money/account/login"}>Log in</Link>
         </button>
         <button className="md:block bg-orange-100 border border-black-700 hover:bg-orange-500 text-[16px] leading-3 text-white-100 font-normal-200 px-8 my-3 py-[16px] rounded">
-          <Link href={"http://app.stealth.money/account/register"}>Get Started</Link>
+          <Link href={"http://app.stealth.money/account/register"}>
+            Get Started
+          </Link>
         </button>
       </div>
     );
@@ -66,14 +71,18 @@ const Navbar: React.FC = () => {
             <span className="bg-white-100 w-[20px] h-[2px]"></span>
             <span className="bg-white-100 w-[20px] h-[2px]"></span>
           </div>
-          {/* <button className="border border-black-700 rounded hover:border-black-500 hover:bg-black-600 px-8 py-[10px] text-white-300 text-[16px] leading-6">
-            Resources
-          </button> */}
+          <button className="hidden md:block border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[16px] px-8 rounded">
+            <Link href={"/resources"}>
+              Bitcoin Education
+            </Link>
+          </button>
           <button className="hidden md:block bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[16px] px-8 rounded">
             <Link href={"http://app.stealth.money/account/login"}>Log in</Link>
           </button>
           <button className="hidden md:block bg-orange-100 border border-black-700 hover:bg-orange-500 text-[16px] leading-3 text-white-100 font-normal-200 px-8 py-[16px] rounded">
-            <Link href={"http://app.stealth.money/account/register"}>Get Started</Link>
+            <Link href={"http://app.stealth.money/account/register"}>
+              Get Started
+            </Link>
           </button>
 
           {openNav && MobileMenu()}

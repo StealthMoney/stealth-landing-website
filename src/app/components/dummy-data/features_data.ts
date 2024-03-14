@@ -12,7 +12,7 @@ const featuresData = [
       title: "Dollar-Cost Averaging",
       description:
         "Create a Dollar-Cost Averaging (DCA) plan to automatically buy Bitcoin into your hardware wallet on set dates for a set period of time.",
-      image: "/images/dollar.jpg",
+      image: "/images/dca.png",
       comingSoon: true,
     },
     {
