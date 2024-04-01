@@ -1,0 +1,335 @@
+[
+  {
+    "id": 1,
+
+    "product_name": "Trezor Model One",
+
+    "product_images": ["/trezor-model-1.svg"],
+
+    "description": "The go-to choice for offline crypto security for over 10 years. A trusted, proven, and affordable hardware wallet that has stood the test of time.",
+
+    "product_details": [
+      {
+        "icon": "/four-arrow.svg",
+        "description": "0.96 Monochromatic OLED screen"
+      },
+      {
+        "icon": "/window.svg",
+        "description": "Two-button pad"
+      },
+      {
+        "icon": "/shape.svg",
+        "description": "Coin management in Trezor Suite"
+      }
+    ],
+    "price": "100000",
+
+    "specs": "Tried and tested, the Trezor Model One is the world’s first hardware wallet for offline coin security, giving you complete confidence in handling your crypto game. This wallet keeps your data, passwords, and other important stuff super safe. Feel like a boss sending, receiving, and trading coins. Trezor's got your back with its one-of-a-kind security setup. Every move you make needs your physical confirmation right on the wallet, making sure everything is legit. Protect your device with a PIN up to a whopping 50 digits to lock things up. Want to crank the security dial to 11? Add a passphrase—your unique mix of letters, words, and whatever else rocks your boat. It's like your VIP ticket to your Trezor hardware wallet, giving you that extra warm and fuzzy feeling. The Trezor Model One hardware wallet is the iconic solution for offline coin security.",
+
+    "glance": {
+      "main_text": "At a glance",
+      "items": [
+        {
+          "icon": "/window-icon.svg",
+          "header": "Two-button pad",
+          "text": "0.96' Monochromatic OLED128 x 64 pixels"
+        },
+        {
+          "icon": "/micro-usb.svg",
+          "header": "micro USB",
+          "text": "USB-A cable"
+        },
+        {
+          "icon": "/parralel-arrow.svg",
+          "header": "Send, receive & trade",
+          "text": "Secure your assets"
+        }
+      ]
+    },
+
+    "security": {
+      "main_text": "Device security",
+      "items": [
+        {
+          "icon": "/verified.svg",
+          "header": "PIN & passphrase enabled"
+        },
+        {
+          "icon": "/world.svg",
+          "header": "Open-source & transparent"
+        }
+      ]
+    },
+
+    "privacy": {
+      "main_text": "Privacy",
+      "items": [
+        {
+          "icon": "/triangle-sign.svg",
+          "header": "Go incognito with coinjoin"
+        },
+        {
+          "icon": "/circle-sign.svg",
+          "header": "Increase privacy with coin control"
+        },
+        {
+          "icon": "/half-circle.svg",
+          "header": "Protect identity with Tor"
+        }
+      ]
+    },
+
+    "backup": {
+      "main_text": "Backup & Recovery",
+      "items": [
+        {
+          "icon": "/standard.svg",
+          "header": "Standard Backup"
+        },
+        {
+          "icon": "/note.svg",
+          "header": "12- or 24-word recovery seed"
+        }
+      ]
+    },
+
+    "authentication": {
+      "main_text": "Authentication",
+      "items": [
+        {
+          "icon": "/code.svg",
+          "header": "Two-factor authentication"
+        }
+      ]
+    },
+
+    "product_details2": {
+      "main_text": "Product details",
+      "items": [
+        {
+          "icon": "/four-arrow2.svg",
+          "header": "Products size & weight",
+          "text": "60x30x6 mm / 12 g2.4x1.2x0.2 in / 0.42 oz"
+        },
+        {
+          "icon": "/box.svg",
+          "header": "Package size & weight",
+          "text": "Package size & weight"
+        },
+        {
+          "icon": "/thermometer.svg",
+          "header": "Operating temperature",
+          "text": "-20°C to +60°C -4°F to +140°F"
+        },
+        {
+          "icon": "/memory.svg",
+          "header": "CPU",
+          "text": "120 MHz embedded ARM processor)(Cortex M3"
+        }
+      ]
+    },
+
+    "in_the_box": {
+      "main_text": "What's in the box?",
+      "items": [
+        {
+          "icon": "/trezor-icon.svg",
+          "header": "Trezor Model One hardware wallet"
+        },
+        {
+          "icon": "/micro-usb.svg",
+          "header": "Micro USB → USB-A cable"
+        },
+        {
+          "icon": "/doc.svg",
+          "header": "Start-up guide"
+        },
+        {
+          "icon": "/code.svg",
+          "header": "2x Recovery seed card"
+        },
+        {
+          "icon": "/sticker.svg",
+          "header": "Trezor stickers"
+        }
+      ]
+    },
+
+    "safety": {
+      "main_text": "Safety & certifications",
+      "sub_text": "All Trezor devices are CE and RoHS certified meeting all quality, reliability, and environmental standards. Trezors are X-ray safe and suitable for air travel."
+    },
+
+    "material": {
+      "main_text": "Material",
+      "sub_text": "Trezor uses a durable casing made from a PC/ABS engineering thermoplastic blend, designed for long-lasting durability. The button construction is engineered to withstand over 200,000 clicks, while the OLED screen delivers stunning visuals with deep blacks, ensuring an effortless and legible user experience."
+    }
+  },
+  {
+    "id": 2,
+
+    "product_name": "Trezor safe3",
+
+    "product_images": ["/trezor-safe3.svg"],
+
+    "description": "The newest Trezor hardware wallet with Secure-Element protection, open-source design, and on-device confirmation.",
+
+    "product_details": [
+      {
+        "icon": "/four-arrow.svg",
+        "description": "0.96 Monochromatic OLED screen"
+      },
+      {
+        "icon": "/window.svg",
+        "description": "Two-button pad"
+      },
+      {
+        "icon": "/shape.svg",
+        "description": "Coin management in Trezor Suite"
+      }
+    ],
+
+    "price": "135000",
+
+    "specs": "Your ultimate fortress for safeguarding digital assets. Equipped with cutting-edge features including the Secure Element (EAL6+) and device-entry passphrase, it’s an impenetrable security pair Say farewell to crypto concerns. With wallet backup, you’re covered. Opt for the Standard Backup—just a 12-word list for easy access. Need more? Choose Shamir Backup for extra peace of mind with multiple word lists And the look? A sleek, stylish, modern design perfectly complements its robust crypto armor. Meet the next-gen hardware wallet—the future of crypto security awaits with Trezor Safe 3!",
+
+    "glance": {
+      "main_text": "At a glance",
+      "items": [
+        {
+          "icon": "/window-icon.svg",
+          "header": "Two-button pad",
+          "text": "0.96' Monochromatic OLED128 x 64 pixels"
+        },
+        {
+          "icon": "/micro-usb.svg",
+          "header": "micro USB",
+          "text": "USB-A cable"
+        },
+        {
+          "icon": "/parralel-arrow.svg",
+          "header": "Send, receive & trade",
+          "text": "Secure your assets"
+        }
+      ]
+    },
+
+    "security": {
+      "main_text": "Device security",
+      "items": [
+        {
+          "icon": "/verified.svg",
+          "header": "PIN & passphrase enabled"
+        },
+        {
+          "icon": "/world.svg",
+          "header": "Open-source & transparent"
+        }
+      ]
+    },
+
+    "privacy": {
+      "main_text": "Privacy",
+      "items": [
+        {
+          "icon": "/triangle-sign.svg",
+          "header": "Go incognito with coinjoin"
+        },
+        {
+          "icon": "/circle-sign.svg",
+          "header": "Increase privacy with coin control"
+        },
+        {
+          "icon": "/half-circle.svg",
+          "header": "Protect identity with Tor"
+        }
+      ]
+    },
+
+    "backup": {
+      "main_text": "Backup & Recovery",
+      "items": [
+        {
+          "icon": "/standard.svg",
+          "header": "Standard Backup"
+        },
+        {
+          "icon": "/note.svg",
+          "header": "12- or 24-word recovery seed"
+        }
+      ]
+    },
+
+    "authentication": {
+      "main_text": "Authentication",
+      "items": [
+        {
+          "icon": "/code.svg",
+          "header": "Two-factor authentication"
+        }
+      ]
+    },
+
+    "product_details2": {
+      "main_text": "Product details",
+      "items": [
+        {
+          "icon": "/four-arrow2.svg",
+          "header": "Products size & weight",
+          "text": "60x30x6 mm / 12 g2.4x1.2x0.2 in / 0.42 oz"
+        },
+        {
+          "icon": "/box.svg",
+          "header": "Package size & weight",
+          "text": "Package size & weight"
+        },
+        {
+          "icon": "/thermometer.svg",
+          "header": "Operating temperature",
+          "text": "-20°C to +60°C -4°F to +140°F"
+        },
+        {
+          "icon": "/memory.svg",
+          "header": "CPU",
+          "text": "120 MHz embedded ARM processor)(Cortex M3"
+        }
+      ]
+    },
+
+    "in_the_box": {
+      "main_text": "What's in the box?",
+      "items": [
+        {
+          "icon": "/trezor-icon.svg",
+          "header": "Trezor Model One hardware wallet"
+        },
+        {
+          "icon": "/micro-usb.svg",
+          "header": "Micro USB → USB-A cable"
+        },
+        {
+          "icon": "/doc.svg",
+          "header": "Start-up guide"
+        },
+        {
+          "icon": "/code.svg",
+          "header": "2x Recovery seed card"
+        },
+        {
+          "icon": "/sticker.svg",
+          "header": "Trezor stickers"
+        }
+      ]
+    },
+
+    "safety": {
+      "main_text": "Safety & certifications",
+      "sub_text": "All Trezor devices are CE and RoHS certified meeting all quality, reliability, and environmental standards. Trezors are X-ray safe and suitable for air travel."
+    },
+
+    "material": {
+      "main_text": "Material",
+      "sub_text": "Trezor uses a durable casing made from a PC/ABS engineering thermoplastic blend, designed for long-lasting durability. The button construction is engineered to withstand over 200,000 clicks, while the OLED screen delivers stunning visuals with deep blacks, ensuring an effortless and legible user experience."
+    }
+  }
+]

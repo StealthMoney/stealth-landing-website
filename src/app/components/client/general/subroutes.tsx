@@ -19,6 +19,7 @@ export default function Subroutes() {
 
   useEffect(() => {
     trackPathName();
+    console.log(url);
   }, [url]);
 
   return (
@@ -51,6 +52,27 @@ export default function Subroutes() {
             }`}
           >
             Bitcoin Self-Custody
+          </a>
+        </nav>
+      ) : url === "/pre_order" ? (
+        <nav
+          className="flex mt-6 md:px-12 px-6 text-[#494949] w-screen justify-start -py-4 items-end 
+      overflow-x-auto"
+        >
+          <a
+            href="/"
+            className="mx-2 text-nowrap text-white-100 hover:text-orange-100 py-4"
+          >
+            Home <span className="mx-2">&gt;</span>
+          </a>
+
+          <a
+            href={`/pre_order`}
+            className={`mx-2 text-nowrap hover:text-orange-100 py-4 ${
+              url === "/pre_order" ? "text-orange-100" : "text-white-100"
+            }`}
+          >
+            Pre-order wallet
           </a>
         </nav>
       ) : null}

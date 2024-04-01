@@ -34,7 +34,7 @@ const HeroSection = () => {
           <Link href={"/#waitlist"}>Start Saving Now</Link>
         </button>
         <button className="bg-orange-100 border text-center border-black-700 hover:bg-orange-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-normal-200 px-8 h-[70px] rounded">
-          <Link href={"/#waitlist"}>Pre Order Wallet</Link>
+          <Link href={"/pre_order"}>Pre Order Wallet</Link>
         </button>
       </div>
       <picture className="flex items-center">
