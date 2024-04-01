@@ -51,12 +51,9 @@ const Navbar: React.FC = () => {
   const MobileMenu = () => {
     return (
       <div className="flex flex-col w-3/4 fixed top-20 right-2 z-10 h-1/4 py-2 px-6 gap-y-5 bg-black-700 items-center">
-        <button
-          onClick={() => router.push("/resources")}
-          className="md:block bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[16px] my-3 px-8 rounded"
-        >
-          <span>Bitcoin Education</span>
-        </button>
+        
+        <Link href={"/resources"} className="hover:text-orange-100 text-white-100 my-4">Bitcoin Education</Link>
+        
 
         <button
           onClick={() => {
@@ -108,20 +105,14 @@ const Navbar: React.FC = () => {
             <span className="bg-white-100 w-[20px] h-[2px]"></span>
             <span className="bg-white-100 w-[20px] h-[2px]"></span>
           </div>
-          <button
-            onClick={() => {
-              router.push("/resources");
-            }}
-            className="hidden cursor-pointer md:block border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[16px] px-8 rounded"
-          >
-            <Link href={"/resources"}>Bitcoin Education</Link>
-          </button>
+
+          <Link href={"/resources"} className="hover:text-orange-100 text-white-100 hidden md:block">Bitcoin Education</Link>
 
           <button
             onClick={() => {
               window.open("http://app.stealth.money/account/login", "_blank");
             }}
-            className="hidden cursor-pointer md:block border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[16px] px-8 rounded"
+            className="hidden cursor-pointer md:block border border-black-700 hover:bg-black-600 bg-black-500 text-[16px] leading-3 text-white-100 font-normal-200 py-[16px] px-8 rounded"
           >
             <span className="hidden md:block">Log in</span>
           </button>
