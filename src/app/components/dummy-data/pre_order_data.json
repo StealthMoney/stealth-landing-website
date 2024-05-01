@@ -1,10 +1,16 @@
 [
   {
-    "id": 1,
+    "id": "1",
 
     "product_name": "Trezor Model One",
 
-    "product_images": ["/trezor-model-1.svg"],
+    "product_images": [
+      "/trezor-model-1.svg",
+      "/trezor-model-1(small).svg",
+      "/trezor-model-1(small)2.svg"
+    ],
+
+    "availble": true,
 
     "description": "The go-to choice for offline crypto security for over 10 years. A trusted, proven, and affordable hardware wallet that has stood the test of time.",
 
@@ -24,7 +30,10 @@
     ],
     "price": "100000",
 
-    "specs": "Tried and tested, the Trezor Model One is the world’s first hardware wallet for offline coin security, giving you complete confidence in handling your crypto game. This wallet keeps your data, passwords, and other important stuff super safe. Feel like a boss sending, receiving, and trading coins. Trezor's got your back with its one-of-a-kind security setup. Every move you make needs your physical confirmation right on the wallet, making sure everything is legit. Protect your device with a PIN up to a whopping 50 digits to lock things up. Want to crank the security dial to 11? Add a passphrase—your unique mix of letters, words, and whatever else rocks your boat. It's like your VIP ticket to your Trezor hardware wallet, giving you that extra warm and fuzzy feeling. The Trezor Model One hardware wallet is the iconic solution for offline coin security.",
+    "specs": {
+      "main_text": "Specs",
+      "sub_text": "Tried and tested, the Trezor Model One is the world’s first hardware wallet for offline coin security, giving you complete confidence in handling your crypto game. This wallet keeps your data, passwords, and other important stuff super safe. Feel like a boss sending, receiving, and trading coins. Trezor's got your back with its one-of-a-kind security setup. Every move you make needs your physical confirmation right on the wallet, making sure everything is legit. Protect your device with a PIN up to a whopping 50 digits to lock things up. Want to crank the security dial to 11? Add a passphrase—your unique mix of letters, words, and whatever else rocks your boat. It's like your VIP ticket to your Trezor hardware wallet, giving you that extra warm and fuzzy feeling. The Trezor Model One hardware wallet is the iconic solution for offline coin security."
+    },
 
     "glance": {
       "main_text": "At a glance",
@@ -166,11 +175,18 @@
     }
   },
   {
-    "id": 2,
+    "id": "2",
 
     "product_name": "Trezor safe3",
 
-    "product_images": ["/trezor-safe3.svg"],
+    "product_images": [
+      "/trezor-safe3.svg",
+      "/trezor-safe3(small)2.png",
+      "/trezor-safe3(small).png",
+      "/trezor-safe3(small)1.png"
+    ],
+
+    "availble": true,
 
     "description": "The newest Trezor hardware wallet with Secure-Element protection, open-source design, and on-device confirmation.",
 
@@ -191,7 +207,10 @@
 
     "price": "135000",
 
-    "specs": "Your ultimate fortress for safeguarding digital assets. Equipped with cutting-edge features including the Secure Element (EAL6+) and device-entry passphrase, it’s an impenetrable security pair Say farewell to crypto concerns. With wallet backup, you’re covered. Opt for the Standard Backup—just a 12-word list for easy access. Need more? Choose Shamir Backup for extra peace of mind with multiple word lists And the look? A sleek, stylish, modern design perfectly complements its robust crypto armor. Meet the next-gen hardware wallet—the future of crypto security awaits with Trezor Safe 3!",
+    "specs": {
+      "main_text": "Specs",
+      "sub_text": "Your ultimate fortress for safeguarding digital assets. Equipped with cutting-edge features including the Secure Element (EAL6+) and device-entry passphrase, it’s an impenetrable security pair Say farewell to crypto concerns. With wallet backup, you’re covered. Opt for the Standard Backup—just a 12-word list for easy access. Need more? Choose Shamir Backup for extra peace of mind with multiple word lists And the look? A sleek, stylish, modern design perfectly complements its robust crypto armor. Meet the next-gen hardware wallet—the future of crypto security awaits with Trezor Safe 3!"
+    },
 
     "glance": {
       "main_text": "At a glance",

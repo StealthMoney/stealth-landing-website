@@ -1,5 +1,6 @@
 import Image from "next/image";
 import data from "../components/dummy-data/pre_order_data.json";
+import Link from "next/link";
 
 export default function Pre_order_page() {
   return (
@@ -8,7 +9,7 @@ export default function Pre_order_page() {
       <p className="text-[#cccccc]">
         Pre-order your Trezor hardware wallet from anywhere in Nigeria and get
         it within 48 hours in Lagos or 7 days elsewhere. Secure your assets with
-        Trezor – order now for quick delivery.
+        Trezor &#8210; order now for quick delivery.
       </p>
 
       <section className="flex md:flex-row flex-col">
@@ -34,9 +35,12 @@ export default function Pre_order_page() {
             </div>
 
             <div className="my-2 px-4">
-              <button className="w-full p-4 bg-orange-100 text-center text-white-100 font-bold rounded-md">
+              <Link
+                href={`/pre_order/${item.id}`}
+                className="w-full inline-block p-4 bg-orange-100 text-center text-white-100 font-bold rounded-md"
+              >
                 Buy for NGN {item.price}
-              </button>
+              </Link>
             </div>
           </div>
         ))}
