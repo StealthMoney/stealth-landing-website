@@ -72,13 +72,166 @@ export default function Page({ params }: { params: { id: string } }) {
         </div>
       </section>
 
-      <section className="flex gap-x-6">
+      <section className="flex gap-x-8 lg:flex-row flex-col lg:h-[650px] md:h-auto overflow-y-hidden">
         <div className="lg:w-2/4 w-full">
           <h1 className="text-2xl">Billing & Shipping</h1>
+
+          <form action="" className="w-full">
+            <div className="w-full flex md:flex-row flex-col">
+              <div className="md:w-2/4 flex flex-col md:mr-2 my-4">
+                <label htmlFor="firstname">
+                  First Name<span className="text-red-700">*</span>
+                </label>
+                <input
+                  className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                  type="text"
+                  name=""
+                  id="firstname"
+                />
+              </div>
+              <div className="md:w-2/4 flex flex-col md:ml-2 my-4">
+                <label htmlFor="lastname">
+                  Last Name<span className="text-red-700">*</span>
+                </label>
+                <input
+                  className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                  type="text"
+                  name=""
+                  id="lastname"
+                />
+              </div>
+            </div>
+
+            <div className="w-full flex flex-col">
+              <label htmlFor="address">
+                House number and street name
+                <span className="text-red-700">*</span>
+              </label>
+              <input
+                className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                type="text"
+                name=""
+                id="address"
+              />
+            </div>
+
+            <div className="w-full flex md:flex-row flex-col">
+              <div className="md:w-2/4 flex flex-col md:mr-2 my-4">
+                <label htmlFor="city">
+                  Town/City<span className="text-red-700">*</span>
+                </label>
+                <input
+                  className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                  type="text"
+                  name=""
+                  id="city"
+                />
+              </div>
+              <div className="md:w-2/4 flex flex-col md:ml-2 my-4">
+                <label htmlFor="state">
+                  State<span className="text-red-700">*</span>
+                </label>
+                <input
+                  className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                  type="text"
+                  name=""
+                  id="state"
+                />
+              </div>
+            </div>
+
+            <div className="w-full flex flex-col my-4">
+              <label htmlFor="phone">
+                Phone Number
+                <span className="text-red-700">*</span>
+              </label>
+              <input
+                className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                type="tel"
+                name=""
+                id="phone"
+              />
+            </div>
+
+            <div className="w-full flex flex-col my-4">
+              <label htmlFor="mail">
+                Email Address
+                <span className="text-red-700">*</span>
+              </label>
+              <input
+                className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                type="email"
+                name=""
+                id="mail"
+              />
+            </div>
+          </form>
         </div>
 
-        <div className="lg:w-2/4 w-full">
-          <h1 className="text-2xl">Your Order</h1>
+        <div className="lg:w-2/4 w-full lg:mt-0 mt-12">
+          <h1 className="text-2xl">Your order</h1>
+
+          <div className="w-full my-12">
+            <div className="w-full flex justify-between border-b border-b-[#494949] border-dashed my-4 px-6">
+              <h1 className=" text-lg mx-4">Product</h1>
+              <h1 className="text-lg mx-4">Subtotal</h1>
+            </div>
+          </div>
+
+          {purchaseItems.length > 0 ? (
+            <div>
+              {purchaseItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col justify-between md:px-6 px-3 text-[#D4D4D4]"
+                >
+                  <div className="md:mx-4 flex justify-between items-center">
+                    <div className="w-[50px] h-[50px] rounded-md flex justify-center items-center bg-[#161616]">
+                      <Image
+                        src={item.image}
+                        alt={item.product_name}
+                        width={20}
+                        height={40}
+                      />
+                    </div>
+                    <div className="mx-4">
+                      <h1 className="text-lg">{item.product_name}</h1>
+                      <small>The Original hardware wallet</small>
+                    </div>
+                    <span className="mx-4 md:text-2xl">x{item.amount}</span>
+
+                    <p className="md:text-2xl">NGN {item.price}</p>
+                  </div>
+
+                  <div className="flex justify-between items-center px-6 py-6 my-4 border-dashed border-b border-b-[#494949]">
+                    <h1 className="md:text-2xl text-lg text-white-100">
+                      Subtotal
+                    </h1>
+                    <p className="md:text-2xl">NGN {item.price}</p>
+                  </div>
+
+                  <div className="flex justify-between items-center px-6 py-6 my-4 border-dashed border-b border-b-[#494949]">
+                    <h1 className="md:text-2xl text-lg text-white-100">
+                      Total
+                    </h1>
+                    <p className="md:text-2xl text-[#F7931A]">
+                      NGN {item.price}
+                    </p>
+                  </div>
+
+                  <div className="w-full">
+                    <button className="bg-[#F7931A] px-4 py-6 text-white-100 rounded-md w-full my-8">
+                      Place Order NGN {item.price}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="w-full h-2/4 lg:mt-0 mt-12 flex items-center justify-center text-[#F7931A]">
+              <p className="text-2xl text-center">No order Details Found</p>
+            </div>
+          )}
         </div>
       </section>
     </section>

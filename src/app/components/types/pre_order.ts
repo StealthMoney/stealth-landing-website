@@ -80,4 +80,5 @@ export interface Item {
   price: number;
   amount: number;
   complete: boolean;
+  image: string;
 }

@@ -18,6 +18,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     product_name: item?.product_name || "",
     price: item?.price || 0,
     complete: false,
+    image: item?.product_images[0] || "",
   });
 
   const { purchaseItems = [], addToCart = () => {} } = usePurchase() || {};
