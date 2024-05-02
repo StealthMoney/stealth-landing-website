@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
 
     "product_name": "Trezor Model One",
 
@@ -28,7 +28,7 @@
         "description": "Coin management in Trezor Suite"
       }
     ],
-    "price": "100000",
+    "price": 100000,
 
     "specs": {
       "main_text": "Specs",
@@ -175,7 +175,7 @@
     }
   },
   {
-    "id": "2",
+    "id": 2,
 
     "product_name": "Trezor safe3",
 
@@ -205,7 +205,7 @@
       }
     ],
 
-    "price": "135000",
+    "price": 135000,
 
     "specs": {
       "main_text": "Specs",

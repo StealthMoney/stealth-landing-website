@@ -3,10 +3,15 @@ import Image from "next/image";
 import data from "../../components/dummy-data/pre_order_data.json";
 import Link from "next/link";
 import { useState } from "react";
+import { usePurchase } from "@/app/components/context/pre_order";
+import { itemType } from "@/app/components/types/pre_order";
 
 export default function Page({ params }: { params: { slug: string } }) {
-  const item = data.find((item) => item.id === params.slug);
-  const [amount, setAmount] = useState<number>(Number);
+  const item: itemType | undefined = data.find(
+    (item) => item.id.toString() === params.slug
+  );
+  const [amount, setAmount] = useState<number>(1);
+  const { purchaseItems = [], addToCart = () => {} } = usePurchase() || {};
 
   if (!item) {
     return (
@@ -15,6 +20,16 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
     );
   }
+
+  const increaseAmount = () => {
+    if (amount >= 1) setAmount((prev) => prev + 1);
+    console.log(amount);
+  };
+
+  const decreaseAmount = () => {
+    if (amount > 1) setAmount((prev) => prev - 1);
+    console.log(amount);
+  };
 
   return (
     <section className="text-white-100 w-full md:px-12 px-6 py-2">
@@ -59,11 +74,17 @@ export default function Page({ params }: { params: { slug: string } }) {
             ))}
 
             <div className="w-full flex gap-x-2 items-center">
-              <button className="rounded-full px-2 w-6 h-6 shadow-sm shadow-[#888888] border-[#494949] border flex items-center justify-center">
+              <button
+                onClick={() => decreaseAmount()}
+                className="rounded-full cursor-pointer px-2 w-6 h-6 shadow-sm shadow-[#888888] border-[#494949] border flex items-center justify-center"
+              >
                 -
               </button>
               {amount || 1}
-              <button className="rounded-full px-2 w-6 h-6 shadow-sm shadow-[#888888] border-[#494949] border flex items-center justify-center">
+              <button
+                onClick={() => increaseAmount()}
+                className="rounded-full cursor-pointer px-2 w-6 h-6 shadow-sm shadow-[#888888] border-[#494949] border flex items-center justify-center"
+              >
                 +
               </button>
             </div>
@@ -83,33 +104,35 @@ export default function Page({ params }: { params: { slug: string } }) {
       <section className="w-full">
         <div className="w-full border-b border-b-[#494949] py-4">
           <h1 className="font-bold text-2xl border-b border-b-[#494949] my-8">
-            {item.specs.main_text}
+            {item.specs?.main_text}
           </h1>
           <span className="leading-8 inline-block my-4">
             <p className="text-lg">{item.product_name}</p>
-            <small>{item.specs.sub_text}</small>
+            <small>{item.specs?.sub_text}</small>
           </span>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4">
-          <h1 className="font-bold text-2xl my-8">{item.glance.main_text}</h1>
-          <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
-            {item.glance.items.map((value, index) => (
-              <div
-                key={index}
-                className="flex lg:flex-row flex-col lg:items-center gap-x-2 lg:my-auto my-4"
-              >
-                <span className="leading-8 inline-block lg:mx-2 lg:my-auto my-4">
-                  <Image src={value.icon} alt="icon" width={40} height={20} />
-                </span>
-                <div>
-                  <h1 className="text-lg font-bold">{value.header}</h1>
-                  <small>{value.text}</small>
+        {item.glance && (
+          <div className="w-full border-b border-b-[#494949] py-4">
+            <h1 className="font-bold text-2xl my-8">{item.glance.main_text}</h1>
+            <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
+              {item.glance.items.map((value, index) => (
+                <div
+                  key={index}
+                  className="flex lg:flex-row flex-col lg:items-center gap-x-2 lg:my-auto my-4"
+                >
+                  <span className="leading-8 inline-block lg:mx-2 lg:my-auto my-4">
+                    <Image src={value.icon} alt="icon" width={40} height={20} />
+                  </span>
+                  <div>
+                    <h1 className="text-lg font-bold">{value.header}</h1>
+                    <small>{value.text}</small>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="w-full border-b border-b-[#494949] py-4">
           <h1 className="font-bold text-2xl my-8">{item.security.main_text}</h1>
@@ -239,7 +262,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           </span>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4">
+        <div className="w-full border-b border-b-[#494949] py-4 mb-12">
           <h1 className="font-bold text-2xl my-8">{item.material.main_text}</h1>
           <span className="leading-8 inline-block my-4">
             <small>{item.material.sub_text}</small>
