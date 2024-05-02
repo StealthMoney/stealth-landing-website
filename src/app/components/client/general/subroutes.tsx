@@ -121,6 +121,7 @@ export default function Subroutes() {
                 : url === "/pre_order/2/checkout"
                 ? "Trezor safe3"
                 : "")}
+                <span className="mx-2">&gt;</span>
           </Link>
           <Link
             href="#" onClick={() => router.refresh()}

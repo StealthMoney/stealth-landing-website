@@ -4,13 +4,22 @@ import data from "../../components/dummy-data/pre_order_data.json";
 import Link from "next/link";
 import { useState } from "react";
 import { usePurchase } from "@/app/components/context/pre_order";
-import { itemType } from "@/app/components/types/pre_order";
+import { itemType, Item } from "@/app/components/types/pre_order";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const item: itemType | undefined = data.find(
     (item) => item.id.toString() === params.slug
   );
   const [amount, setAmount] = useState<number>(1);
+
+  const [details, setDetails] = useState<Item>({
+    id: item?.id || 0,
+    amount: 1,
+    product_name: item?.product_name || "",
+    price: item?.price || 0,
+    complete: false,
+  });
+
   const { purchaseItems = [], addToCart = () => {} } = usePurchase() || {};
 
   if (!item) {
@@ -22,13 +31,29 @@ export default function Page({ params }: { params: { slug: string } }) {
   }
 
   const increaseAmount = () => {
-    if (amount >= 1) setAmount((prev) => prev + 1);
-    console.log(amount);
+    setAmount((prev) => prev + 1);
+    if (details.amount >= 1) {
+      setDetails((prev) => ({
+        ...prev,
+        amount: prev.amount + 1,
+        price: (item?.price || 0) * (prev.amount + 1),
+      }));
+    }
   };
 
   const decreaseAmount = () => {
-    if (amount > 1) setAmount((prev) => prev - 1);
-    console.log(amount);
+    if (details.amount > 1) {
+      setDetails((prev) => ({
+        ...prev,
+        amount: prev.amount - 1,
+        price: (item?.price || 0) * (prev.amount - 1),
+      }));
+    }
+  };
+
+  const saveValues = () => {
+    addToCart(details);
+    console.log(purchaseItems);
   };
 
   return (
@@ -80,7 +105,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               >
                 -
               </button>
-              {amount || 1}
+              {details.amount}
               <button
                 onClick={() => increaseAmount()}
                 className="rounded-full cursor-pointer px-2 w-6 h-6 shadow-sm shadow-[#888888] border-[#494949] border flex items-center justify-center"
@@ -92,9 +117,10 @@ export default function Page({ params }: { params: { slug: string } }) {
             <div className="my-2 px-4">
               <Link
                 href={`/pre_order/${item.id}/checkout`}
+                onClick={saveValues}
                 className="w-full inline-block p-4 bg-orange-100 text-center text-white-100 font-bold rounded-md"
               >
-                Buy for NGN {item.price * (amount || 1)}
+                Buy for NGN {details.price}
               </Link>
             </div>
           </div>
