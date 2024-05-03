@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -33,7 +34,10 @@ const HeroSection = () => {
         <button className="bg-black-600 border text-center border-black-700 hover:bg-black-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-normal-200 h-[70px] px-8 rounded">
           <Link href={"/#waitlist"}>Start Saving Now</Link>
         </button>
-        <button className="bg-orange-100 border text-center border-black-700 hover:bg-orange-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-normal-200 px-8 h-[70px] rounded">
+        <button
+          onClick={() => window.open("/pre_order", "_self")}
+          className="bg-orange-100 border text-center border-black-700 cursor-pointer hover:bg-orange-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-normal-200 px-8 h-[70px] rounded"
+        >
           <Link href={"/pre_order"}>Pre Order Wallet</Link>
         </button>
       </div>
