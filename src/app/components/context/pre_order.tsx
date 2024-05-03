@@ -1,9 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from "react";
 import { Item } from "../types/pre_order";
 
 interface PreOrderContextType {
   purchaseItems: Item[];
   addToCart: (item: Item) => void;
+  setPurchaseItems: Dispatch<SetStateAction<Item[]>>; // Add setPurchaseItems
 }
 
 export const PreOrderContext = createContext<PreOrderContextType | undefined>(
@@ -53,7 +54,7 @@ export const PurchaseProvider: React.FC<PurchaseProviderProps> = ({
   };
 
   return (
-    <PreOrderContext.Provider value={{ purchaseItems, addToCart }}>
+    <PreOrderContext.Provider value={{ purchaseItems, addToCart, setPurchaseItems }}>
       {children}
     </PreOrderContext.Provider>
   );

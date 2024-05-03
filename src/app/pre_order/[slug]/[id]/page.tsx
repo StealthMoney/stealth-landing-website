@@ -3,20 +3,20 @@ import Image from "next/image";
 import { usePurchase } from "@/app/components/context/pre_order";
 import DialogBox from "@/app/components/shared/dialog";
 import { useState } from "react";
-
-interface formValueTypes {
-  firstName: string;
-  lastName: string;
-  location: string;
-  state: string;
-  tel: number | string;
-  email: string;
-  region: string;
-}
+import { useRouter } from "next/navigation";
+import { formValueTypes } from "@/app/components/types/pre_order";
 
 export default function Page({ params }: { params: { id: string } }) {
-  const { purchaseItems = [], addToCart } = usePurchase();
+  const { purchaseItems = [], setPurchaseItems } = usePurchase();
+
+  const router = useRouter();
+
+  // go back if purchaseItems can't be found
+  if (purchaseItems.length === 0 || !purchaseItems) {
+    router.back();
+  }
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const [formValues, setFormValues] = useState<formValueTypes>({
     firstName: "",
     lastName: "",
@@ -29,18 +29,76 @@ export default function Page({ params }: { params: { id: string } }) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormValues((prev) => ({ ...prev, [name]: value }));
+    let parsedValue = value;
+
+    if (name === "tel" && value.length > 14) {
+      parsedValue = value.slice(0, 14);
+    }
+    setFormValues((prev) => ({ ...prev, [name]: parsedValue }));
+  };
+
+  const validateInputs = () => {
+    let hasError = false;
+
+    if (formValues.firstName === "") {
+      hasError = true;
+    }
+
+    if (formValues.lastName === "") {
+      hasError = true;
+    }
+
+    if (formValues.location === "") {
+      hasError = true;
+    }
+
+    if (formValues.state === "") {
+      hasError = true;
+    }
+
+    if (formValues.region === "") {
+      hasError = true;
+    }
+
+    if (
+      formValues.email === "" ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)
+    ) {
+      hasError = true;
+    }
+
+    if (formValues.tel && !/^[\d+]+$/.test(formValues.tel.toString())) {
+      hasError = true;
+    }
+
+    setError(hasError);
+
+    return !hasError;
   };
 
   const handleSubmit = () => {
-    console.log(formValues);
+    if (validateInputs()) {
+      updateOrder();
+
+      setTimeout(() => {
+        setPurchaseItems([]);
+      }, 5000);
+    } else {
+      validateInputs();
+    }
   };
 
   const updateOrder = () => {
-    const updatedItems = purchaseItems.map((item) => ({
-      ...item,
-      complete: true,
-    }));
+    const updatedItems = purchaseItems.map((item) => {
+      if (!item.complete) {
+        return {
+          ...item,
+          complete: true,
+        };
+      }
+      return item;
+    });
+    setPurchaseItems(updatedItems);
     setOpenModal(!openModal);
   };
 
@@ -58,7 +116,7 @@ export default function Page({ params }: { params: { id: string } }) {
       <DialogBox
         header="ALERT!"
         open={openModal}
-        message="You're all done! check your mail for order details"
+        message="You're all done! check your mail for order details and delivery date"
         dismiss={closeModal}
       >
         <div className="flex items-center justify-center font-bold">
@@ -304,7 +362,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
                     <div className="w-full">
                       <button
-                        onClick={updateOrder}
+                        onClick={handleSubmit}
                         className="bg-[#F7931A] px-4 py-6 text-white-100 rounded-md w-full my-8"
                       >
                         Place Order NGN {item.price}

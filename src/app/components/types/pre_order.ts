@@ -82,3 +82,13 @@ export interface Item {
   complete: boolean;
   image: string;
 }
+
+export interface formValueTypes {
+  firstName: string;
+  lastName: string;
+  location: string;
+  state: string;
+  tel: string;
+  email: string;
+  region: string;
+}
