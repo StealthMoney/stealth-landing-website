@@ -13,7 +13,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const router = useRouter();
 
   // Product animation showcase
-  const [currentImageIndex, setCurrentImageIndex] = useState(1);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     if (item && item.product_images) {
@@ -94,7 +94,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               width={80}
               height={50}
               src={value}
-              alt={`imagge-${index + 1}`}
+              alt={`image-${index + 1}`}
               key={index}
               className={`my-2 bg-[#161616] rounded-md cursor-pointer ${
                 index === currentImageIndex ? "border-2 border-orange-100" : ""
