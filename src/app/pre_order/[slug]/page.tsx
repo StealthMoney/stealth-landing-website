@@ -208,7 +208,10 @@ export default function Page({ params }: { params: { slug: string } }) {
                 }`}
                 disabled={!item.availble}
               >
-                Buy for NGN {details.price}
+                Buy for NGN{" "}
+                {details.price.toLocaleString("en", {
+                  maximumFractionDigits: 2,
+                })}
               </button>
             </div>
           </div>

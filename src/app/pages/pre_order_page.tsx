@@ -39,7 +39,9 @@ export default function Pre_order_page() {
                 href={`/pre_order/${item.id}`}
                 className="w-full inline-block p-4 bg-orange-100 text-center text-white-100 font-bold rounded-md"
               >
-                Buy for NGN {item.price}
+                Buy for NGN {item.price.toLocaleString("en", {
+                          maximumFractionDigits: 2,
+                        })}
               </Link>
             </div>
           </div>

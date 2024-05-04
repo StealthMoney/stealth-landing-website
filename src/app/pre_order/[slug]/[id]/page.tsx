@@ -31,8 +31,8 @@ export default function Page({ params }: { params: { id: string } }) {
     const { name, value } = e.target;
     let parsedValue = value;
 
-    if (name === "tel" && value.length > 14) {
-      parsedValue = value.slice(0, 14);
+    if (name === "tel" && value.length > 20) {
+      parsedValue = value.slice(0, 20);
     }
     setFormValues((prev) => ({ ...prev, [name]: parsedValue }));
   };
@@ -67,7 +67,7 @@ export default function Page({ params }: { params: { id: string } }) {
       hasError = true;
     }
 
-    if (formValues.tel && !/^[\d+]+$/.test(formValues.tel.toString())) {
+    if (formValues.tel && !/^[\d+\s]*$/.test(formValues.tel.toString())) {
       hasError = true;
     }
 
@@ -375,7 +375,10 @@ export default function Page({ params }: { params: { id: string } }) {
                         onClick={handleSubmit}
                         className="bg-[#F7931A] px-4 py-6 text-white-100 rounded-md w-full my-8"
                       >
-                        Place Order NGN {item.price}
+                        Place Order NGN{" "}
+                        {item.price.toLocaleString("en", {
+                          maximumFractionDigits: 2,
+                        })}
                       </button>
                     </div>
                   </div>
