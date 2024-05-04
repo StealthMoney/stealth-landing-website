@@ -180,10 +180,7 @@
     "product_name": "Trezor safe3",
 
     "product_images": [
-      "/trezor-safe3.svg",
-      "/trezor-safe3(small)2.svg",
-      "/trezor-safe3(small).svg",
-      "/trezor-safe3(small)1.svg"
+      "/trezor-safe3.svg"
     ],
 
     "availble": true,

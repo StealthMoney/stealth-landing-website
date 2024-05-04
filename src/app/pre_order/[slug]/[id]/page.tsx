@@ -78,6 +78,8 @@ export default function Page({ params }: { params: { id: string } }) {
 
   const handleSubmit = () => {
     if (validateInputs()) {
+      setError(false);
+
       updateOrder();
 
       setTimeout(() => {
@@ -85,6 +87,8 @@ export default function Page({ params }: { params: { id: string } }) {
       }, 5000);
     } else {
       validateInputs();
+      setError(true);
+      setOpenModal(!openModal);
     }
   };
 
@@ -116,11 +120,17 @@ export default function Page({ params }: { params: { id: string } }) {
       <DialogBox
         header="ALERT!"
         open={openModal}
-        message="You're all done! check your mail for order details and delivery date"
+        message={
+          !error
+            ? "You're all done! check your mail for order details and delivery date"
+            : "One or more input(s) invalid"
+        }
         dismiss={closeModal}
       >
         <div className="flex items-center justify-center font-bold">
-          <h1 className="text-2xl">Congratulations! 🎉</h1>
+          <h1 className="text-2xl">
+            {!error ? "Congratulations! 🎉" : "Check input fields"}
+          </h1>
         </div>
       </DialogBox>
 
