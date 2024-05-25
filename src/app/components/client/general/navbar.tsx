@@ -51,9 +51,13 @@ const Navbar: React.FC = () => {
   const MobileMenu = () => {
     return (
       <div className="flex flex-col w-3/4 fixed top-20 right-2 z-10 h-1/4 py-2 px-6 gap-y-5 bg-black-700 items-center">
-        
-        <Link href={"/resources"} className="hover:text-orange-100 text-white-100 my-4">Bitcoin Education</Link>
-        
+        <Link
+          href={"https://education.stealth.money/"}
+          target="_blank"
+          className="hover:text-orange-100 text-white-100 my-4"
+        >
+          Bitcoin Education
+        </Link>
 
         <button
           onClick={() => {
@@ -106,7 +110,13 @@ const Navbar: React.FC = () => {
             <span className="bg-white-100 w-[20px] h-[2px]"></span>
           </div>
 
-          <Link href={"/resources"} className="hover:text-orange-100 text-white-100 hidden md:block">Bitcoin Education</Link>
+          <Link
+            href={"https://education.stealth.money"}
+            target="_blank"
+            className="hover:text-orange-100 text-white-100 hidden md:block"
+          >
+            Bitcoin Education
+          </Link>
 
           <button
             onClick={() => {
