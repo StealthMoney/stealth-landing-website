@@ -9,7 +9,7 @@ const slidesData = [
     title: "Bitcoin Self Custody",
     description:
       "With Stealth Money, you can hold your Bitcoin in a self-custodial or hardware wallet ensuring that only you have access to your Bitcoin. A hardware wallet is a physical wallet device that secures your Bitcoin.",
-    image: "/images/padlock.png",
+    image: "/images/bitcoin_save.svg",
     indexIcon: "/01.svg",
   },
   {
@@ -74,6 +74,7 @@ const Carousel = () => {
         </div>
         <div className="flex gap-8 lg:justify-start justify-center">
           <button
+            title="previous"
             onClick={goToPrevious}
             className="border border-black-500 p-3 rounded hover:border-white-100"
           >
@@ -82,6 +83,7 @@ const Carousel = () => {
             />
           </button>
           <button
+            title="next"
             onClick={goToNext}
             className="border border-black-500 p-3 rounded hover:border-white-100"
           >
