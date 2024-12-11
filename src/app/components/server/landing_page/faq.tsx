@@ -2,7 +2,7 @@ import AccordionDemo from "../../client/landing_page/AccordionRFC/accordion";
 
 export default function Faq() {
   return (
-    <div className="text-white-100 my-8 flex justify-center flex-col bg-[#080808]">
+    <div className="text-white-100 my-8 flex justify-center flex-col bg-[#080808]" id="faq">
       <h1 className="text-center font-bold text-[38px] font-Montserrat">
         Frequently Asked Questions
       </h1>

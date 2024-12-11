@@ -79,13 +79,13 @@ const Footer = () => {
           <div className="md:w-1/4 w-full gap-x-4 flex flex-col gap-y-4">
             <h1 className="font-bold">QUICK LINK</h1>
             <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
-              <Link href="#" target="_blank" className="text-sm">
+              <Link href="#faq" className="text-sm">
                 FAQs
               </Link>
               <Link href="#" target="_blank" className="text-sm">
                 Seting up your wallet
               </Link>
-              <Link href="#" target="_blank" className="text-sm">
+              <Link href="/resources" className="text-sm">
                 Bitcoin Education
               </Link>
               <Link href="#" target="_blank" className="text-sm">

@@ -32,7 +32,7 @@ const config: Config = {
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
         Nunito: ["Nunito", "sans-serif"],
-        "Satoshi-variable": ["Satoshi-Variable", "sans-serif"],
+        Satoshi: ["Satoshi", "sans-serif"],
       },
     },
   },

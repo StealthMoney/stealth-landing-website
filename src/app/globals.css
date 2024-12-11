@@ -29,14 +29,14 @@
 @font-face {
   font-family: "Montserrat", sans-serif;
   src: url("/fonts/montserrat/Montserrat-Bold.ttf") format("ttf");
-  font-weight: 700;
+  font-weight: 700 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Nunito", sans-serif;
   src: url("/fonts/nunito/Nunito-Light.ttf") format("ttf");
-  font-weight: 400;
+  font-weight: 100 400;
   font-style: normal;
 }
 @font-face {
@@ -48,29 +48,19 @@
 @font-face {
   font-family: "Nunito", sans-serif;
   src: url("/fonts/nunito/Nunito-Bold.ttf") format("ttf");
-  font-weight: 700;
+  font-weight: 700 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Satoshi-Variable", sans-serif;
+  font-family: "Satoshi";
   src: url("/fonts/satoshi_variable/Satoshi-Variable.ttf") format("ttf");
-  font-weight: 300;
+  font-weight: 100 900;
 }
 @font-face {
-  font-family: "Satoshi-Variable", sans-serif;
-  src: url("/fonts/satoshi_variable/Satoshi-Variable.ttf") format("ttf");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Satoshi-Variable", sans-serif;
-  src: url("/fonts/satoshi_variable/Satoshi-Variable.ttf") format("ttf");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Satoshi-Variable", sans-serif;
+  font-family: "Satoshi";
   src: url("/fonts/satoshi_variable/Satoshi-VariableItalic.ttf") format("ttf");
-  font-weight: 300;
+  font-weight: 100 900;
   font-style: italic;
 }
 

@@ -27,10 +27,10 @@ const HeroSection = () => {
       </h2>
 
       <div className="buttons flex space-x-4 my-8">
-        <button className="bg-black-600 border text-center border-black-700 font-Satoshi-variable hover:bg-black-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium h-[70px] px-8 rounded">
+        <button className="bg-black-600 border text-center border-black-700 font-Satoshi hover:bg-black-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium h-[70px] px-8 rounded">
           <Link href={"/#waitlist"}>Start Saving Now</Link>
         </button>
-        <button className="bg-orange-100 border text-center border-black-700 font-Satoshi-variable hover:bg-orange-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium px-8 h-[70px] rounded">
+        <button className="bg-orange-100 border text-center border-black-700 font-Satoshi hover:bg-orange-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium px-8 h-[70px] rounded">
           <Link href={"/#waitlist"}>Pre Order Wallet</Link>
         </button>
       </div>
