@@ -29,7 +29,7 @@ function TestimonialCard({ text, name, occupation }: TestimonialType) {
 
 export default function Testimonial() {
   return (
-    <section className="bg-[#010101] w-screen lg:h-[560px] flex flex-col p-4 justify-center items-center">
+    <section className="bg-[#010101] lg:h-[560px] flex flex-col p-4 justify-center items-center">
       <h1 className="text-[38px] text-center font-bold text-white-100 font-Satoshi">
         Don&apos;t just take our words for it
       </h1>

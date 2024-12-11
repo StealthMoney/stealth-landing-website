@@ -67,7 +67,12 @@ const Carousel = () => {
             <p className="text-white-300">
               {slidesData[currentSlide].description}
             </p>
-            <button className="w-fit border border-black-500 mt-4 py-2 px-4 rounded bg-black-600 text-white-300 hover:border-white-300">
+            <button
+              onClick={() => {
+                window.open("https://education.stealth.money/money/", "_blank");
+              }}
+              className="w-fit border border-black-500 mt-4 py-2 px-4 rounded bg-black-600 text-white-300 hover:border-white-300 cursor-pointer"
+            >
               Learn More
             </button>
           </div>
