@@ -8,6 +8,72 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("/fonts/montserrat/Montserrat-Light.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("/fonts/montserrat/Montserrat-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("/fonts/montserrat/Montserrat-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("/fonts/montserrat/Montserrat-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito", sans-serif;
+  src: url("/fonts/nunito/Nunito-Light.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito", sans-serif;
+  src: url("/fonts/nunito/Nunito-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito", sans-serif;
+  src: url("/fonts/nunito/Nunito-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi-Variable", sans-serif;
+  src: url("/fonts/satoshi_variable/Satoshi-Variable.ttf") format("ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Satoshi-Variable", sans-serif;
+  src: url("/fonts/satoshi_variable/Satoshi-Variable.ttf") format("ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Satoshi-Variable", sans-serif;
+  src: url("/fonts/satoshi_variable/Satoshi-Variable.ttf") format("ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Satoshi-Variable", sans-serif;
+  src: url("/fonts/satoshi_variable/Satoshi-VariableItalic.ttf") format("ttf");
+  font-weight: 300;
+  font-style: italic;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

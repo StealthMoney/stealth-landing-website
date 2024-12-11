@@ -30,13 +30,13 @@ const cards = [
 const HowItWorks = () => {
   return (
     <div className="text-center my-8">
-      <p className="text-center text-[38px] text-white-100 font-medium mb-6">
+      <p className="text-center text-[38px] text-white-100 font-bold font-Montserrat mb-6">
         How it works?
       </p>
-      <p className="text-white-100 text-[18px]">
+      <p className="text-white-100 text-[20px] font-bold font-Montserrat">
         Get Started with Stealth Money in Four (4) simple steps:
       </p>
-      <p className="text-white-300 leading-10">
+      <p className="text-white-300 leading-10 font-Nunito">
         We make it easy to get started on your Bitcoin self-custody journey.
       </p>
       <div className="flex flex-wrap justify-center mt-8">
@@ -67,8 +67,8 @@ const Card = ({
         <Image src={imgSrc} alt={title} width={100} height={100} />
       </div>
       <div className="flex flex-col gap-y-4 text-start">
-        <p className="text-white-100 text-[18px] font-medium">{title}</p>
-        <p className="text-white-300 text-[15px] max-w-[330px]">{description}</p>
+        <p className="text-white-100 text-[20px] font-bold font-Montserrat">{title}</p>
+        <p className="text-white-300 text-[16px] max-w-[330px] font-Nunito">{description}</p>
       </div>
     </div>
   );

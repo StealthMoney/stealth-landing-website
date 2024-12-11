@@ -45,7 +45,7 @@ const Footer = () => {
           <WaitlistForm joinWaitlist={joinWaitlist} />
         </fieldset> */}
 
-        <div className="w-full flex md:flex-row flex-col md:gap-y-0 gap-y-6 md:px-4 md:items-start py-12">
+        <div className="w-full flex md:flex-row flex-col md:gap-y-0 gap-y-6 md:px-4 md:items-start py-12 font-Nunito">
           <div className="md:w-1/4 w-full gap-x-4 flex flex-col gap-y-4 justify-center items-center">
             <div className="flex justify-center items-center w-full">
               <Image
@@ -127,7 +127,7 @@ const Footer = () => {
 
               <button
                 title="Signup"
-                className="bg-[#F7931A] py-4 px-2 rounded-md text-white-100 lg:w-1/4 flex justify-center items-center font-semibold"
+                className="bg-[#F7931A] py-4 px-2 rounded-md text-white-100 lg:w-1/4 flex justify-center items-center font-semibold font-Montserrat"
               >
                 Sign Up
               </button>
@@ -137,12 +137,12 @@ const Footer = () => {
 
         <div className="w-full h-[1px] bg-black-500 my-12"></div>
 
-        <div className="text-white-300 flex flex-col max-w-[800px]">
-          <small className="font-bold text-[12px]">
+        <div className="text-white-300 flex flex-col max-w-[800px] font-Nunito">
+          <small className="font-bold text-[12px] mb-1">
             Copyright 2024, All Rights Reserved by Stealth Money.
           </small>
 
-          <small className="text-[12px]">
+          <small className="text-[12px] leading-5">
             Stealth Money does not provide investment, legal, or tax advice.
             Information about digital assets like Bitcoin serve as a general
             explanation of the services provided. Users on our platform need to
