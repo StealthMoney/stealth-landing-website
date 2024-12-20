@@ -14,7 +14,7 @@ const cards = [
     imgSrc: "/wallet.svg",
   },
   {
-    title: "Deposit Funds/Instant Buy",
+    title: "Instant Buy",
     description:
       "You can receive your Bitcoin instantly in your self-custody wallet with our ‘Instant Buy’ feature. You can also receive Bitcoin as a gift directly to your self-custody wallet.",
     imgSrc: "/bitcoin.svg",
@@ -37,7 +37,7 @@ const HowItWorks = () => {
         Get Started with Stealth Money in Four (4) simple steps:
       </p>
       <p className="text-white-300 leading-10 font-Nunito">
-        We make it easy to get started on your Bitcoin self-custody journey.
+        We simplify your Bitcoin self-custody and accumulation journey.
       </p>
       <div className="flex flex-wrap justify-center mt-8">
         {cards.map((card) => (
@@ -67,8 +67,12 @@ const Card = ({
         <Image src={imgSrc} alt={title} width={100} height={100} />
       </div>
       <div className="flex flex-col gap-y-4 text-start">
-        <p className="text-white-100 text-[20px] font-bold font-Montserrat">{title}</p>
-        <p className="text-white-300 text-[16px] max-w-[330px] font-Nunito">{description}</p>
+        <p className="text-white-100 text-[20px] font-bold font-Montserrat">
+          {title}
+        </p>
+        <p className="text-white-300 text-[16px] max-w-[330px] font-Nunito">
+          {description}
+        </p>
       </div>
     </div>
   );

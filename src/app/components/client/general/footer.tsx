@@ -55,7 +55,7 @@ const Footer = () => {
                 alt="logo"
               />
             </div>
-            <div className="w-2/4 flex justify-between items-center">
+            <div className="lg:w-1/4 md:w-2/4 max-sm:w-1/4 flex justify-between items-center">
               <button title="twitter">
                 <Image
                   src={"/twitter.svg"}
@@ -82,10 +82,18 @@ const Footer = () => {
               <Link href="#faq" className="text-sm">
                 FAQs
               </Link>
-              <Link href="#" target="_blank" className="text-sm">
-                Seting up your wallet
+              <Link
+                href="https://calendar.app.google/7gHUwCk2WNNLkX3AA"
+                target="_blank"
+                className="text-sm"
+              >
+                Setup your wallet
               </Link>
-              <Link href="/resources" className="text-sm">
+              <Link
+                href="https://education.stealth.money"
+                target="_blank"
+                className="text-sm"
+              >
                 Bitcoin Education
               </Link>
               <Link href="#" target="_blank" className="text-sm">
@@ -105,7 +113,7 @@ const Footer = () => {
                   Privacy Policy
                 </Link>
                 <Link href="#" target="_blank" className="text-sm">
-                  Aml Policy
+                  AML Policy
                 </Link>
               </div>
             </div>
@@ -118,6 +126,7 @@ const Footer = () => {
                   Email
                 </label>
                 <input
+                  readOnly={true}
                   title="mail"
                   type="email"
                   id="mail"
@@ -126,6 +135,7 @@ const Footer = () => {
               </fieldset>
 
               <button
+                disabled={true}
                 title="Signup"
                 className="bg-[#F7931A] py-4 px-2 rounded-md text-white-100 lg:w-1/4 flex justify-center items-center font-semibold font-Montserrat"
               >
