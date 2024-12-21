@@ -15,7 +15,7 @@ function TestimonialCard({ text, name, occupation }: TestimonialType) {
 
       <div className="flex w-full my-4 gap-x-3 items-center">
         <div className="w-[48px] h-[48px] rounded-full bg-[#F7931A] flex justify-center items-center">
-          <h1 className="text-[28px] font-bold text-center font-Montserrat">
+          <h1 className="text-[28px] font-bold text-center font-Satoshi">
             {firstLetter}
           </h1>
         </div>

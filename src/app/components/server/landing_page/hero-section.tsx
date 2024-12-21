@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     <section className="flex flex-col items-center justify-center py-2">
       <InfoBanner />
-      <h2 className="text-white-100 text-4xl md:text-5xl font-semibold font-Montserrat text-center mt-2 md:mt-5 leading-[50px] md:leading-[70px] max-w-4xl">
+      <h2 className="text-white-100 text-4xl md:text-5xl font-semibold font-Satoshi text-center mt-2 md:mt-5 leading-[50px] md:leading-[70px] max-w-4xl">
         Secure Your Financial Future with Bitcoin Savings & Self Custody.
       </h2>
 

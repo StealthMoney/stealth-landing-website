@@ -106,13 +106,25 @@ const Footer = () => {
             <div className="w-full gap-x-4 flex flex-col gap-y-4">
               <h1 className="font-bold">LEGAL</h1>
               <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
-                <Link href="#" target="_blank" className="text-sm">
+                <Link
+                  href="https://drive.google.com/file/d/1Uynx0IhZhq9VxH5XrExPe4MiPnzyxcEd/view?usp=sharing"
+                  target="_blank"
+                  className="text-sm"
+                >
                   Terms of Service
                 </Link>
-                <Link href="#" target="_blank" className="text-sm">
+                <Link
+                  href="https://drive.google.com/file/d/1ZfGS2ryTgWk3wpe3J8uIOBFMLfWQLm19/view?usp=sharing"
+                  target="_blank"
+                  className="text-sm"
+                >
                   Privacy Policy
                 </Link>
-                <Link href="#" target="_blank" className="text-sm">
+                <Link
+                  href="https://drive.google.com/file/d/1uQLQTqs4ANyChHdubsGU8BchJr5Uegom/view?usp=sharing"
+                  target="_blank"
+                  className="text-sm"
+                >
                   AML Policy
                 </Link>
               </div>

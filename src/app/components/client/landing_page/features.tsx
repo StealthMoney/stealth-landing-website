@@ -80,7 +80,7 @@ const Features = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <h1 className="text-center text-[38px] text-white-100 font-bold font-Montserrat">
+      <h1 className="text-center text-[38px] text-white-100 font-bold font-Satoshi">
         Our Features
       </h1>
       <div className="relative flex flex-col-reverse lg:flex-row items-center justify-between w-full mt-14">

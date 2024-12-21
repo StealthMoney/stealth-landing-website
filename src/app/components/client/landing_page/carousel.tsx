@@ -23,7 +23,7 @@ const slidesData = [
     title: "Hedge against Currency Devaluation",
     description:
       "Stealth Money simplifies saving in Bitcoin to avoid the risk of your money losing value and purchasing power. In the last decade, most African currencies have devalued against the Dollar. Bitcoin is a hedge against endless currency depreciation.",
-    image: "/images/dollar.jpg",
+    image: "/images/dollar.jpeg",
     indexIcon: "/03.svg",
   },
 ];
@@ -63,7 +63,7 @@ const Carousel = () => {
             />
           </picture>
           <div className="flex flex-col gap-6 lg:text-left text-center lg:mt-auto mt-6 lg:justify-start justify-center lg:items-start items-center">
-            <p className="text-[35px] font-semibold font-Montserrat">{slidesData[currentSlide].title}</p>
+            <p className="text-[35px] font-semibold font-Satoshi">{slidesData[currentSlide].title}</p>
             <p className="text-white-300">
               {slidesData[currentSlide].description}
             </p>
