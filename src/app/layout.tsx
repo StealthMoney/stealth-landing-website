@@ -13,13 +13,8 @@ export const metadata: Metadata = {
   description: "Stealth Money",
 };
 
-const satoshi = LocalFont({
+const satoshiItalic = LocalFont({
   src: [
-    { path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf", weight: "200" },
-    { path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf", weight: "400" },
-    { path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf", weight: "500" },
-    { path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf", weight: "700" },
-    { path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf", weight: "900" },
     {
       path: "../../public/fonts/satoshi_variable/Satoshi-VariableItalic.ttf",
       weight: "200",
@@ -41,6 +36,32 @@ const satoshi = LocalFont({
       weight: "900",
     },
   ],
+  variable: "--satoshi-italic",
+});
+
+const satoshi = LocalFont({
+  src: [
+    {
+      path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf",
+      weight: "200",
+    },
+    {
+      path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf",
+      weight: "500",
+    },
+    {
+      path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf",
+      weight: "700",
+    },
+    {
+      path: "../../public/fonts/satoshi_variable/Satoshi-Variable.ttf",
+      weight: "900",
+    },
+  ],
   variable: "--satoshi",
 });
 
@@ -52,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${satoshi.variable} scrollbar bg-black-700 overflow-x-hidden`}
+        className={`${inter.className} ${satoshi.variable} ${satoshiItalic.variable} scrollbar bg-black-700 overflow-x-hidden`}
       >
         <Navbar />
         <Subroutes />
