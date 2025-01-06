@@ -32,6 +32,7 @@ const config: Config = {
       fontFamily: {
         Nunito: ["Nunito", "sans-serif"],
         Satoshi: ["var(--satoshi)"],
+        SatoshiItalic: ["var(--satoshi-italic)"],
       },
     },
   },

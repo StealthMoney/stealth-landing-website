@@ -57,21 +57,28 @@ const Footer = () => {
             </div>
             <div className="lg:w-1/4 md:w-2/4 max-sm:w-1/4 flex justify-between items-center">
               <button title="twitter">
-                <Image
-                  src={"/twitter.svg"}
-                  width={30}
-                  height={100}
-                  alt="twitter-icon"
-                />
+                <Link href={"https://x.com/stealthmoney_"} target="_blank">
+                  <Image
+                    src={"/twitter.svg"}
+                    width={30}
+                    height={100}
+                    alt="twitter-icon"
+                  />
+                </Link>
               </button>
 
               <button title="facebook">
-                <Image
-                  src={"/facebook.svg"}
-                  width={30}
-                  height={100}
-                  alt="facebook-icon"
-                />
+                <Link
+                  href={"https://Facebook.com/stealthmoney"}
+                  target="_blank"
+                >
+                  <Image
+                    src={"/facebook.svg"}
+                    width={30}
+                    height={100}
+                    alt="facebook-icon"
+                  />
+                </Link>
               </button>
             </div>
           </div>
