@@ -2,12 +2,14 @@
 import Image from "next/image";
 import { usePurchase } from "@/app/components/context/pre_order";
 import DialogBox from "@/app/components/shared/dialog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { formValueTypes } from "@/app/components/types/pre_order";
 
 export default function Page({ params }: { params: { id: string } }) {
   const { purchaseItems = [], setPurchaseItems } = usePurchase();
+  const [paymentsuccess, setpaymentSuccess] = useState<boolean>(false);
+  const [payableAmount, setpayableAmount] = useState<number>(0);
 
   const router = useRouter();
 
@@ -79,12 +81,8 @@ export default function Page({ params }: { params: { id: string } }) {
   const handleSubmit = () => {
     if (validateInputs()) {
       setError(false);
-
-      updateOrder();
-
-      setTimeout(() => {
-        setPurchaseItems([]);
-      }, 5000);
+      getItemPrice();
+      setOpenModal(!openModal);
     } else {
       validateInputs();
       setError(true);
@@ -103,7 +101,12 @@ export default function Page({ params }: { params: { id: string } }) {
       return item;
     });
     setPurchaseItems(updatedItems);
-    setOpenModal(!openModal);
+  };
+
+  const getItemPrice = () => {
+    if (purchaseItems.length === 0) return;
+    const price = purchaseItems.map((item) => item.price);
+    setpayableAmount(price[0]);
   };
 
   const closeModal = () => {
@@ -115,23 +118,87 @@ export default function Page({ params }: { params: { id: string } }) {
     return completed ? "/radioFilled.svg" : "/radioEmpty.svg";
   };
 
+  // will handle api request
+  const handlePaidState = () => {
+    setpaymentSuccess(true);
+    setError(false);
+
+    // should occur after api call
+    updateOrder();
+
+    // will occur after api call
+    setTimeout(() => {
+      setPurchaseItems([]);
+    }, 5000);
+  };
+
   return (
     <>
       <DialogBox
-        header="ALERT!"
+        header={
+          error ? "ALERT!" : !error && !paymentsuccess ? "Make Payment!" : ""
+        }
         open={openModal}
         message={
-          !error
+          paymentsuccess && !error
             ? "You're all done! check your mail for order details and delivery date"
-            : "One or more input(s) invalid"
+            : error
+            ? "One or more input(s) invalid"
+            : ""
         }
         dismiss={closeModal}
+        errorState={error}
+        paymentState={paymentsuccess}
       >
+        {!error && !paymentsuccess && (
+          <div className="flex flex-col py-4 gap-y-4">
+            {/* <div>
+              <h1 className="text-center text-2xl font-bold">Make Payment</h1>
+            </div> */}
+            <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
+              <h1 className="font-bold text-2xl">Account Name:</h1>
+              <h1 className="text-xl">Stealth Money</h1>
+            </div>
+
+            <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-4">
+              <h1 className="font-bold text-2xl">Account Number:</h1>
+              <h1 className="text-xl">6173237977</h1>
+            </div>
+
+            <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
+              <h1 className="font-bold text-2xl">Bank Name:</h1>
+              <h1 className="text-xl">9 Payment Service Bank</h1>
+            </div>
+
+            <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
+              <h1 className="font-bold text-2xl">Amount:</h1>
+              <h1 className="text-xl">
+                NGN {" "}
+                {payableAmount.toLocaleString("en", {
+                  maximumFractionDigits: 2,
+                })}
+              </h1>
+            </div>
+          </div>
+        )}
         <div className="flex items-center justify-center font-bold">
           <h1 className="text-2xl">
-            {!error ? "Congratulations! 🎉" : "Check input fields"}
+            {!error && paymentsuccess
+              ? "Congratulations! 🎉"
+              : error
+              ? "Check input fields"
+              : ""}
           </h1>
         </div>
+
+        {!paymentsuccess && !error && (
+          <button
+            onClick={handlePaidState}
+            className="bg-[#F7931A] inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-none"
+          >
+            I have Already Paid
+          </button>
+        )}
       </DialogBox>
 
       <section className="text-white-100 w-full md:px-12 px-6 py-2 my-6">
