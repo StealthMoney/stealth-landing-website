@@ -5,7 +5,7 @@ const featuresData = [
       title: "Instant Purchase",
       description:
         "Instantly buy Bitcoin directly into your hardware wallet - effortlessly acquire Bitcoin and safeguard your assets with self-custody.",
-      image: "/images/instant-buy.png",
+      image: "/images/instant-buy.svg",
     },
     {
       id: 1,

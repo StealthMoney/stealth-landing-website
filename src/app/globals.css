@@ -8,6 +8,25 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@font-face {
+  font-family: "Nunito", sans-serif;
+  src: url("/fonts/nunito/Nunito-Light.ttf") format("ttf");
+  font-weight: 100 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito", sans-serif;
+  src: url("/fonts/nunito/Nunito-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito", sans-serif;
+  src: url("/fonts/nunito/Nunito-Bold.ttf") format("ttf");
+  font-weight: 700 900;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

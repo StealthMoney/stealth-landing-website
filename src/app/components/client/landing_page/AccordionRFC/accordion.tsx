@@ -55,7 +55,7 @@ AccordionContent.displayName = "AccordionContent";
 
 const AccordionDemo = ({ defaultIndex = 0 }) => (
   <Accordion.Root
-    className="AccordionRoot my-8 py-6 px-6"
+    className="AccordionRoot my-8 py-6 px-6 font-Nunito"
     type="single"
     defaultValue={`item-${defaultIndex + 1}`}
     collapsible
