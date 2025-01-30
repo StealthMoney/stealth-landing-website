@@ -38,7 +38,11 @@ export default function Page({ params }: { params: { slug: string } }) {
     image: item?.product_images[0] || "",
   });
 
-  const { purchaseItems = [], addToCart = () => {} } = usePurchase() || {};
+  const {
+    purchaseItems = [],
+    addToCart = () => {},
+    setPurchaseItems,
+  } = usePurchase() || {};
 
   const increaseAmount = () => {
     if (details.amount >= 1) {
@@ -76,6 +80,11 @@ export default function Page({ params }: { params: { slug: string } }) {
     router.push(`/pre_order/${value}/checkout`);
   };
   // End of update product details in state
+
+  // clear existinng oderState on page load
+  useEffect(() => {
+    setPurchaseItems([]);
+  }, []);
 
   if (!item) {
     return (

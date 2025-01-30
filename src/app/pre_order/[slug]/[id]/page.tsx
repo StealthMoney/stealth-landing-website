@@ -2,15 +2,24 @@
 import Image from "next/image";
 import { usePurchase } from "@/app/components/context/pre_order";
 import DialogBox from "@/app/components/shared/dialog";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { formValueTypes } from "@/app/components/types/pre_order";
 import axiosInstance from "../../../../../lib/axiosInstance";
+import { useMutation } from "@tanstack/react-query";
 
 export default function Page({ params }: { params: { id: string } }) {
   const { purchaseItems = [], setPurchaseItems } = usePurchase();
   const [paymentsuccess, setpaymentSuccess] = useState<boolean>(false);
-  const [payableAmount, setpayableAmount] = useState<number>(0);
+  const [itemValues, setItemvalues] = useState<{
+    walletName: string;
+    price: number | null;
+    amount: number | null;
+  }>({
+    walletName: "",
+    price: null,
+    amount: null,
+  });
 
   const router = useRouter();
 
@@ -82,7 +91,7 @@ export default function Page({ params }: { params: { id: string } }) {
   const handleSubmit = () => {
     if (validateInputs()) {
       setError(false);
-      getItemPrice();
+      getItemDetails();
       setOpenModal(!openModal);
     } else {
       validateInputs();
@@ -104,10 +113,16 @@ export default function Page({ params }: { params: { id: string } }) {
     setPurchaseItems(updatedItems);
   };
 
-  const getItemPrice = () => {
+  const getItemDetails = () => {
     if (purchaseItems.length === 0) return;
-    const price = purchaseItems.map((item) => item.price);
-    setpayableAmount(price[0]);
+    const orderDetails = purchaseItems.map((item) => item);
+
+    setItemvalues((prev) => ({
+      ...prev,
+      walletName: orderDetails[0].product_name,
+      amount: orderDetails[0].amount,
+      price: orderDetails[0].price,
+    }));
   };
 
   const closeModal = () => {
@@ -116,7 +131,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   const getStatusImage = () => {
     const completed = purchaseItems.some((item) => item.complete);
-    return completed ? "/radioFilled.svg" : "/radioEmpty.svg";
+    return completed && !isError ? "/radioFilled.svg" : "/radioEmpty.svg";
   };
 
   const walletOrderRequest = async () => {
@@ -129,6 +144,9 @@ export default function Page({ params }: { params: { id: string } }) {
         city: formValues.state,
         phoneNumber: formValues.tel,
         email: formValues.email,
+        walletName: itemValues.walletName,
+        price: itemValues.price,
+        amount: itemValues.amount,
       });
       return response;
     } catch (err) {
@@ -137,21 +155,30 @@ export default function Page({ params }: { params: { id: string } }) {
     }
   };
 
-  // will handle api request
+  const { mutate, isPending, isError } = useMutation({
+    mutationFn: walletOrderRequest,
+    onSuccess: () => {
+      setTimeout(() => {
+        setPurchaseItems([]);
+      }, 5000);
+    },
+  });
+
+  // handles api request
   const handlePaidState = () => {
     setpaymentSuccess(true);
     setError(false);
 
-    const response = walletOrderRequest();
-    if (response === 200 || response === 201) {
-      // should occur after api call
-      updateOrder();
-    }
+    mutate();
 
-    // will occur after api call
-    // setTimeout(() => {
-    //   setPurchaseItems([]);
-    // }, 5000);
+    updateOrder();
+  };
+
+  const clearStateValues = () => {
+    if (isError) {
+      setpaymentSuccess(false);
+      setError(false);
+    }
   };
 
   return (
@@ -162,21 +189,21 @@ export default function Page({ params }: { params: { id: string } }) {
         }
         open={openModal}
         message={
-          paymentsuccess && !error
+          paymentsuccess && !error && !isPending && !isError
             ? "You're all done! check your mail for order details and delivery date"
             : error
             ? "One or more input(s) invalid"
+            : isError && paymentsuccess
+            ? "Couldn't send your data, please contact support :("
             : ""
         }
         dismiss={closeModal}
         errorState={error}
         paymentState={paymentsuccess}
+        clearState={clearStateValues}
       >
-        {!error && !paymentsuccess && (
+        {!isPending && !error && !paymentsuccess && (
           <div className="flex flex-col py-4 gap-y-4">
-            {/* <div>
-              <h1 className="text-center text-2xl font-bold">Make Payment</h1>
-            </div> */}
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
               <h1 className="font-bold text-2xl">Account Name:</h1>
               <h1 className="text-xl">Stealth Money</h1>
@@ -193,22 +220,27 @@ export default function Page({ params }: { params: { id: string } }) {
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
-              <h1 className="font-bold text-2xl">Amount:</h1>
+              <h1 className="font-bold text-2xl">Price:</h1>
               <h1 className="text-xl">
                 NGN{" "}
-                {payableAmount.toLocaleString("en", {
+                {itemValues.price?.toLocaleString("en", {
                   maximumFractionDigits: 2,
                 })}
               </h1>
             </div>
           </div>
         )}
+
+        {isPending && <div className="text-2xl font-bold">Loading...</div>}
+
         <div className="flex items-center justify-center font-bold">
           <h1 className="text-2xl">
-            {!error && paymentsuccess
+            {!error && paymentsuccess && !isPending && !isError
               ? "Congratulations! 🎉"
               : error
               ? "Check input fields"
+              : isError && paymentsuccess
+              ? "Request failed 😓"
               : ""}
           </h1>
         </div>
@@ -223,7 +255,7 @@ export default function Page({ params }: { params: { id: string } }) {
         )}
       </DialogBox>
 
-      <section className="text-white-100 w-full md:px-12 px-6 py-2 my-6">
+      <section className="text-white-100 w-full md:px-12 px-6 py-2 my-6 overflow-x-hidden">
         <section className="py-4 px-2">
           <div className="border-b border-b-[#494949] flex gap-x-4 items-center md:flex-nowrap flex-wrap">
             <div className="w-2/4">
@@ -251,7 +283,7 @@ export default function Page({ params }: { params: { id: string } }) {
               </span>
             </div>
           </div>
-          <div className=" my-4 py-4">
+          {/* <div className=" my-4 py-4">
             <div className="flex gap-x-4 my-2 items-center">
               <span>
                 <Image
@@ -282,7 +314,7 @@ export default function Page({ params }: { params: { id: string } }) {
                 courier.
               </p>
             </div>
-          </div>
+          </div> */}
         </section>
 
         <section className="flex gap-x-8 lg:flex-row flex-col lg:h-[650px] md:h-auto overflow-y-hidden">
@@ -462,7 +494,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     <div className="w-full">
                       <button
                         onClick={handleSubmit}
-                        className="bg-[#F7931A] px-4 py-6 text-white-100 rounded-md w-full my-8"
+                        className="bg-[#F7931A] text-center px-4 py-6 text-white-100 rounded-md w-full my-8"
                       >
                         Place Order NGN{" "}
                         {item.price.toLocaleString("en", {

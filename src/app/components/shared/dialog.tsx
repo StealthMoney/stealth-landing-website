@@ -10,6 +10,7 @@ interface DialogBoxTypes {
   children?: React.ReactNode;
   errorState?: boolean;
   paymentState?: boolean;
+  clearState: () => void;
 }
 
 const DialogBox = ({
@@ -20,6 +21,7 @@ const DialogBox = ({
   children,
   errorState,
   paymentState,
+  clearState,
 }: DialogBoxTypes) => (
   <Dialog.Root open={open} onOpenChange={dismiss} modal={open}>
     <Dialog.Portal>
@@ -33,7 +35,10 @@ const DialogBox = ({
         <div className="mt-[25px] flex justify-end">
           {(errorState || paymentState) && (
             <Dialog.Close asChild>
-              <button className="bg-[#F7931A] inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-none">
+              <button
+                className="bg-[#F7931A] inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-none"
+                onClick={clearState}
+              >
                 close
               </button>
             </Dialog.Close>
