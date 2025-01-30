@@ -5,6 +5,7 @@ import DialogBox from "@/app/components/shared/dialog";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { formValueTypes } from "@/app/components/types/pre_order";
+import axiosInstance from "../../../../../lib/axiosInstance";
 
 export default function Page({ params }: { params: { id: string } }) {
   const { purchaseItems = [], setPurchaseItems } = usePurchase();
@@ -118,18 +119,39 @@ export default function Page({ params }: { params: { id: string } }) {
     return completed ? "/radioFilled.svg" : "/radioEmpty.svg";
   };
 
+  const walletOrderRequest = async () => {
+    try {
+      const response = await axiosInstance.post("/api/ordered-wallets", {
+        firstName: formValues.firstName,
+        lastName: formValues.lastName,
+        street: formValues.location,
+        state: formValues.region,
+        city: formValues.state,
+        phoneNumber: formValues.tel,
+        email: formValues.email,
+      });
+      return response;
+    } catch (err) {
+      console.error("Unable to process request:", err);
+      throw err;
+    }
+  };
+
   // will handle api request
   const handlePaidState = () => {
     setpaymentSuccess(true);
     setError(false);
 
-    // should occur after api call
-    updateOrder();
+    const response = walletOrderRequest();
+    if (response === 200 || response === 201) {
+      // should occur after api call
+      updateOrder();
+    }
 
     // will occur after api call
-    setTimeout(() => {
-      setPurchaseItems([]);
-    }, 5000);
+    // setTimeout(() => {
+    //   setPurchaseItems([]);
+    // }, 5000);
   };
 
   return (
@@ -173,7 +195,7 @@ export default function Page({ params }: { params: { id: string } }) {
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
               <h1 className="font-bold text-2xl">Amount:</h1>
               <h1 className="text-xl">
-                NGN {" "}
+                NGN{" "}
                 {payableAmount.toLocaleString("en", {
                   maximumFractionDigits: 2,
                 })}
