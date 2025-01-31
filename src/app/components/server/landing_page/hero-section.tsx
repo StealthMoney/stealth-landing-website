@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const InfoBanner = () => {
   return (
@@ -20,6 +21,8 @@ const InfoBanner = () => {
 };
 
 const HeroSection = () => {
+  const router = useRouter();
+
   return (
     <section className="flex flex-col items-center justify-center py-2">
       <InfoBanner />
@@ -28,10 +31,23 @@ const HeroSection = () => {
       </h2>
 
       <div className="buttons flex space-x-4 my-8">
-        <button className="bg-orange-100 border text-center border-black-700 font-Satoshi hover:bg-orange-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium px-8 h-[70px] rounded">
-          <Link href={"/#waitlist"}>Start Saving Now</Link>
+        <button
+          onClick={() =>
+            window.open("https://app.stealth.money/account/register", "_blank")
+          }
+          className="bg-orange-100 border text-center border-black-700 font-Satoshi hover:bg-orange-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium px-8 h-[70px] cursor-pointer rounded"
+        >
+          <Link
+            href={"https://app.stealth.money/account/register"}
+            target="_blank"
+          >
+            Start Saving Now
+          </Link>
         </button>
-        <button className="bg-black-600 border text-center border-black-700 font-Satoshi hover:bg-black-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium h-[70px] px-8 rounded">
+        <button
+          onClick={() => router.push("/pre_order")}
+          className="bg-black-600 border text-center cursor-pointer border-black-700 font-Satoshi hover:bg-black-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium h-[70px] px-8 rounded"
+        >
           <Link href={"/pre_order"}>Order Wallet</Link>
         </button>
       </div>

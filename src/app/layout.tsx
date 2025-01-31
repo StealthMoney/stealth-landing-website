@@ -1,13 +1,19 @@
-"use client";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Inter } from "next/font/google";
+import { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/client/general/navbar";
 import Subroutes from "./components/client/general/subroutes";
 import LocalFont from "next/font/local";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { twak_WIDGET_id, twak_property_id } from "@/config";
+import Twak from "./components/client/general/twak";
+import TanstackProvider from "./components/client/general/tanstack";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Stealth Money",
+  description: "Stealth Money",
+};
 
 const satoshiItalic = LocalFont({
   src: [
@@ -61,34 +67,28 @@ const satoshi = LocalFont({
   variable: "--satoshi",
 });
 
-const queryClient = new QueryClient();
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <HelmetProvider>
-      <html lang="en">
-        <Helmet>
-          <title>Stealth Money</title>
-          <meta name="description" content="Stealth Money" />
-          <meta property="og:title" content="Stealth Money" />
-          <meta property="og:description" content="Stealth Money" />
-          <meta name="twitter:title" content="Stealth Money" />
-          <meta name="twitter:description" content="Stealth Money" />
-        </Helmet>
-        <body
-          className={`${inter.className} ${satoshi.variable} ${satoshiItalic.variable} scrollbar bg-black-700 overflow-x-hidden`}
-        >
-          <QueryClientProvider client={queryClient}>
-            <Navbar />
-            <Subroutes />
-            {children}
-          </QueryClientProvider>
-        </body>
-      </html>
-    </HelmetProvider>
+    <html lang="en">
+      <body
+        className={`${inter.className} ${satoshi.variable} ${satoshiItalic.variable} relative scrollbar bg-black-700 overflow-x-hidden`}
+      >
+        <TanstackProvider>
+          <Navbar />
+          <Subroutes />
+          {children}
+          <div className="absolute bottom-8 right-8">
+            <Twak
+              propertyID={twak_property_id || ""}
+              widgetID={twak_WIDGET_id || ""}
+            />
+          </div>
+        </TanstackProvider>
+      </body>
+    </html>
   );
 }

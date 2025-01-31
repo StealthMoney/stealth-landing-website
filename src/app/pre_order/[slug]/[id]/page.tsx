@@ -251,7 +251,7 @@ export default function Page({ params }: { params: { id: string } }) {
         {!paymentsuccess && !error && (
           <button
             onClick={handlePaidState}
-            className="bg-[#F7931A] inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-none"
+            className="bg-[#F7931A] inline-flex h-[35px] cursor-pointer items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-none"
           >
             I have Already Paid
           </button>
