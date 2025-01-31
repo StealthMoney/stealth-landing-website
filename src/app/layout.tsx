@@ -6,6 +6,8 @@ import Navbar from "./components/client/general/navbar";
 import Subroutes from "./components/client/general/subroutes";
 import LocalFont from "next/font/local";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import { twak_WIDGET_id, twak_property_id } from "@/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,12 +82,18 @@ export default function RootLayout({
           <meta name="twitter:description" content="Stealth Money" />
         </Helmet>
         <body
-          className={`${inter.className} ${satoshi.variable} ${satoshiItalic.variable} scrollbar bg-black-700 overflow-x-hidden`}
+          className={`${inter.className} ${satoshi.variable} ${satoshiItalic.variable} relative scrollbar bg-black-700 overflow-x-hidden`}
         >
           <QueryClientProvider client={queryClient}>
             <Navbar />
             <Subroutes />
             {children}
+            <div className="absolute bott-m-8 right-8">
+              <TawkMessengerReact
+                propertyId={twak_property_id || ""}
+                widgetId={twak_WIDGET_id || ""}
+              />
+            </div>
           </QueryClientProvider>
         </body>
       </html>

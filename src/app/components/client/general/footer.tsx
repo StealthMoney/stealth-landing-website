@@ -103,7 +103,7 @@ const Footer = () => {
               >
                 Bitcoin Education
               </Link>
-              <Link href="#" target="_blank" className="text-sm">
+              <Link href="/pre_order" className="text-sm">
                 Buy your wallets
               </Link>
             </div>
