@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -31,7 +32,7 @@ const HeroSection = () => {
           <Link href={"/#waitlist"}>Start Saving Now</Link>
         </button>
         <button className="bg-black-600 border text-center border-black-700 font-Satoshi hover:bg-black-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium h-[70px] px-8 rounded">
-          <Link href={"/#waitlist"}>Order Wallet</Link>
+          <Link href={"/pre_order"}>Order Wallet</Link>
         </button>
       </div>
       <picture className="flex items-center">
