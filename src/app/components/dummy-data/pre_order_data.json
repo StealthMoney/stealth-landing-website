@@ -10,7 +10,7 @@
       "/trezor-model-1(small)2.svg"
     ],
 
-    "availble": true,
+    "outOfStock": true,
 
     "description": "The go-to choice for offline crypto security for over 10 years. A trusted, proven, and affordable hardware wallet that has stood the test of time.",
 
@@ -183,7 +183,7 @@
       "/trezor-safe3.svg"
     ],
 
-    "availble": true,
+    "outOfStock": true,
 
     "description": "The newest Trezor hardware wallet with Secure-Element protection, open-source design, and on-device confirmation.",
 

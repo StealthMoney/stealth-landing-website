@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { formValueTypes } from "@/app/components/types/pre_order";
 import axiosInstance from "../../../../../lib/axiosInstance";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export default function Page({ params }: { params: { id: string } }) {
   const { purchaseItems = [], setPurchaseItems } = usePurchase();
@@ -144,9 +144,9 @@ export default function Page({ params }: { params: { id: string } }) {
         city: formValues.state,
         phoneNumber: formValues.tel,
         email: formValues.email,
-        walletName: itemValues.walletName,
+        walletTypeId: purchaseItems[0].id,
         price: itemValues.price,
-        amount: itemValues.amount,
+        quantity: itemValues.amount,
       });
       return response;
     } catch (err) {
@@ -155,9 +155,12 @@ export default function Page({ params }: { params: { id: string } }) {
     }
   };
 
+  const queryClient = useQueryClient();
+
   const { mutate, isPending, isError } = useMutation({
     mutationFn: walletOrderRequest,
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["wallet"] });
       setTimeout(() => {
         setPurchaseItems([]);
       }, 5000);

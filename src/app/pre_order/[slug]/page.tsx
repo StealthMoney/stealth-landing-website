@@ -1,15 +1,39 @@
 "use client";
 import Image from "next/image";
-import data from "../../components/dummy-data/pre_order_data.json";
+import data1 from "../../components/dummy-data/pre_order_data.json";
 import { useState, useEffect } from "react";
 import { usePurchase } from "@/app/components/context/pre_order";
 import { itemType, Item } from "@/app/components/types/pre_order";
 import { useRouter } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { getWalletDetails } from "@/app/components/shared/functions";
 
 export default function Page({ params }: { params: { slug: string } }) {
-  const item: itemType | undefined = data.find(
+  const item: itemType | undefined = data1.find(
     (item) => item.id.toString() === params.slug
   );
+
+  const { data, isPending, isError } = useQuery({
+    queryKey: ["wallet"],
+    queryFn: getWalletDetails,
+    select: (values) => {
+      if (!item) return null;
+
+      const walletData = values.data.find(
+        (newItem: any) => newItem.id === item.id
+      );
+
+      return {
+        ...item,
+        id: walletData.id,
+        product_name: walletData.walletName,
+        price: walletData.price,
+        outOfStock: walletData.outOfStock,
+      };
+    },
+    staleTime: 1000 * 60 * 30,
+  });
+
   const router = useRouter();
 
   // Product animation showcase
@@ -30,10 +54,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   // update order details in state
   const [details, setDetails] = useState<Item>({
-    id: item?.id || 0,
+    id: data?.id || 0,
     amount: 1,
-    product_name: item?.product_name || "",
-    price: item?.price || 0,
+    product_name: data?.product_name || "",
+    price: data?.price || 0,
     complete: false,
     image: item?.product_images[0] || "",
   });
@@ -49,7 +73,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       setDetails((prev) => ({
         ...prev,
         amount: prev.amount + 1,
-        price: (item?.price || 0) * (prev.amount + 1),
+        price: (data?.price || 0) * (prev.amount + 1),
       }));
     }
   };
@@ -59,7 +83,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       setDetails((prev) => ({
         ...prev,
         amount: prev.amount - 1,
-        price: (item?.price || 0) * (prev.amount - 1),
+        price: (data?.price || 0) * (prev.amount - 1),
       }));
     }
   };
@@ -69,10 +93,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 
     setDetails((prev) => ({
       ...prev,
-      id: item?.id || 0,
+      id: data?.id || 0,
       amount: 1,
-      product_name: item?.product_name || "",
-      price: item?.price || 0,
+      product_name: data?.product_name || "",
+      price: data?.price || 0,
       complete: false,
       image: item?.product_images[0] || "",
     }));
@@ -86,7 +110,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     setPurchaseItems([]);
   }, []);
 
-  if (!item) {
+  if (!data) {
     return (
       <div className="text-white-100 text-center flex justify-center items-center w-screen h-screen text-4xl">
         Item not found
@@ -94,11 +118,23 @@ export default function Page({ params }: { params: { slug: string } }) {
     );
   }
 
-  return (
+  return isPending ? (
+    <section className="min-h-screen w-full flex items-center justify-center">
+      <h1 className="text-2xl font-bold text-center text-white-100">
+        Loading...
+      </h1>
+    </section>
+  ) : isError ? (
+    <section className="min-h-screen w-full flex items-center justify-center">
+      <h1 className="text-2xl font-bold text-center text-red-500">
+        Error getting data, check back later :(
+      </h1>
+    </section>
+  ) : (
     <section className="text-white-100 w-full md:px-12 px-6 py-2">
       <section className="w-full flex gap-x-4 my-8">
         <div className="w-[80px] my-2">
-          {item.product_images.map((value, index) => (
+          {data.product_images.map((value, index) => (
             <Image
               width={80}
               height={50}
@@ -122,7 +158,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               height={100}
               quality={100}
               className="w-full"
-              src={item.product_images[currentImageIndex]}
+              src={data.product_images[currentImageIndex]}
               alt={`image-${currentImageIndex + 1}`}
             />
             <div className="w-full flex justify-between items-center px-4 lg:flex-row flex-col lg:gap-y-0 gap-y-4 lg:my-0 my-4">
@@ -166,15 +202,15 @@ export default function Page({ params }: { params: { slug: string } }) {
 
           <div className="md:w-2/4 w-full flex flex-col gap-4 leading-8 md:my-auto my-6">
             <div className="flex items-center gap-x-4 md:flex-nowrap flex-wrap">
-              <h1 className="text-2xl font-bold">{item.product_name}</h1>
+              <h1 className="text-2xl font-bold">{data.product_name}</h1>
               <span
                 className={`rounded-2xl px-4 py-1 ${
-                  item.availble
+                  !data.outOfStock
                     ? "bg-[#D1EBD5] text-[#199B2E]"
                     : "bg-[#ebd1d1] text-[#9b2819]"
                 }`}
               >
-                {item.availble ? (
+                {!data.outOfStock ? (
                   <p className=" text-nowrap">IN STOCK</p>
                 ) : (
                   <p className=" text-nowrap">OUT OF STOCK</p>
@@ -182,9 +218,9 @@ export default function Page({ params }: { params: { slug: string } }) {
               </span>
             </div>
             <p className="text-lg">The original hardware wallet</p>
-            <small>{item.description}</small>
+            <small>{data.description}</small>
 
-            {item.product_details.map((value, index) => (
+            {data.product_details.map((value, index) => (
               <div key={index} className="flex gap-x-1 items-center">
                 <span className="mx-1">
                   <Image width={30} height={50} src={value.icon} alt="icon" />
@@ -213,9 +249,9 @@ export default function Page({ params }: { params: { slug: string } }) {
               <button
                 onClick={() => saveValues(details.id)}
                 className={`w-full inline-block p-4 bg-orange-100 text-center text-white-100 font-bold rounded-md ${
-                  !item.availble ? "cursor-not-allowed" : "cursor-pointer"
+                  data.outOfStock ? "cursor-not-allowed" : "cursor-pointer"
                 }`}
-                disabled={!item.availble}
+                disabled={data.outOfStock}
               >
                 Buy for NGN{" "}
                 {details.price.toLocaleString("en", {
@@ -230,19 +266,19 @@ export default function Page({ params }: { params: { slug: string } }) {
       <section className="w-full">
         <div className="w-full border-b border-b-[#494949] py-4">
           <h1 className="font-bold text-2xl border-b border-b-[#494949] my-8">
-            {item.specs?.main_text}
+            {data.specs?.main_text}
           </h1>
           <span className="leading-8 inline-block my-4">
-            <p className="text-lg">{item.product_name}</p>
-            <small>{item.specs?.sub_text}</small>
+            <p className="text-lg">{data.product_name}</p>
+            <small>{data.specs?.sub_text}</small>
           </span>
         </div>
 
-        {item.glance && (
+        {data.glance && (
           <div className="w-full border-b border-b-[#494949] py-4">
-            <h1 className="font-bold text-2xl my-8">{item.glance.main_text}</h1>
+            <h1 className="font-bold text-2xl my-8">{data.glance.main_text}</h1>
             <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
-              {item.glance.items.map((value, index) => (
+              {data.glance.items.map((value, index) => (
                 <div
                   key={index}
                   className="flex lg:flex-row flex-col lg:items-center gap-x-2 lg:my-auto my-4"
@@ -261,9 +297,9 @@ export default function Page({ params }: { params: { slug: string } }) {
         )}
 
         <div className="w-full border-b border-b-[#494949] py-4">
-          <h1 className="font-bold text-2xl my-8">{item.security.main_text}</h1>
+          <h1 className="font-bold text-2xl my-8">{data.security.main_text}</h1>
           <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
-            {item.security.items.map((value, index) => (
+            {data.security.items.map((value, index) => (
               <div
                 key={index}
                 className="flex lg:flex-row flex-col lg:items-center gap-x-2 lg:my-auto my-4"
@@ -280,9 +316,9 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="w-full border-b border-b-[#494949] py-4">
-          <h1 className="font-bold text-2xl my-8">{item.privacy.main_text}</h1>
+          <h1 className="font-bold text-2xl my-8">{data.privacy.main_text}</h1>
           <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
-            {item.privacy.items.map((value, index) => (
+            {data.privacy.items.map((value, index) => (
               <div
                 key={index}
                 className="flex lg:flex-row flex-col lg:items-center gap-x-2 lg:my-auto my-4"
@@ -299,9 +335,9 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="w-full border-b border-b-[#494949] py-4">
-          <h1 className="font-bold text-2xl my-8">{item.backup.main_text}</h1>
+          <h1 className="font-bold text-2xl my-8">{data.backup.main_text}</h1>
           <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
-            {item.backup.items.map((value, index) => (
+            {data.backup.items.map((value, index) => (
               <div
                 key={index}
                 className="flex lg:flex-row flex-col lg:items-center gap-x-2 lg:my-auto my-4"
@@ -319,10 +355,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <div className="w-full border-b border-b-[#494949] py-4">
           <h1 className="font-bold text-2xl my-8">
-            {item.authentication.main_text}
+            {data.authentication.main_text}
           </h1>
           <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
-            {item.authentication.items.map((value, index) => (
+            {data.authentication.items.map((value, index) => (
               <div
                 key={index}
                 className="flex lg:flex-row flex-col lg:items-center gap-x-2 lg:my-auto my-4"
@@ -340,10 +376,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <div className="w-full border-b border-b-[#494949] py-4">
           <h1 className="font-bold text-2xl my-8">
-            {item.product_details2.main_text}
+            {data.product_details2.main_text}
           </h1>
           <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8 flex-wrap">
-            {item.product_details2.items.map((value, index) => (
+            {data.product_details2.items.map((value, index) => (
               <div
                 key={index}
                 className="flex lg:flex-row flex-col lg:items-center gap-x-2 lg:my-auto my-4"
@@ -362,10 +398,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <div className="w-full border-b border-b-[#494949] py-4">
           <h1 className="font-bold text-2xl my-8">
-            {item.in_the_box.main_text}
+            {data.in_the_box.main_text}
           </h1>
           <div className="flex md:flex-row flex-col flex-wrap lg:items-center md:gap-x-24 my-8">
-            {item.in_the_box.items.map((value, index) => (
+            {data.in_the_box.items.map((value, index) => (
               <div
                 key={index}
                 className="flex lg:flex-row flex-col lg:items-center gap-x-2 my-4 flex-wrap"
@@ -382,16 +418,16 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="w-full border-b border-b-[#494949] py-4">
-          <h1 className="font-bold text-2xl my-8">{item.safety.main_text}</h1>
+          <h1 className="font-bold text-2xl my-8">{data.safety.main_text}</h1>
           <span className="leading-8 inline-block my-4">
-            <small>{item.safety.sub_text}</small>
+            <small>{data.safety.sub_text}</small>
           </span>
         </div>
 
         <div className="w-full border-b border-b-[#494949] py-4 mb-12">
-          <h1 className="font-bold text-2xl my-8">{item.material.main_text}</h1>
+          <h1 className="font-bold text-2xl my-8">{data.material.main_text}</h1>
           <span className="leading-8 inline-block my-4">
-            <small>{item.material.sub_text}</small>
+            <small>{data.material.sub_text}</small>
           </span>
         </div>
       </section>

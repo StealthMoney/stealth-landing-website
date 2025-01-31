@@ -2,7 +2,7 @@ export interface itemType {
   id: number;
   product_name: string;
   product_images: string[];
-  availble: boolean;
+  outOfStock: boolean;
   description: string;
   product_details: {
     icon: string;
