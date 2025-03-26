@@ -214,12 +214,12 @@ export default function Page({ params }: { params: { id: string } }) {
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-4">
               <h1 className="font-bold text-2xl">Account Number:</h1>
-              <h1 className="text-xl">6173237977</h1>
+              <h1 className="text-xl">8520573639</h1>
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
               <h1 className="font-bold text-2xl">Bank Name:</h1>
-              <h1 className="text-xl">9 Payment Service Bank</h1>
+              <h1 className="text-xl">Sterling Bank</h1>
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
