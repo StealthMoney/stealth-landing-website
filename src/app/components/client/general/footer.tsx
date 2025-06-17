@@ -154,7 +154,7 @@ const Footer = () => {
                   title="mail"
                   type="email"
                   id="mail"
-                  className="py-3 border border-[#494949] bg-[#111111] rounded-md lg:w-3/4 focus:border focus:border-[#F7931A] focus:outline-none"
+                  className="py-3 border border-black-500 bg-[#111111] rounded-md lg:w-3/4 focus:border focus:border-[#F7931A] focus:outline-hidden"
                 />
               </fieldset>
 
@@ -169,7 +169,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full h-[1px] bg-black-500 my-12"></div>
+        <div className="w-full h-px bg-black-500 my-12"></div>
 
         <div className="text-white-300 flex flex-col max-w-[800px] font-Nunito">
           <small className="font-bold text-[12px] mb-1">

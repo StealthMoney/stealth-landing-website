@@ -233,14 +233,14 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
             <div className="w-full flex gap-x-2 items-center">
               <button
                 onClick={() => decreaseAmount()}
-                className="rounded-full cursor-pointer px-2 w-6 h-6 shadow-sm shadow-[#888888] border-[#494949] border flex items-center justify-center"
+                className="!rounded-full !cursor-pointer !px-2 !w-6 !h-6 !shadow-xs !shadow-[#888888] !border-black-500 !border !flex !items-center !justify-center"
               >
                 -
               </button>
               {details.amount}
               <button
                 onClick={() => increaseAmount()}
-                className="rounded-full cursor-pointer px-2 w-6 h-6 shadow-sm shadow-[#888888] border-[#494949] border flex items-center justify-center"
+                className="!rounded-full !cursor-pointer !px-2 !w-6 !h-6 !shadow-xs !shadow-[#888888] !border-black-500 !border !flex !items-center !justify-center"
               >
                 +
               </button>
@@ -249,8 +249,8 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
             <div className="my-2 px-4">
               <button
                 onClick={() => saveValues(details.id)}
-                className={`w-full inline-block p-4 bg-orange-100 text-center text-white-100 font-bold rounded-md ${
-                  data.outOfStock ? "cursor-not-allowed" : "cursor-pointer"
+                className={`!w-full !inline-block !p-4 !bg-orange-100 !text-center !text-white-100 !font-bold !rounded-md ${
+                  data.outOfStock ? "!cursor-not-allowed" : "!cursor-pointer"
                 }`}
                 disabled={data.outOfStock}
               >
@@ -265,8 +265,8 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
       </section>
 
       <section className="w-full">
-        <div className="w-full border-b border-b-[#494949] py-4">
-          <h1 className="font-bold text-2xl border-b border-b-[#494949] my-8">
+        <div className="w-full border-b border-b-black-500 py-4">
+          <h1 className="font-bold text-2xl border-b border-b-black-500 my-8">
             {data.specs?.main_text}
           </h1>
           <span className="leading-8 inline-block my-4">
@@ -276,7 +276,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
         </div>
 
         {data.glance && (
-          <div className="w-full border-b border-b-[#494949] py-4">
+          <div className="w-full border-b border-b-black-500 py-4">
             <h1 className="font-bold text-2xl my-8">{data.glance.main_text}</h1>
             <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
               {data.glance.items.map((value, index) => (
@@ -297,7 +297,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           </div>
         )}
 
-        <div className="w-full border-b border-b-[#494949] py-4">
+        <div className="w-full border-b border-b-black-500 py-4">
           <h1 className="font-bold text-2xl my-8">{data.security.main_text}</h1>
           <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
             {data.security.items.map((value, index) => (
@@ -316,7 +316,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           </div>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4">
+        <div className="w-full border-b border-b-black-500 py-4">
           <h1 className="font-bold text-2xl my-8">{data.privacy.main_text}</h1>
           <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
             {data.privacy.items.map((value, index) => (
@@ -335,7 +335,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           </div>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4">
+        <div className="w-full border-b border-b-black-500 py-4">
           <h1 className="font-bold text-2xl my-8">{data.backup.main_text}</h1>
           <div className="flex md:flex-row flex-col lg:items-center md:gap-x-24 my-8">
             {data.backup.items.map((value, index) => (
@@ -354,7 +354,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           </div>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4">
+        <div className="w-full border-b border-b-black-500 py-4">
           <h1 className="font-bold text-2xl my-8">
             {data.authentication.main_text}
           </h1>
@@ -375,7 +375,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           </div>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4">
+        <div className="w-full border-b border-b-black-500 py-4">
           <h1 className="font-bold text-2xl my-8">
             {data.product_details2.main_text}
           </h1>
@@ -397,7 +397,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           </div>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4">
+        <div className="w-full border-b border-b-black-500 py-4">
           <h1 className="font-bold text-2xl my-8">
             {data.in_the_box.main_text}
           </h1>
@@ -418,14 +418,14 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           </div>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4">
+        <div className="w-full border-b border-b-black-500 py-4">
           <h1 className="font-bold text-2xl my-8">{data.safety.main_text}</h1>
           <span className="leading-8 inline-block my-4">
             <small>{data.safety.sub_text}</small>
           </span>
         </div>
 
-        <div className="w-full border-b border-b-[#494949] py-4 mb-12">
+        <div className="w-full border-b border-b-black-500 py-4 mb-12">
           <h1 className="font-bold text-2xl my-8">{data.material.main_text}</h1>
           <span className="leading-8 inline-block my-4">
             <small>{data.material.sub_text}</small>

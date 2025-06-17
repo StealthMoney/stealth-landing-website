@@ -84,13 +84,13 @@ const Features = () => {
         Our Features
       </h1>
       <div className="relative flex flex-col-reverse lg:flex-row items-center justify-between w-full mt-14">
-        <div className="absolute left-[1px] h-[420px] w-[2px] bg-black-600"></div>
+        <div className="absolute left-px h-[420px] w-[2px] bg-black-600"></div>
 
         <div className="lg:w-1/2 w-full z-10 mt-4 md:mt-auto lg:h-auto h-[200px] overflow-hidden">
           {featuresData.map((feature, index) => (
             <div
               key={index}
-              className={`mb-10 pr-10 pl-6 py-4 lg:border-l-[4px] cursor-pointer ${
+              className={`mb-10 pr-10 pl-6 py-4 lg:border-l-4 cursor-pointer ${
                 step === index
                   ? "lg:border-l-orange-100"
                   : "lg:opacity-20 lg:border-l-transparent"

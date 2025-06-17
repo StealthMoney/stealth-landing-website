@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer2() {
   return (
     <>
-      <div className="w-full h-[1px] bg-black-500 my-28"></div>
+      <div className="w-full h-px bg-black-500 my-28"></div>
       <div className="flex flex-col items-center gap-y-10">
         <Image
           src="/stealth-logo.svg"

@@ -71,7 +71,7 @@ const Carousel = () => {
               onClick={() => {
                 window.open("https://education.stealth.money/money/", "_blank");
               }}
-              className="w-fit border border-black-500 mt-4 py-2 px-4 rounded bg-black-600 text-white-300 hover:border-white-300 cursor-pointer"
+              className="w-fit border border-black-500 mt-4 py-2 px-4 rounded-sm bg-black-600 text-white-300 hover:border-white-300 cursor-pointer"
             >
               Learn More
             </button>
@@ -81,7 +81,7 @@ const Carousel = () => {
           <button
             title="previous"
             onClick={goToPrevious}
-            className="border border-black-500 p-3 rounded hover:border-white-100"
+            className="border border-black-500 p-3 rounded-sm hover:border-white-100"
           >
             <BackwardArrowIcon
               fillColor={currentSlide === 0 ? "#2B2B2B" : "#FFFFFF"}
@@ -90,7 +90,7 @@ const Carousel = () => {
           <button
             title="next"
             onClick={goToNext}
-            className="border border-black-500 p-3 rounded hover:border-white-100"
+            className="border border-black-500 p-3 rounded-sm hover:border-white-100"
           >
             <ForwardArrowIcon
               fillColor={

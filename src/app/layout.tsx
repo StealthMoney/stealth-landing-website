@@ -5,7 +5,7 @@ import Navbar from "./components/client/general/navbar";
 import Subroutes from "./components/client/general/subroutes";
 import LocalFont from "next/font/local";
 import { twak_WIDGET_id, twak_property_id } from "@/config";
-// import Twak from "./components/client/general/twak";
+import Twak from "./components/client/general/twak";
 import TanstackProvider from "./components/client/general/tanstack";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -82,10 +82,10 @@ export default function RootLayout({
           <Subroutes />
           {children}
           <div className="absolute bottom-8 right-8">
-            {/* <Twak
+            <Twak
               propertyID={twak_property_id || ""}
               widgetID={twak_WIDGET_id || ""}
-            /> */}
+            />
           </div>
         </TanstackProvider>
       </body>

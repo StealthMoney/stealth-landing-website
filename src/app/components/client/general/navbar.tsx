@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
   const MobileMenu = () => {
     return (
       <div className="flex flex-col w-3/4 fixed top-20 right-2 z-10 h-1/4 py-2 px-6 bg-black-700">
-        <button className="md:block bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-[#AAAAAA] font-Satoshi py-[16px] my-3 px-8 rounded">
+        <button className="md:block bg-black-600 border border-black-700 hover:bg-black-500 text-[16px] leading-3 text-[#AAAAAA] font-Satoshi py-[16px] my-3 px-8 rounded-sm">
           <Link href={"/resources"}>Bitcoin Education</Link>
         </button>
         <div className="flex flex-col w-3/4 fixed top-20 right-2 z-10 h-1/4 py-2 px-6 gap-y-5 bg-black-700 items-center">
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
               window.open("http://app.stealth.money/account/login", "_blank");
             }}
           >
-            <span className="bg-black-600 border border-black-700 text-black-200 hover:bg-black-500 leading-3 py-[16px] my-3 px-8 rounded font-Montserrat font-medium">
+            <span className="!bg-black-600 !border !border-black-700 !text-black-200 hover:bg-black-500 !leading-3 !py-[16px] !my-3 !px-8 !rounded-sm !font-Montserrat !font-medium">
               Log in
             </span>
           </button>
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
                 "_blank"
               );
             }}
-            className="md:block bg-orange-100 border border-black-700 hover:bg-orange-500 text-[16px] leading-3 text-white-100 font-normal-200 px-8 my-3 py-[16px] rounded font-Satoshi"
+            className="!md:block !bg-orange-100 !border !border-black-700 hover:bg-orange-500 !text-[16px] !leading-3 !text-white-100 f!ont-normal-200 !px-8 !my-3 !py-[16px] !rounded-sm font-Satoshi"
           >
             <span>Get Started</span>
           </button>
@@ -107,15 +107,15 @@ const Navbar: React.FC = () => {
             priority
           />
         </div>
-        <div className="buttons flex space-x-4 items-center">
+        <div className="buttons !flex !space-x-4 !items-center">
           <div
-            className="flex flex-col items-center gap-y-1 md:hidden"
+            className="!flex !flex-col !items-center !gap-y-1 md:hidden!"
             onClick={handleNavOpen}
             ref={hamburgerRef}
           >
-            <span className="bg-white-100 w-[20px] h-[2px]"></span>
-            <span className="bg-white-100 w-[20px] h-[2px]"></span>
-            <span className="bg-white-100 w-[20px] h-[2px]"></span>
+            <span className="bg-white-100 !w-[20px] !h-[2px]"></span>
+            <span className="bg-white-100 !w-[20px] !h-[2px]"></span>
+            <span className="bg-white-100 !w-[20px] !h-[2px]"></span>
           </div>
 
           <Link
@@ -130,7 +130,7 @@ const Navbar: React.FC = () => {
             onClick={() => {
               window.open("http://app.stealth.money/account/login", "_blank");
             }}
-            className="hidden cursor-pointer md:block border border-black-700 hover:bg-black-600 bg-black-500 text-[16px] leading-3 text-black-200 font-normal-200 py-[16px] px-8 rounded font-Satoshi font-medium"
+            className="!hidden !cursor-pointer md:block !border !border-black-700 hover:bg-black-600 !bg-black-500 !text-[16px] !leading-3 !text-black-200 !font-normal-200 !py-[16px] !px-8 !rounded-sm !font-Satoshi !font-medium"
           >
             <span className="hidden md:block">Log in</span>
           </button>
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
                 "_blank"
               );
             }}
-            className="hidden cursor-pointer md:block bg-orange-100 border border-black-700 hover:bg-orange-500 text-[16px] leading-3 text-white-100 font-normal-200 px-8 py-[16px] rounded font-Satoshi"
+            className="hidden! !cursor-pointer md:block! !bg-orange-100 !border !border-black-700 hover:bg-orange-500 !text-[16px] !leading-3 !text-white-100 !font-normal-200 !px-8 !py-[16px] !rounded-sm !font-Satoshi"
           >
             <span>Get Started</span>
           </button>

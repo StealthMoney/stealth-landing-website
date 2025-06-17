@@ -251,7 +251,7 @@ export default function Page({ params }: { params: { id: string } }) {
         {!paymentsuccess && !error && (
           <button
             onClick={handlePaidState}
-            className="bg-[#F7931A] inline-flex h-[35px] cursor-pointer items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-none"
+            className="bg-[#F7931A] inline-flex h-[35px] cursor-pointer items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-hidden"
           >
             I have Already Paid
           </button>
@@ -260,7 +260,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
       <section className="text-white-100 w-full md:px-12 px-6 py-2 my-6 overflow-x-hidden">
         <section className="py-4 px-2">
-          <div className="border-b border-b-[#494949] flex gap-x-4 items-center md:flex-nowrap flex-wrap">
+          <div className="border-b border-b-black-500 flex gap-x-4 items-center md:flex-nowrap flex-wrap">
             <div className="w-2/4">
               <h1 className="lg:text-4xl md:text-2xl">Complete Your order</h1>
             </div>
@@ -274,7 +274,7 @@ export default function Page({ params }: { params: { id: string } }) {
                 />
                 <p>Information</p>
               </span>
-              <div className=" border-b border-b-[#494949] w-1/3"></div>
+              <div className=" border-b border-b-black-500 w-1/3"></div>
               <span className="w-1/3 flex items-center justify-center">
                 <Image
                   src={getStatusImage()}
@@ -331,7 +331,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     First Name<span className="text-red-700">*</span>
                   </label>
                   <input
-                    className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                    className="bg-[#111111] p-4 rounded-md border border-black-500 focus:border-[#F7931A] focus:outline-hidden"
                     type="text"
                     name="firstName"
                     id="firstname"
@@ -344,7 +344,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     Last Name<span className="text-red-700">*</span>
                   </label>
                   <input
-                    className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                    className="bg-[#111111] p-4 rounded-md border border-black-500 focus:border-[#F7931A] focus:outline-hidden"
                     type="text"
                     name="lastName"
                     id="lastname"
@@ -360,7 +360,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <span className="text-red-700">*</span>
                 </label>
                 <input
-                  className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                  className="bg-[#111111] p-4 rounded-md border border-black-500 focus:border-[#F7931A] focus:outline-hidden"
                   type="text"
                   name="location"
                   id="address"
@@ -375,7 +375,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     Town/City<span className="text-red-700">*</span>
                   </label>
                   <input
-                    className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                    className="bg-[#111111] p-4 rounded-md border border-black-500 focus:border-[#F7931A] focus:outline-hidden"
                     type="text"
                     name="state"
                     id="city"
@@ -388,7 +388,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     State<span className="text-red-700">*</span>
                   </label>
                   <input
-                    className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                    className="bg-[#111111] p-4 rounded-md border border-black-500 focus:border-[#F7931A] focus:outline-hidden"
                     type="text"
                     name="region"
                     id="state"
@@ -404,7 +404,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <span className="text-red-700">*</span>
                 </label>
                 <input
-                  className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                  className="bg-[#111111] p-4 rounded-md border border-black-500 focus:border-[#F7931A] focus:outline-hidden"
                   type="tel"
                   name="tel"
                   id="phone"
@@ -419,7 +419,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <span className="text-red-700">*</span>
                 </label>
                 <input
-                  className="bg-[#111111] p-4 rounded-md border border-[#494949] focus:border-[#F7931A] focus:outline-none"
+                  className="bg-[#111111] p-4 rounded-md border border-black-500 focus:border-[#F7931A] focus:outline-hidden"
                   type="email"
                   name="email"
                   id="mail"
@@ -434,7 +434,7 @@ export default function Page({ params }: { params: { id: string } }) {
             <h1 className="text-2xl">Your order</h1>
 
             <div className="w-full my-12">
-              <div className="w-full flex justify-between border-b border-b-[#494949] border-dashed my-4 px-6">
+              <div className="w-full flex justify-between border-b border-b-black-500 border-dashed my-4 px-6">
                 <h1 className=" text-lg mx-4">Product</h1>
                 <h1 className="text-lg mx-4">Subtotal</h1>
               </div>
@@ -470,7 +470,7 @@ export default function Page({ params }: { params: { id: string } }) {
                       </p>
                     </div>
 
-                    <div className="flex justify-between items-center px-6 py-6 my-4 border-dashed border-b border-b-[#494949]">
+                    <div className="flex justify-between items-center px-6 py-6 my-4 border-dashed border-b border-b-black-500">
                       <h1 className="md:text-2xl text-lg text-white-100">
                         Subtotal
                       </h1>
@@ -482,7 +482,7 @@ export default function Page({ params }: { params: { id: string } }) {
                       </p>
                     </div>
 
-                    <div className="flex justify-between items-center px-6 py-6 my-4 border-dashed border-b border-b-[#494949]">
+                    <div className="flex justify-between items-center px-6 py-6 my-4 border-dashed border-b border-b-black-500">
                       <h1 className="md:text-2xl text-lg text-white-100">
                         Total
                       </h1>
@@ -497,7 +497,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     <div className="w-full">
                       <button
                         onClick={handleSubmit}
-                        className="bg-[#F7931A] text-center px-4 py-6 text-white-100 rounded-md w-full my-8"
+                        className="!bg-[#F7931A] !text-center !px-4 !py-6 !text-white-100 !rounded-md !w-full !my-8"
                       >
                         Place Order NGN{" "}
                         {item.price.toLocaleString("en", {

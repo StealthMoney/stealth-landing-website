@@ -25,8 +25,8 @@ const DialogBox = ({
 }: DialogBoxTypes) => (
   <Dialog.Root open={open} onOpenChange={dismiss} modal={open}>
     <Dialog.Portal>
-      <Dialog.Overlay className="data-[state=open]:animate-overlayShow fixed inset-0 bg-[#494949] opacity-40" />
-      <Dialog.Content className="flex items-between flex-col gap-2 text-white-100 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-[#161616] p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
+      <Dialog.Overlay className="data-[state=open]:animate-overlayShow fixed inset-0 bg-black-500 opacity-40" />
+      <Dialog.Content className="flex items-between flex-col gap-2 text-white-100 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-[#161616] p-[25px] shadow-[hsl(206_22%_7%/35%)_0px_10px_38px_-10px,hsl(206_22%_7%/20%)_0px_10px_20px_-15px] focus:outline-hidden">
         <Dialog.Title className="m-0 text-lg font-bold">{header}</Dialog.Title>
         <Dialog.Description className="mt-[10px] mb-5 text-[15px] leading-normal">
           {message}
@@ -36,7 +36,7 @@ const DialogBox = ({
           {(errorState || paymentState) && (
             <Dialog.Close asChild>
               <button
-                className="bg-[#F7931A] inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-none"
+                className="bg-[#F7931A] inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-hidden"
                 onClick={clearState}
               >
                 close
@@ -46,7 +46,7 @@ const DialogBox = ({
         </div>
         <Dialog.Close asChild>
           <button
-            className="absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-none"
+            className="absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-hidden"
             aria-label="Close"
           >
             <Cross2Icon />
