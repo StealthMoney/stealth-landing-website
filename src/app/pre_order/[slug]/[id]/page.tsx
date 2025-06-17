@@ -8,7 +8,7 @@ import { formValueTypes } from "@/app/components/types/pre_order";
 import axiosInstance from "../../../../../lib/axiosInstance";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-export default function Page({ params }: { params: { id: string } }) {
+export default function Page() {
   const { purchaseItems = [], setPurchaseItems } = usePurchase();
   const [paymentsuccess, setpaymentSuccess] = useState<boolean>(false);
   const [itemValues, setItemvalues] = useState<{
@@ -251,7 +251,7 @@ export default function Page({ params }: { params: { id: string } }) {
         {!paymentsuccess && !error && (
           <button
             onClick={handlePaidState}
-            className="bg-[#F7931A] inline-flex h-[35px] cursor-pointer items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:outline-hidden"
+            className="!bg-[#F7931A] !inline-flex !h-[35px] !cursor-pointer !items-center !justify-center !rounded-[4px] !px-[15px] !font-medium !leading-none !focus:outline-hidden"
           >
             I have Already Paid
           </button>
@@ -286,38 +286,6 @@ export default function Page({ params }: { params: { id: string } }) {
               </span>
             </div>
           </div>
-          {/* <div className=" my-4 py-4">
-            <div className="flex gap-x-4 my-2 items-center">
-              <span>
-                <Image
-                  src={"/checkboxFilled.svg"}
-                  alt="checkbox"
-                  width={20}
-                  height={20}
-                />
-              </span>
-              <p>
-                All orders within Lagos will be delivered in 1 - 3 business
-                days. Orders outside Lagos will be delivered in 5 - 7 business
-                days
-              </p>
-            </div>
-            <div className="flex gap-x-4 my-2 items-center">
-              <span>
-                <Image
-                  src={"/checkboxFilled.svg"}
-                  alt="checkbox"
-                  width={20}
-                  height={20}
-                />
-              </span>
-              <p>
-                Delivery fees are inclusive, orders outside Lagos and Abuja may
-                be delivered to a pick up point, details will be provided by
-                courier.
-              </p>
-            </div>
-          </div> */}
         </section>
 
         <section className="flex gap-x-8 lg:flex-row flex-col lg:h-[650px] md:h-auto overflow-y-hidden">

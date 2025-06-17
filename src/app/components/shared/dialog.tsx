@@ -46,7 +46,7 @@ const DialogBox = ({
         </div>
         <Dialog.Close asChild>
           <button
-            className="absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-hidden"
+            className="!absolute !top-[10px] !right-[10px] !inline-flex !h-[25px] !w-[25px] !appearance-none !items-center !justify-center !rounded-full !focus:shadow-[0_0_0_2px] !focus:outline-hidden"
             aria-label="Close"
           >
             <Cross2Icon />
