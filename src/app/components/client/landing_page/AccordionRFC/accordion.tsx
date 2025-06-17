@@ -22,7 +22,7 @@ const AccordionTrigger = forwardRef(
   ) => (
     <Accordion.Header className="AccordionHeader">
       <Accordion.Trigger
-        className="flex justify-between items-center w-full cursor-pointer py-4 px-6"
+        className="!flex !justify-between !items-center !w-full !cursor-pointer !py-4 !px-6"
         {...props}
         ref={forwardedRef}
       >
