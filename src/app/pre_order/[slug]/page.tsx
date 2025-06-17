@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
 import data1 from "../../components/dummy-data/pre_order_data.json";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { usePurchase } from "@/app/components/context/pre_order";
 import { itemType, Item } from "@/app/components/types/pre_order";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { getWalletDetails } from "@/app/components/shared/functions";
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page(props: { params: Promise<{ slug: string }> }) {
+  const params = use(props.params);
   const item: itemType | undefined = data1.find(
     (item) => item.id.toString() === params.slug
   );
