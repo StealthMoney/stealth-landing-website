@@ -10,6 +10,11 @@ export type WaitlistFormData = {
   phoneNumber?: string;
 };
 
+const getCurrentDateYear = () => {
+  const today = new Date();
+  return today.getFullYear();
+};
+
 const joinWaitlist = async (formData: WaitlistFormData) => {
   "use server";
   const url = baseUrl + "/waitlists";
@@ -149,7 +154,7 @@ const Footer = () => {
                   title="mail"
                   type="email"
                   id="mail"
-                  className="py-3 border border-[#494949] bg-[#111111] rounded-md lg:w-3/4 focus:border focus:border-[#F7931A] focus:outline-none px-4"
+                  className="py-3 border border-[#494949] bg-[#111111] rounded-md lg:w-3/4 focus:border focus:border-[#F7931A] focus:outline-none"
                 />
               </fieldset>
 
@@ -168,7 +173,8 @@ const Footer = () => {
 
         <div className="text-white-300 flex flex-col max-w-[800px] font-Nunito">
           <small className="font-bold text-[12px] mb-1">
-            Copyright 2024, All Rights Reserved by Stealth Money.
+            Copyright {getCurrentDateYear()}, All Rights Reserved by Stealth
+            Money.
           </small>
 
           <small className="text-[12px] leading-5">

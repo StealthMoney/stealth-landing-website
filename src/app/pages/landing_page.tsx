@@ -6,6 +6,7 @@ import Faq from "../components/server/landing_page/faq";
 import Footer from "../components/client/general/footer";
 import Wallet from "../components/client/landing_page/wallet";
 import Testimonial from "../components/client/landing_page/testimonial";
+import Backedby from "../components/server/landing_page/backed-by";
 
 export default function Landing_page() {
   return (
@@ -16,6 +17,7 @@ export default function Landing_page() {
       <WhyStealthMoney />
       <Wallet />
       <Testimonial />
+      <Backedby />
       <Faq />
       <Footer />
     </>
