@@ -161,7 +161,7 @@ const Footer = () => {
               <button
                 disabled={true}
                 title="Signup"
-                className="bg-[#F7931A] py-4 px-2 rounded-md text-white-100 lg:w-1/4 flex justify-center items-center font-semibold font-Montserrat"
+                className="!bg-[#F7931A] !py-4 !px-2 !rounded-md !text-white-100 lg:w-1/4! flex! !justify-center !items-center !font-semibold !font-Montserrat"
               >
                 Sign Up
               </button>

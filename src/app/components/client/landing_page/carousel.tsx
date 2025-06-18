@@ -16,14 +16,14 @@ const slidesData = [
     title: "Dollar-Cost Averaging",
     description:
       "With Stealth Money, you can you can initiate Dollar-Cost Averaging (DCA). Dollar-cost averaging (DCA) is the automatic investment of a fixed amount on a periodic basis (weekly/monthly).",
-    image: "/images/calender.png",
+    image: "/images/averaging.svg",
     indexIcon: "/02.svg",
   },
   {
     title: "Hedge against Currency Devaluation",
     description:
       "Stealth Money simplifies saving in Bitcoin to avoid the risk of your money losing value and purchasing power. In the last decade, most African currencies have devalued against the Dollar. Bitcoin is a hedge against endless currency depreciation.",
-    image: "/images/dollar.jpeg",
+    image: "/images/averaging1.svg",
     indexIcon: "/03.svg",
   },
 ];

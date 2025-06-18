@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --color-orange-100: #f7931a;
@@ -19,8 +19,8 @@
   );
 
   --font-Nunito: Nunito, sans-serif;
-  --font-Satoshi: var(--satoshi);
-  --font-Satoshi-italic: var(--satoshi-italic);
+  --font-Satoshi: "Satoshi", sans-serif;
+  --font-Satoshi-italic: "Satoshi", sans-serif;
 }
 
 /*
@@ -89,6 +89,21 @@
   src: url("/fonts/montserrat/Montserrat-Bold.ttf") format("ttf");
   font-weight: 700 900;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/satoshi_variable/Satoshi-Variable.ttf") format("ttf");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/satoshi_variable/Satoshi-VariableItalic.ttf")
+    format("ttf");
+  font-weight: 100 900;
+  font-style: italic;
 }
 
 @media (prefers-color-scheme: dark) {

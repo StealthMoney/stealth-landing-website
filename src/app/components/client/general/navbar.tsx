@@ -130,7 +130,7 @@ const Navbar: React.FC = () => {
             onClick={() => {
               window.open("http://app.stealth.money/account/login", "_blank");
             }}
-            className="!hidden !cursor-pointer md:block !border !border-black-700 hover:bg-black-600 !bg-black-500 !text-[16px] !leading-3 !text-black-200 !font-normal-200 !py-[16px] !px-8 !rounded-sm !font-Satoshi !font-medium"
+            className="!hidden !cursor-pointer md:block! !border !border-black-700 hover:bg-black-600! !bg-black-500 !text-[16px] !leading-3 !text-black-200 !font-normal-200 !py-[16px] !px-8 !rounded-sm !font-Satoshi !font-medium"
           >
             <span className="hidden md:block">Log in</span>
           </button>
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
                 "_blank"
               );
             }}
-            className="hidden! !cursor-pointer md:block! !bg-orange-100 !border !border-black-700 hover:bg-orange-500 !text-[16px] !leading-3 !text-white-100 !font-normal-200 !px-8 !py-[16px] !rounded-sm !font-Satoshi"
+            className="hidden! !cursor-pointer md:block! !bg-orange-100 !border !border-black-700 hover:bg-orange-500! !text-[16px] !leading-3 !text-white-100 !font-normal-200 !px-8 !py-[16px] !rounded-sm !font-Satoshi"
           >
             <span>Get Started</span>
           </button>

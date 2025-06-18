@@ -35,7 +35,7 @@ export default function Testimonial() {
   return (
     <section className="bg-[#010101] w-screen lg:h-[560px] flex flex-col p-4 justify-center items-center">
       <div className="w-auto flex flex-col justify-center items-center max-w-[1440px]">
-        <h1 className="text-[38px] text-center font-bold text-white-100 font-SatoshiItalic">
+        <h1 className="text-[38px] text-center font-bold text-white-100 font-Satoshi italic">
           Don&apos;t just take our words for it
         </h1>
         <div className="flex lg:flex-row flex-col my-8 py-8 px-4 md:w-3/4 w-full lg:gap-x-6">
