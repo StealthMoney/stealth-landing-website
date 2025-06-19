@@ -8,21 +8,21 @@ const slidesData = [
   {
     title: "Bitcoin Self Custody",
     description:
-      "With Stealth Money, you can hold your Bitcoin in a self-custodial or hardware wallet ensuring that only you have access to your Bitcoin. A hardware wallet is a physical wallet device that secures your Bitcoin.",
+      "With Stealth Money, you hold your Bitcoin in a self-custodial or hardware wallet ensuring that only you have access to your Bitcoin.  This is the most secure way to hold Bitcoin.",
     image: "/images/bitcoin_save.svg",
     indexIcon: "/01.svg",
   },
   {
     title: "Dollar-Cost Averaging",
     description:
-      "With Stealth Money, you can you can initiate Dollar-Cost Averaging (DCA). Dollar-cost averaging (DCA) is the automatic investment of a fixed amount on a periodic basis (weekly/monthly).",
+      "With Stealth Money, you can easily DCA. Dollar-cost averaging (DCA) is the automatic buying of a fixed amount of Bitcoin on a periodic basis (weekly/monthly).",
     image: "/images/averaging.svg",
     indexIcon: "/02.svg",
   },
   {
     title: "Hedge against Currency Devaluation",
     description:
-      "Stealth Money simplifies saving in Bitcoin to avoid the risk of your money losing value and purchasing power. In the last decade, most African currencies have devalued against the Dollar. Bitcoin is a hedge against endless currency depreciation.",
+      "Stealth Money simplifies saving in Bitcoin, protecting you from currency devaluation, which is when a country's currency loses value over time.",
     image: "/images/averaging1.svg",
     indexIcon: "/03.svg",
   },
@@ -63,7 +63,9 @@ const Carousel = () => {
             />
           </picture>
           <div className="flex flex-col gap-6 lg:text-left text-center lg:mt-auto mt-6 lg:justify-start justify-center lg:items-start items-center">
-            <p className="text-[35px] font-semibold font-Satoshi">{slidesData[currentSlide].title}</p>
+            <p className="text-[35px] font-semibold font-Satoshi">
+              {slidesData[currentSlide].title}
+            </p>
             <p className="text-white-300">
               {slidesData[currentSlide].description}
             </p>

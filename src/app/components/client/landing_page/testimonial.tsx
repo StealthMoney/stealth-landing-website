@@ -21,7 +21,7 @@ function TestimonialCard({ text, name, occupation }: TestimonialType) {
         </div>
 
         <div>
-          <h1 className="text-[20px] font-bold font-SatoshiItalic">{name}</h1>
+          <h1 className="text-[20px] font-bold font-Satoshi italic">{name}</h1>
           <small className="text-[14px] text-[#AAAAAA] font-Nunito">
             {occupation}
           </small>

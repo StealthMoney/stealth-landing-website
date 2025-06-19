@@ -20,7 +20,7 @@ const cards = [
     imgSrc: "/bitcoin.svg",
   },
   {
-    title: "Create DCA Plan",
+    title: "Create Savings Plan",
     description:
       "You can make recurring purchases of Bitcoin which will be sent directly to your self-custody wallet. This can help you save in Bitcoin or accumulate it.",
     imgSrc: "/calendar.svg",
