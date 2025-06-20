@@ -26,16 +26,16 @@ const HeroSection = () => {
   return (
     <section className="flex flex-col items-center justify-center py-2">
       <InfoBanner />
-      <h2 className="text-white-100 text-4xl md:text-5xl font-semibold font-Satoshi text-center mt-2 md:mt-5 leading-[50px] md:leading-[70px] max-w-4xl">
+      <h2 className="text-white-100 !text-4xl md:text-5xl! font-semibold font-Satoshi text-center mt-2 md:mt-5 leading-[50px] md:leading-[70px] max-w-4xl">
         Secure Your Financial Future with Bitcoin Savings & Self Custody.
       </h2>
 
-      <div className="buttons flex space-x-4 my-8">
+      <div className="buttons flex gap-x-4 my-8">
         <button
           onClick={() =>
             window.open("https://app.stealth.money/account/register", "_blank")
           }
-          className="bg-orange-100 border text-center border-black-700 font-Satoshi hover:bg-orange-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium px-8 h-[70px] cursor-pointer rounded"
+          className="bg-orange-100! border! text-center! border-black-700! font-Satoshi! hover:bg-orange-500! text-[14px]! md:text-[16px]! leading-3! text-white-100! font-medium! px-8! h-[70px]! cursor-pointer! rounded!"
         >
           <Link
             href={"https://app.stealth.money/account/register"}
@@ -46,7 +46,7 @@ const HeroSection = () => {
         </button>
         <button
           onClick={() => router.push("/pre_order")}
-          className="bg-black-600 border text-center cursor-pointer border-black-700 font-Satoshi hover:bg-black-500 text-[14px] md:text-[16px] leading-3 text-white-100 font-medium h-[70px] px-8 rounded"
+          className="bg-black-600! border! text-center! cursor-pointer! border-black-700! font-Satoshi! hover:bg-black-500! text-[14px]! md:text-[16px]! leading-3! text-white-100! font-medium! h-[70px]! px-8! rounded!"
         >
           <Link href={"/pre_order"}>Order Wallet</Link>
         </button>

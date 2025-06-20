@@ -5,7 +5,7 @@ import Carousel from "../../client/landing_page/carousel";
 const WhyStealthMoney = () => {
   return (
     <div className="my-6">
-      <p className="text-center text-[38px] text-white-100 font-bold font-Satoshi mb-6">
+      <p className="text-center !text-[38px] text-white-100 font-bold !font-Satoshi mb-6">
         Why Stealth Money?
       </p>
       <div className="flex flex-wrap items-center mt-16">

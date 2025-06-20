@@ -20,7 +20,7 @@ export default function Subroutes() {
   return (
     <>
       {pathRegex.test(url) && (
-        <nav className="flex mt-6 md:px-12 px-6 text-[#494949] w-screen justify-start -py-4 items-end overflow-x-auto">
+        <nav className="flex mt-6 md:px-12 px-6 text-black-500 w-screen justify-start -py-4 items-end overflow-x-auto">
           <Link
             href="/"
             className="mx-2 text-nowrap text-white-100 hover:text-orange-100 py-4"
@@ -47,7 +47,7 @@ export default function Subroutes() {
       )}
 
       {url === "/pre_order" && (
-        <nav className="flex mt-6 md:px-12 px-6 text-[#494949] w-screen justify-start -py-4 items-end overflow-x-auto">
+        <nav className="flex mt-6 md:px-12 px-6 text-black-500 w-screen justify-start -py-4 items-end overflow-x-auto">
           <Link
             href="/"
             className="mx-2 text-nowrap text-white-100 hover:text-orange-100 py-4"
@@ -66,7 +66,7 @@ export default function Subroutes() {
       )}
 
       {(url === "/pre_order/1" || url === "/pre_order/2") && (
-        <nav className="flex mt-6 md:px-12 px-6 text-[#494949] w-screen justify-start -py-4 items-end overflow-x-auto">
+        <nav className="flex mt-6 md:px-12 px-6 text-black-500 w-screen justify-start -py-4 items-end overflow-x-auto">
           <Link
             href="/"
             className="mx-2 text-nowrap text-white-100 hover:text-orange-100 py-4"
@@ -97,7 +97,7 @@ export default function Subroutes() {
       )}
 
       {(url === "/pre_order/1/checkout" || url === "/pre_order/2/checkout") && (
-        <nav className="flex mt-6 md:px-12 px-6 text-[#494949] w-screen justify-start -py-4 items-end overflow-x-auto">
+        <nav className="flex mt-6 md:px-12 px-6 text-black-500 w-screen justify-start -py-4 items-end overflow-x-auto">
           <Link
             href="/"
             className="mx-2 text-nowrap text-white-100 hover:text-orange-100 py-4"

@@ -44,7 +44,7 @@ export default function Pre_order_page() {
   ) : (
     <section className="w-full md:px-12 px-6 py-2 text-white-100">
       <h1 className="text-2xl my-2">Trezor Hardware Wallet for You</h1>
-      <p className="text-[#cccccc]">
+      <p className="text-black-200">
         Pre-order your Trezor hardware wallet from anywhere in Nigeria and get
         it within 48 hours in Lagos or 7 days elsewhere. Secure your assets with
         Trezor &#8210; order now for quick delivery.
@@ -77,7 +77,7 @@ export default function Pre_order_page() {
               <div className="my-2 px-4">
                 <Link
                   href={`/pre_order/${item.id}`}
-                  className="w-full inline-block p-4 bg-orange-100 text-center text-white-100 font-bold rounded-md"
+                  className="!w-full !inline-block !p-4 !bg-orange-100 !text-center !text-white-100 f!ont-bold !rounded-md"
                 >
                   Buy for NGN{" "}
                   {item.price.toLocaleString("en", {

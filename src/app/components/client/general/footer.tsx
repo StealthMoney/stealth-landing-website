@@ -10,6 +10,11 @@ export type WaitlistFormData = {
   phoneNumber?: string;
 };
 
+const getCurrentDateYear = () => {
+  const today = new Date();
+  return today.getFullYear();
+};
+
 const joinWaitlist = async (formData: WaitlistFormData) => {
   "use server";
   const url = baseUrl + "/waitlists";
@@ -149,14 +154,14 @@ const Footer = () => {
                   title="mail"
                   type="email"
                   id="mail"
-                  className="py-3 border border-[#494949] bg-[#111111] rounded-md lg:w-3/4 focus:border focus:border-[#F7931A] focus:outline-none px-4"
+                  className="py-3 border border-black-500 bg-[#111111] rounded-md lg:w-3/4 focus:border focus:border-[#F7931A] focus:outline-hidden"
                 />
               </fieldset>
 
               <button
                 disabled={true}
                 title="Signup"
-                className="bg-[#F7931A] py-4 px-2 rounded-md text-white-100 lg:w-1/4 flex justify-center items-center font-semibold font-Montserrat"
+                className="!bg-[#F7931A] !py-4 !px-2 !rounded-md !text-white-100 lg:w-1/4! flex! !justify-center !items-center !font-semibold !font-Montserrat"
               >
                 Sign Up
               </button>
@@ -164,11 +169,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full h-[1px] bg-black-500 my-12"></div>
+        <div className="w-full h-px bg-black-500 my-12"></div>
 
         <div className="text-white-300 flex flex-col max-w-[800px] font-Nunito">
           <small className="font-bold text-[12px] mb-1">
-            Copyright 2024, All Rights Reserved by Stealth Money.
+            Copyright {getCurrentDateYear()}, All Rights Reserved by Stealth
+            Money.
           </small>
 
           <small className="text-[12px] leading-5">

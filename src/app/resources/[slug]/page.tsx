@@ -1,4 +1,5 @@
-"use client";
+"use client";;
+import { use } from "react";
 import Image from "next/image";
 import data from "../../components/dummy-data/blog.json";
 import "../../components/server/styles/resource_page/components.css";
@@ -25,7 +26,8 @@ interface Link {
   description?: string;
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page(props: { params: Promise<{ slug: string }> }) {
+  const params = use(props.params);
   const item: BlogItem | undefined = data.find(
     (item) => item.id === params.slug
   );
