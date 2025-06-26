@@ -118,12 +118,12 @@
         {
           "icon": "/four-arrow2.svg",
           "header": "Products size & weight",
-          "text": "60x30x6 mm / 12 g2.4x1.2x0.2 in / 0.42 oz"
+          "text": "60x30x6 mm / 12 g & 2.4x1.2x0.2 in / 0.42 oz"
         },
         {
           "icon": "/box.svg",
           "header": "Package size & weight",
-          "text": "Package size & weight"
+          "text": "100x100x13 mm / 44 g & 3.9x3.9x0.5 in / 1.55 oz"
         },
         {
           "icon": "/thermometer.svg",
@@ -292,12 +292,12 @@
         {
           "icon": "/four-arrow2.svg",
           "header": "Products size & weight",
-          "text": "60x30x6 mm / 12 g2.4x1.2x0.2 in / 0.42 oz"
+          "text": "59x32x7.4 mm / 14 g & 2.3x1.3x0.3 in / 0.5 oz"
         },
         {
           "icon": "/box.svg",
           "header": "Package size & weight",
-          "text": "Package size & weight"
+          "text": "145x92x21 mm / 66 g & 5.7x3.6x0.8 in / 2.3 oz"
         },
         {
           "icon": "/thermometer.svg",
@@ -307,7 +307,7 @@
         {
           "icon": "/memory.svg",
           "header": "CPU",
-          "text": "120 MHz embedded ARM processor)(Cortex M3"
+          "text": "180 MHz embedded ARM processor(Cortex M4)"
         }
       ]
     },
@@ -317,7 +317,7 @@
       "items": [
         {
           "icon": "/trezor-icon.svg",
-          "header": "Trezor Model One hardware wallet"
+          "header": "Trezor Safe-3 hardware wallet"
         },
         {
           "icon": "/micro-usb.svg",
