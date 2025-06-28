@@ -119,21 +119,21 @@ const Footer = () => {
               <h1 className="font-bold">LEGAL</h1>
               <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
                 <Link
-                  href="https://drive.google.com/file/d/1Uynx0IhZhq9VxH5XrExPe4MiPnzyxcEd/view?usp=sharing"
+                  href="/terms-of-service"
                   target="_blank"
                   className="text-sm"
                 >
                   Terms of Service
                 </Link>
                 <Link
-                  href="https://drive.google.com/file/d/1ZfGS2ryTgWk3wpe3J8uIOBFMLfWQLm19/view?usp=sharing"
+                  href="/privacy-policy"
                   target="_blank"
                   className="text-sm"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  href="https://drive.google.com/file/d/1uQLQTqs4ANyChHdubsGU8BchJr5Uegom/view?usp=sharing"
+                  href="/aml-policy"
                   target="_blank"
                   className="text-sm"
                 >
