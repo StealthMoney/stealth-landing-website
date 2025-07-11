@@ -70,7 +70,7 @@ const AccordionContent = forwardRef(
 AccordionContent.displayName = "AccordionContent";
 
 const AccordionDemo = ({ defaultIndex = 0 }) => {
-  const [openItem, setOpenItem] = useState(`item-${defaultIndex + 1}`);
+  const [openItem, setOpenItem] = useState(`item-${defaultIndex}`);
 
   return (
     <Accordion.Root
@@ -87,7 +87,7 @@ const AccordionDemo = ({ defaultIndex = 0 }) => {
           key={i}
         >
           <AccordionTrigger isOpen={openItem === `item-${i + 1}`}>
-            <div className="max-w-[200px] lg:max-w-fit md:text-lg text-sm font-semibold">
+            <div className="max-w-[200px] lg:max-w-fit md:text-lg text-sm">
               {item.Header}
             </div>
           </AccordionTrigger>
