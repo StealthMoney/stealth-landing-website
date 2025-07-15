@@ -8,19 +8,19 @@
     "body": "Self-custody is a means of holding your Bitcoin in a self-custodial or hardware wallet by which only you have access to your Bitcoin."
   },
   {
-    "Header": "What is Dollar-Cost-Averaging?",
-    "body": "Dollar-cost averaging (DCA) is where you buy a fixed amount of BTC at regular intervals (weekly/monthly), no matter the price."
+    "Header": "Why should I self custody my Bitcoin?",
+    "body": "Self custody is the most secure way to own bitcoin. It gives you full control of your digital gold."
   },
   {
-    "Header": "Can someone purchase Bitcoin on my behalf?",
-    "body": "Yes, using our Gift Bitcoin feature, your loved ones can buy Bitcoin directly into your hardware wallet address."
-  },
-  {
-    "Header": "Where is my Bitcoin purchased going to?",
-    "body": "Bitcoin gifted to you is sent directly into your hardware wallet address which you provide to the sender."
+    "Header": "Where does the Bitcoin I purchase go to?",
+    "body": "With Stealth Money, you can only buy bitcoin into your self custody or an external wallet address."
   },
   {
     "Header": "What is a hardware wallet?",
     "body": "A hardware wallet, also known as a cold wallet, is a physical device created solely for offline storage of cryptocurrency private keys."
+  },
+  {
+    "Header": "Does Stealth Money assist in setting up a hardware wallet?",
+    "body": "Yes, we provide a free 30-minute, one-on-one session to guide you step-by-step in setting up your hardware wallet."
   }
 ]
