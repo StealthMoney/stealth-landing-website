@@ -51,7 +51,7 @@ const Footer = () => {
         </fieldset> */}
 
         <div className="w-full flex md:flex-row flex-col md:gap-y-0 gap-y-6 md:px-4 md:items-start py-12 font-Nunito">
-          <div className="md:w-1/4 w-full gap-x-4 flex flex-col gap-y-4 justify-center items-center">
+          <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4 justify-center items-center">
             <div className="flex justify-center items-center w-full">
               <Image
                 src={"/stealth-logo.svg"}
@@ -88,7 +88,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="md:w-1/4 w-full gap-x-4 flex flex-col gap-y-4">
+          <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4">
             <h1 className="font-bold">QUICK LINK</h1>
             <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
               <Link href="#faq" className="text-sm">
@@ -114,7 +114,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="md:w-1/4 w-full gap-x-4 flex flex-col gap-y-4">
+          <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4">
             <div className="w-full gap-x-4 flex flex-col gap-y-4">
               <h1 className="font-bold">LEGAL</h1>
               <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
@@ -132,17 +132,30 @@ const Footer = () => {
                 >
                   Privacy Policy
                 </Link>
-                <Link
-                  href="/aml-policy"
-                  target="_blank"
-                  className="text-sm"
-                >
+                <Link href="/aml-policy" target="_blank" className="text-sm">
                   AML Policy
                 </Link>
               </div>
             </div>
           </div>
-          <div className="md:w-1/4 w-full gap-x-4 flex flex-col gap-y-4 md:mt-0 mt-4">
+          <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4">
+            <div className="w-full gap-x-4 flex flex-col gap-y-4">
+              <h1 className="font-bold">OUR PRODUCTS</h1>
+              <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
+                <Link
+                  href="https://stealthtreasury.com"
+                  target="_blank"
+                  className="text-sm"
+                >
+                  Stealth Treasury
+                </Link>
+                <Link href="/vip" target="_blank" className="text-sm">
+                  Stealth VIP
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4 md:mt-0 mt-4">
             <div className="w-full flex flex-col md:gap-y-2 gap-y-4 text-white-300">
               <h1 className="text-white-100 font-bold">GET STARTED</h1>
               <fieldset className="flex flex-col gap-y-2">
