@@ -12,10 +12,10 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
       <div className="bg-[#EFB74B] mb-12 w-10 h-10 p-2 bg-accent rounded-md flex items-center justify-center text-lg">
         <Image src={icon} width={100} height={100} alt="item" />
       </div>
-      <h3 className="text-[20px] text-[#ffffff] mb-3">
+      <h3 className="text-[20px] text-[#ffffff] mb-3 font-Satoshi">
         {title}
       </h3>
-      <p className="text-[16px] text-[#A2A2A2] leading-relaxed">
+      <p className="text-[16px] text-[#A2A2A2] leading-relaxed font-Nunito">
         {description}
       </p>
     </div>
@@ -67,10 +67,10 @@ export default function Vip_page() {
       </header>
       <section className="w-full py-12 md:py-20 bg-background">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="lg:text-[40px] text-[32px] font-[600] tracking-tight text-foreground mb-4">
+          <h1 className="lg:text-[40px] text-[32px] font-[600] tracking-tight text-foreground mb-4 font-Satoshi">
             Redefining wealth management with Bitcoin.
           </h1>
-          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 max-w-2xl mx-auto">
+          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 max-w-2xl mx-auto font-Nunito">
             Manage your wealth with transparency, autonomy, and global access
             empowering you to stay in control of your Bitcoin through the most
             secure ecosystem.
@@ -94,10 +94,10 @@ export default function Vip_page() {
       <section className="w-full mt-12 md:mt-28 bg-background">
         <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4">
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-Satoshi">
               Bitcoin is generational wealth
             </h2>
-            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2]">
+            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-Nunito">
               Stealth VIP is your Friedman advantage simplifying your wealth
               management with Bitcoin.
             </p>
@@ -117,10 +117,10 @@ export default function Vip_page() {
       <section className="w-full mt-12 md:mt-28 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4">
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-Satoshi">
               Why Stealth VIP?
             </h2>
-            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2]">
+            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-Nunito">
               Secure your future with a modern approach to digital wealth.
             </p>
           </div>
@@ -134,11 +134,11 @@ export default function Vip_page() {
       </section>
       <section className="w-full py-16 md:py-24 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="lg:text-[40px] text-[32px] text-foreground mb-6">
+          <h2 className="lg:text-[40px] text-[32px] text-foreground mb-6 font-Satoshi">
             Your Bitcoin is digital gold, we provide institutional-grade
             management.
           </h2>
-          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8">
+          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 font-Nunito">
             Stealth VIP is your full-service bitcoin wealth platform with
             dedicated experts. We build strong and trusted client relationships
             to deliver generational Bitcoin wealth management.
@@ -148,12 +148,12 @@ export default function Vip_page() {
           </button>
         </div>
       </section>
-      <footer className="bg-[#1A1A1A] mt-12">
+      <footer className="bg-[#1A1A1A] mt-12 font-Nunito">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex flex-col items-center text-center mb-12">
             <Image src="/StealthVIP.svg" width={200} height={200} alt="logo" />
             {/* <div className="text-3xl font-bold text-foreground mb-4">LOGO</div> */}
-            <p className="text-sm text-[#A2A2A2] max-w-2xl mb-8">
+            <p className="text-sm text-[#A2A2A2] max-w-2xl mb-8 font-Nunito">
               Your all-in-one Bitcoin wealth partner.
             </p>
 
