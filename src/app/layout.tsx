@@ -1,12 +1,12 @@
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/client/general/navbar";
 import Subroutes from "./components/client/general/subroutes";
 import LocalFont from "next/font/local";
 import { twak_WIDGET_id, twak_property_id } from "@/config";
 import Twak from "./components/client/general/twak";
 import TanstackProvider from "./components/client/general/tanstack";
+import Navrender from "./components/client/general/navrender";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -78,7 +78,7 @@ export default function RootLayout({
         className={`${inter.className} ${satoshi.variable} ${satoshiItalic.variable} relative scrollbar bg-black-700 overflow-x-hidden`}
       >
         <TanstackProvider>
-          <Navbar />
+          <Navrender />
           <Subroutes />
           {children}
           <div className="absolute bottom-8 right-8">
