@@ -2,6 +2,7 @@ import Image from "next/image";
 import AccordionDemo from "../components/client/landing_page/AccordionRFC/accordion";
 import data from "@/app/components/dummy-data/vip_data.json";
 import Link from "next/link";
+import LazyImage from "../components/client/general/image";
 
 interface FeatureCardProps {
   icon: string;
@@ -83,12 +84,13 @@ export default function Vip_page() {
       </section>
       <section className="w-full bg-background">
         <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-          <Image
+          <LazyImage
+            blurSrc="/chess.webp"
             src="/chess.svg"
-            alt="Strategic chess pieces"
-            className="w-full h-auto rounded-lg shadow-lg"
+            alt="Bitcoin vault security illustration"
             width={100}
             height={100}
+            className="rounded-lg shadow-2xl"
           />
         </div>
       </section>
@@ -105,12 +107,13 @@ export default function Vip_page() {
           </div>
 
           <div className="flex justify-center w-full">
-            <Image
+            <LazyImage
+              blurSrc="/b_vault.webp"
               src="/b_vault.svg"
-              alt="Bitcoin vault with security features"
-              className="w-full h-auto rounded-lg shadow-2xl"
+              alt="Bitcoin vault security illustration"
               width={100}
               height={100}
+              className="rounded-lg shadow-2xl"
             />
           </div>
         </div>
