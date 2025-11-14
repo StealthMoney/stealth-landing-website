@@ -67,6 +67,42 @@ const satoshi = LocalFont({
   variable: "--satoshi",
 });
 
+// const geist = LocalFont({
+//   src: [
+//     {
+//       path: "../../public/fonts/geist/Geist-Light.ttf",
+//       weight: "200",
+//     },
+//     {
+//       path: "../../public/fonts/geist/Geist-Regular.ttf",
+//       weight: "400",
+//     },
+//     {
+//       path: "../../public/fonts/geist/Geist-SemiBold.ttf",
+//       weight: "500",
+//     },
+//     {
+//       path: "../../public/fonts/geist/Geist-Bold.ttf",
+//       weight: "700",
+//     },
+//     {
+//       path: "../../public/fonts/geist/Geist-ExtraBold.ttf",
+//       weight: "900",
+//     },
+//   ],
+//   variable: "--geist",
+// });
+
+// const switzer = LocalFont({
+//   src: [
+//     { path: "../../public/fonts/switzer/Switzer-Variable.ttf", weight: "200" },
+//     { path: "../../public/fonts/switzer/Switzer-Variable.ttf", weight: "400" },
+//     { path: "../../public/fonts/switzer/Switzer-Variable.ttf", weight: "500" },
+//     { path: "../../public/fonts/switzer/Switzer-Variable.ttf", weight: "700" },
+//   ],
+//   variable: "--switzer",
+// });
+
 export default function RootLayout({
   children,
 }: {

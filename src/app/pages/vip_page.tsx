@@ -1,4 +1,7 @@
 import Image from "next/image";
+import AccordionDemo from "../components/client/landing_page/AccordionRFC/accordion";
+import data from "@/app/components/dummy-data/vip_data.json";
+import Link from "next/link";
 
 interface FeatureCardProps {
   icon: string;
@@ -12,10 +15,8 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
       <div className="bg-[#EFB74B] mb-12 w-10 h-10 p-2 bg-accent rounded-md flex items-center justify-center text-lg">
         <Image src={icon} width={100} height={100} alt="item" />
       </div>
-      <h3 className="text-[20px] text-[#ffffff] mb-3 font-Satoshi">
-        {title}
-      </h3>
-      <p className="text-[16px] text-[#A2A2A2] leading-relaxed font-Nunito">
+      <h3 className="text-[20px] text-[#ffffff] mb-3 font-Switzer">{title}</h3>
+      <p className="text-[16px] text-[#A2A2A2] leading-relaxed font-Geist">
         {description}
       </p>
     </div>
@@ -46,36 +47,36 @@ export default function Vip_page() {
       icon: "/Vector3.svg",
       title: "Luxury Experiences",
       description:
-        "Live a life of refined benefits. From exclusive travel benefits to concierge services and direct access to premium lifestyle experiences with Stealth Wealth.",
+        "Live the future of finance beautifully. From bespoke travel and premium services to exclusive Bitcoin experiences, we connect your wealth to a world of luxury, freedom, and global access.",
     },
   ];
 
   return (
-    <section className="text-white font-[500]">
+    <section className="text-white font-[500] font-Geist">
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Image src="/StealthVIP.svg" width={120} height={100} alt="logo" />
           <nav>
-            <a
+            <Link
               href="#"
-              className="text-sm text-foreground hover:text-accent transition-colors"
+              className="text-sm text-foreground hover:text-accent transition-colors font-Switzer"
             >
-              Schedule a call
-            </a>
+              Schedule Link call
+            </Link>
           </nav>
         </div>
       </header>
       <section className="w-full py-12 md:py-20 bg-background">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="lg:text-[40px] text-[32px] font-[600] tracking-tight text-foreground mb-4 font-Satoshi">
+          <h1 className="lg:text-[40px] text-[32px] font-[600] tracking-tight text-foreground mb-4 font-Switzer">
             Redefining wealth management with Bitcoin.
           </h1>
-          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 max-w-2xl mx-auto font-Nunito">
-            Manage your wealth with transparency, autonomy, and global access
-            empowering you to stay in control of your Bitcoin through the most
-            secure ecosystem.
+          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 max-w-2xl mx-auto font-Geist">
+            Your all-in-one wealth partner. We are the comprehensive platform
+            built for your Bitcoin wealth. Get more than just technology,
+            receive personalized service and specialized expertise.
           </p>
-          <button className="bg-[#EFB74B] hover:bg-[#EFB74B]/90 text-accent-foreground px-2 py-4 md:w-auto w-full rounded-md font-semibold">
+          <button className="!bg-[#EFB74B] !hover:bg-[#EFB74B]/90 text-accent-foreground !px-2 !py-4 md:w-auto w-full !rounded-md font-semibold !cursor-pointer">
             Talk to us
           </button>
         </div>
@@ -94,11 +95,11 @@ export default function Vip_page() {
       <section className="w-full mt-12 md:mt-28 bg-background">
         <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-Satoshi">
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-Switzer">
               Bitcoin is generational wealth
             </h2>
-            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-Nunito">
-              Stealth VIP is your Friedman advantage simplifying your wealth
+            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-Geist">
+              Stealth VIP is your financial concierge simplifying your wealth
               management with Bitcoin.
             </p>
           </div>
@@ -117,10 +118,10 @@ export default function Vip_page() {
       <section className="w-full mt-12 md:mt-28 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-Satoshi">
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-Switzer">
               Why Stealth VIP?
             </h2>
-            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-Nunito">
+            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-Geist">
               Secure your future with a modern approach to digital wealth.
             </p>
           </div>
@@ -132,68 +133,94 @@ export default function Vip_page() {
           </div>
         </div>
       </section>
+
+      <section className="w-full py-16 md:py-24 bg-background">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full text-center">
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-2 font-Switzer">
+              Got questions?
+            </h2>
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-2 font-Switzer">
+              We&apos;ve got Answers
+            </h2>
+          </div>
+          <AccordionDemo data={data} />
+        </div>
+      </section>
+
       <section className="w-full py-16 md:py-24 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="lg:text-[40px] text-[32px] text-foreground mb-6 font-Satoshi">
+          <h2 className="lg:text-[40px] text-[32px] text-foreground mb-6 font-Switzer">
             Your Bitcoin is digital gold, we provide institutional-grade
             management.
           </h2>
-          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 font-Nunito">
+          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 font-Geist">
             Stealth VIP is your full-service bitcoin wealth platform with
             dedicated experts. We build strong and trusted client relationships
             to deliver generational Bitcoin wealth management.
           </p>
-          <button className="bg-[#EFB74B] hover:bg-[#EFB74B]/90 text-accent-foreground px-2 py-4 md:w-auto w-full rounded-md font-semibold">
+          <button className="!bg-[#EFB74B] !hover:bg-[#EFB74B]/90 text-accent-foreground !px-2 !py-4 md:w-auto w-full !rounded-md font-semibold !cursor-pointer">
             Talk to us
           </button>
         </div>
       </section>
-      <footer className="bg-[#1A1A1A] mt-12 font-Nunito">
+      <footer className="bg-[#1A1A1A] mt-12 font-Geist">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex flex-col items-center text-center mb-12">
             <Image src="/StealthVIP.svg" width={200} height={200} alt="logo" />
             {/* <div className="text-3xl font-bold text-foreground mb-4">LOGO</div> */}
-            <p className="text-sm text-[#A2A2A2] max-w-2xl mb-8 font-Nunito">
+            <p className="text-sm text-[#A2A2A2] max-w-2xl mb-8 font-Geist">
               Your all-in-one Bitcoin wealth partner.
             </p>
 
             {/* Social icons - circular backgrounds */}
             <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-accent transition-colors"
+              <Link
+                href="https://www.x.com/stealthmoney_"
+                target="_blank"
+                className="w-12 h-12 border bg-[#1A1A1A] border-white text-[#EFB74B] hover:text-[#EFB74B]/90 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-accent transition-colors"
               >
                 𝕏
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-accent transition-colors"
+              </Link>
+
+              <Link
+                href="https://www.linkedin.com/company/stealthmoney"
+                target="_blank"
+                className="w-12 h-12 border bg-[#1A1A1A] border-white text-[#EFB74B] hover:text-[#EFB74B]/90 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-accent transition-colors"
               >
                 in
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-accent transition-colors"
-              >
-                in
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className="border-t border-border my-8"></div>
 
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-            <p>2025 © Stealth VIP by Stealth Money</p>
+            <p>
+              {new Date().getFullYear()} &copy; Stealth VIP by Stealth Money
+            </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-foreground transition-colors">
+              <Link
+                href="https://www.stealth.money/terms-of-service"
+                target="_blank"
+                className="hover:text-foreground transition-colors"
+              >
                 Terms of Service
-              </a>
-              <a href="#" className="hover:text-foreground transition-colors">
+              </Link>
+              <Link
+                href="https://www.stealth.money/privacy-policy"
+                target="_blank"
+                className="hover:text-foreground transition-colors"
+              >
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-foreground transition-colors">
-                AML Service
-              </a>
+              </Link>
+              <Link
+                href="https://www.stealth.money/aml-policy"
+                target="_blank"
+                className="hover:text-foreground transition-colors"
+              >
+                AML Policy
+              </Link>
             </div>
           </div>
         </div>
