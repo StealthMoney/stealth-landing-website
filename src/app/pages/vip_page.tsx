@@ -59,10 +59,11 @@ export default function Vip_page() {
           <Image src="/StealthVIP.svg" width={120} height={100} alt="logo" />
           <nav>
             <Link
-              href="#"
-              className="text-sm text-foreground hover:text-accent transition-colors font-Switzer"
+              href="https://education.stealth.money/"
+              target="_blank"
+              className="text-sm text-foreground hover:text-accent transition-colors font-Switzer hover:text-[#EFB74B]"
             >
-              Schedule Link call
+              Bitcoin Education
             </Link>
           </nav>
         </div>
@@ -77,9 +78,6 @@ export default function Vip_page() {
             built for your Bitcoin wealth. Get more than just technology,
             receive personalized service and specialized expertise.
           </p>
-          <button className="!bg-[#EFB74B] !hover:bg-[#EFB74B]/90 text-accent-foreground !px-2 !py-4 md:w-auto w-full !rounded-md font-semibold !cursor-pointer">
-            Talk to us
-          </button>
         </div>
       </section>
       <section className="w-full bg-background">
@@ -162,9 +160,6 @@ export default function Vip_page() {
             dedicated experts. We build strong and trusted client relationships
             to deliver generational Bitcoin wealth management.
           </p>
-          <button className="!bg-[#EFB74B] !hover:bg-[#EFB74B]/90 text-accent-foreground !px-2 !py-4 md:w-auto w-full !rounded-md font-semibold !cursor-pointer">
-            Talk to us
-          </button>
         </div>
       </section>
       <footer className="bg-[#1A1A1A] mt-12 font-Geist">

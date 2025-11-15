@@ -140,17 +140,17 @@ const Footer = () => {
           </div>
           <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4">
             <div className="w-full gap-x-4 flex flex-col gap-y-4">
-              <h1 className="font-bold">OUR PRODUCTS</h1>
+              <h1 className="font-bold">PRODUCTS</h1>
               <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
+                <Link href="/vip" target="_blank" className="text-sm">
+                  Stealth VIP
+                </Link>
                 <Link
                   href="https://stealthtreasury.com"
                   target="_blank"
                   className="text-sm"
                 >
                   Stealth Treasury
-                </Link>
-                <Link href="/vip" target="_blank" className="text-sm">
-                  Stealth VIP
                 </Link>
               </div>
             </div>
