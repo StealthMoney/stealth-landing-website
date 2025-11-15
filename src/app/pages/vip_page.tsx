@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import AccordionDemo from "../components/client/landing_page/AccordionRFC/accordion";
 import data from "@/app/components/dummy-data/vip_data.json";
 import Link from "next/link";
 import LazyImage from "../components/client/general/image";
+import { useRouter } from "next/navigation";
 
 interface FeatureCardProps {
   icon: string;
@@ -51,6 +53,8 @@ export default function Vip_page() {
         "Live the future of finance beautifully. From bespoke travel and premium services to exclusive Bitcoin experiences, we connect your wealth to a world of luxury, freedom, and global access.",
     },
   ];
+
+  const router = useRouter();
 
   return (
     <section className="text-white font-[500] font-Geist">
@@ -160,6 +164,17 @@ export default function Vip_page() {
             dedicated experts. We build strong and trusted client relationships
             to deliver generational Bitcoin wealth management.
           </p>
+          <button
+            onClick={() =>
+              window.open(
+                "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1WUl2yY4G1v9r-I6UThRjvDbcoDpWSspp22CvU5KrmQruTJ2RdQfSFL2Zy8KPVQevVoJEjd4mp",
+                "_blank"
+              )
+            }
+            className="!bg-[#EFB74B] !hover:bg-[#EFB74B]/90 text-accent-foreground !px-2 !py-4 md:w-auto w-full !rounded-md font-semibold !cursor-pointer"
+          >
+            Talk to us
+          </button>
         </div>
       </section>
       <footer className="bg-[#1A1A1A] mt-12 font-Geist">
