@@ -1,14 +1,16 @@
 "use client";
 import React, { ReactNode, Ref, forwardRef, useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
-import data from "@/app/components/dummy-data/faq_data.json";
+// import data from "@/app/components/dummy-data/faq_data.json";
 import "./style.css";
 import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
+import { usePathname } from "next/navigation";
 
 interface AccordionTriggerProps {
   children: ReactNode;
   className?: string;
   isOpen?: boolean;
+  iconLeft?: boolean;
 }
 
 interface faq {
@@ -18,18 +20,21 @@ interface faq {
 
 const AccordionTrigger = forwardRef(
   (
-    { children, className, isOpen, ...props }: AccordionTriggerProps,
+    { children, className, isOpen, iconLeft, ...props }: AccordionTriggerProps,
     forwardedRef: Ref<HTMLButtonElement>
   ) => (
     <Accordion.Header className="AccordionHeader">
       <Accordion.Trigger
-        className="!flex !justify-between !items-center !w-full !cursor-pointer !py-6 !px-8"
+        className={`
+          !flex !w-full !items-center !py-6 !px-8 !cursor-pointer 
+          ${iconLeft ? "!flex-row-reverse !justify-end" : "!justify-between"}
+        `}
         {...props}
         ref={forwardedRef}
       >
         {children}
         <div
-          className={`relative w-8 h-8 transform transition-transform duration-500 ease-in-out ${
+          className={`relative w-8 h-8 transform transition-transform duration-500 ease-in-out mr-8 ${
             isOpen ? "rotate-180" : "rotate-0"
           }`}
         >
@@ -69,8 +74,17 @@ const AccordionContent = forwardRef(
 
 AccordionContent.displayName = "AccordionContent";
 
-const AccordionDemo = ({ defaultIndex = 0 }) => {
+const AccordionDemo = ({
+  data,
+  defaultIndex = 0,
+}: {
+  data: { Header: string; body: string }[];
+  defaultIndex?: number;
+}) => {
   const [openItem, setOpenItem] = useState(`item-${defaultIndex}`);
+
+  const pathname = usePathname();
+  const iconLeft = pathname.startsWith("/vip");
 
   return (
     <Accordion.Root
@@ -86,7 +100,10 @@ const AccordionDemo = ({ defaultIndex = 0 }) => {
           value={`item-${i + 1}`}
           key={i}
         >
-          <AccordionTrigger isOpen={openItem === `item-${i + 1}`}>
+          <AccordionTrigger
+            isOpen={openItem === `item-${i + 1}`}
+            iconLeft={iconLeft}
+          >
             <div className="max-w-[200px] lg:max-w-fit md:text-lg text-sm">
               {item.Header}
             </div>

@@ -21,6 +21,8 @@
   --font-Nunito: Nunito, sans-serif;
   --font-Satoshi: "Satoshi", sans-serif;
   --font-Satoshi-italic: "Satoshi", sans-serif;
+  --font-Geist: "Geist", sans-serif;
+  --font-Switzer: "Switzer", sans-serif;
 }
 
 /*
@@ -100,10 +102,41 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/satoshi_variable/Satoshi-VariableItalic.ttf")
-    format("ttf");
+  src: url("/fonts/satoshi_variable/Satoshi-VariableItalic.ttf") format("ttf");
   font-weight: 100 900;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-SemiBold.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Bold.ttf") format("ttf");
+  font-weight: 700 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("/fonts/switzer/Switzer-VariableItalic.ttf") format("ttf");
+  font-weight: 100 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Switzer";
+  src: url("/fonts/switzer/Switzer-Variable.ttf") format("ttf");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
 @media (prefers-color-scheme: dark) {
