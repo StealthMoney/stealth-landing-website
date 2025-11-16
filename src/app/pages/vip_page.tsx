@@ -171,7 +171,7 @@ export default function Vip_page() {
                 "_blank"
               )
             }
-            className="!bg-[#EFB74B] !hover:bg-[#EFB74B]/90 text-accent-foreground !px-2 !py-4 md:w-auto w-full !rounded-md font-semibold !cursor-pointer"
+            className="!bg-[#EFB74B] !hover:bg-[#EFB74B]/90 text-accent-foreground !px-2 !py-4 md:w-auto! !w-[95%] !rounded-md font-semibold !cursor-pointer"
           >
             Talk to us
           </button>
