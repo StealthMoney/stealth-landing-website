@@ -146,7 +146,7 @@ export default function Vip_page() {
               Got questions?
             </h2>
             <h2 className="lg:text-[40px] text-[32px] text-foreground mb-2 font-Switzer">
-              We&apos;ve got Answers
+              We&apos;ve Got Answers
             </h2>
           </div>
           <AccordionDemo data={data} />
