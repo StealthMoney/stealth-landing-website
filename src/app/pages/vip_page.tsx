@@ -74,10 +74,10 @@ export default function Vip_page() {
       </header>
       <section className="w-full py-12 md:py-20 bg-background">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="lg:text-[40px] text-[32px] font-[600] tracking-tight text-foreground mb-4 font-Switzer">
+          <h1 className="lg:text-[40px] text-[32px] font-[700] tracking-tight text-foreground mb-4 font-borna">
             Redefining wealth management with Bitcoin.
           </h1>
-          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 max-w-2xl mx-auto font-Geist">
+          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 max-w-2xl mx-auto font-borna">
             Your all-in-one wealth partner. We are the comprehensive platform
             built for your Bitcoin wealth. Get more than just technology,
             receive personalized service and specialized expertise.
@@ -99,10 +99,10 @@ export default function Vip_page() {
       <section className="w-full mt-12 md:mt-28 bg-background">
         <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-Switzer">
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-borna">
               Bitcoin is generational wealth
             </h2>
-            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-Geist">
+            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-borna">
               Stealth VIP is your financial concierge simplifying your wealth
               management with Bitcoin.
             </p>
@@ -123,10 +123,10 @@ export default function Vip_page() {
       <section className="w-full mt-12 md:mt-28 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-Switzer">
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-4 font-borna">
               Why Stealth VIP?
             </h2>
-            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-Geist">
+            <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] font-borna">
               Secure your future with a modern approach to digital wealth.
             </p>
           </div>
@@ -142,11 +142,11 @@ export default function Vip_page() {
       <section className="w-full py-16 md:py-24 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full text-center">
-            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-2 font-Switzer">
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-2 font-borna">
               Got questions?
             </h2>
-            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-2 font-Switzer">
-              We&apos;ve Got Answers
+            <h2 className="lg:text-[40px] text-[32px] text-foreground mb-2 font-borna">
+              We&apos;ve got answers
             </h2>
           </div>
           <AccordionDemo data={data} />
@@ -155,11 +155,11 @@ export default function Vip_page() {
 
       <section className="w-full py-16 md:py-24 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="lg:text-[40px] text-[32px] text-foreground mb-6 font-Switzer">
+          <h2 className="lg:text-[40px] text-[32px] text-foreground mb-6 font-borna">
             Your Bitcoin is digital gold, we provide institutional-grade
             management.
           </h2>
-          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 font-Geist">
+          <p className="lg:text-[16px] text-[14px] text-[#A2A2A2] mb-8 font-borna">
             Stealth VIP is your full-service bitcoin wealth platform with
             dedicated experts. We build strong and trusted client relationships
             to deliver generational Bitcoin wealth management.
@@ -182,7 +182,7 @@ export default function Vip_page() {
           <div className="flex flex-col items-center text-center mb-12">
             <Image src="/StealthVIP.svg" width={200} height={200} alt="logo" />
             {/* <div className="text-3xl font-bold text-foreground mb-4">LOGO</div> */}
-            <p className="text-sm text-[#A2A2A2] max-w-2xl mb-8 font-Geist">
+            <p className="text-sm text-[#A2A2A2] max-w-2xl mb-8 font-borna">
               Your all-in-one Bitcoin wealth partner.
             </p>
 

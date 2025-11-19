@@ -23,6 +23,7 @@
   --font-Satoshi-italic: "Satoshi", sans-serif;
   --font-Geist: "Geist", sans-serif;
   --font-Switzer: "Switzer", sans-serif;
+  --font-borna: "Borna", sans-serif;
 }
 
 /*
@@ -136,6 +137,20 @@
   font-family: "Switzer";
   src: url("/fonts/switzer/Switzer-Variable.ttf") format("ttf");
   font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Borna";
+  src: url("/fonts/borna/borna-medium.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Borna";
+  src: url("/fonts/borna/borna-medium.otf") format("opentype");
+  font-weight: 700;
   font-style: normal;
 }
 
