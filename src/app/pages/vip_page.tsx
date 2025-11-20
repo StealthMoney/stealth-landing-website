@@ -5,6 +5,7 @@ import data from "@/app/components/dummy-data/vip_data.json";
 import Link from "next/link";
 import LazyImage from "../components/client/general/image";
 import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 interface FeatureCardProps {
   icon: string;
@@ -54,7 +55,26 @@ export default function Vip_page() {
     },
   ];
 
-  const router = useRouter();
+  const [height, setHeight] = useState("auto");
+
+  useEffect(() => {
+    const updateHeight = () => {
+      const width = window.innerWidth;
+
+      if (width >= 1024) {
+        setHeight("400px");
+      } else if (width >= 768) {
+        setHeight("400px");
+      } else {
+        setHeight("auto");
+      }
+    };
+    updateHeight();
+
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   return (
     <section className="text-white font-[500] font-Geist">
@@ -92,6 +112,7 @@ export default function Vip_page() {
             alt="Bitcoin vault security illustration"
             width={100}
             height={100}
+            h2="auto"
             className="rounded-lg shadow-2xl"
           />
         </div>
@@ -115,6 +136,7 @@ export default function Vip_page() {
               alt="Bitcoin vault security illustration"
               width={100}
               height={100}
+              h2="auto"
               className="rounded-lg shadow-2xl"
             />
           </div>
@@ -161,6 +183,7 @@ export default function Vip_page() {
             alt="Bitcoin gold"
             width={100}
             height={100}
+            h2={height}
             className="rounded-lg shadow-2xl"
           />
         </div>
