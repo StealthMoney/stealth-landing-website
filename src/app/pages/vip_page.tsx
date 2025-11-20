@@ -139,7 +139,7 @@ export default function Vip_page() {
         </div>
       </section>
 
-      <section className="w-full py-16 md:py-24 bg-background">
+      <section className="w-full py-16 md:pt-24 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full text-center">
             <h2 className="lg:text-[40px] text-[32px] text-foreground mb-2 font-borna">
@@ -153,7 +153,20 @@ export default function Vip_page() {
         </div>
       </section>
 
-      <section className="w-full py-16 md:py-24 bg-background">
+      <section className="w-full bg-background py-8 md:py-12">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <LazyImage
+            blurSrc="/Bitcoin-1.svg"
+            src="/Bitcoin-1.svg"
+            alt="Bitcoin gold"
+            width={100}
+            height={100}
+            className="rounded-lg shadow-2xl"
+          />
+        </div>
+      </section>
+
+      <section className="w-full py-8 md:py-12 bg-background">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="lg:text-[40px] text-[32px] text-foreground mb-6 font-borna">
             Your Bitcoin is digital gold, we provide institutional-grade
