@@ -9,6 +9,7 @@ interface SmoothImageProps {
   className?: string;
   width: number;
   height: number;
+  h2: string;
 }
 
 export default function LazyImage({
@@ -18,6 +19,7 @@ export default function LazyImage({
   className = "",
   width,
   height,
+  h2,
 }: SmoothImageProps) {
   const [loaded, setLoaded] = useState(false);
 
@@ -32,11 +34,12 @@ export default function LazyImage({
         width={width}
         height={height}
         className={`
-          w-full h-auto rounded-lg 
+          w-full rounded-lg 
           transition-opacity duration-700 ease-out
           ${loaded ? "opacity-0" : "opacity-100"}
           blur-md scale-[1.02]
         `}
+        style={{ height: h2 }}
       />
 
       {/* Final High-Quality Image */}
@@ -47,7 +50,7 @@ export default function LazyImage({
         height={height}
         onLoad={() => setLoaded(true)}
         className={`
-          absolute inset-0 w-full h-auto rounded-lg 
+          absolute inset-0 w-full rounded-lg 
           transition-all duration-[900ms] ease-out
           ${
             loaded
@@ -55,6 +58,7 @@ export default function LazyImage({
               : "opacity-0 blur-sm scale-[1.03]"
           }
         `}
+        style={{ height: h2 }}
       />
     </div>
   );
