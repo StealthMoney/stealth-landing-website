@@ -269,53 +269,87 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
             </p>
 
             <div className="flex gap-x-2">
-              <div
-                className={`${
-                  hasColor(data.product_details[0]) &&
-                  data.product_details[0].color
-                    .toLowerCase()
-                    .includes("emerald")
-                    ? "w-7 h-7 border-2 border-[#494949]"
-                    : "w-6 h-6"
-                } flex justify-center items-center rounded-full`}
-              >
-                <Image
-                  width={100}
-                  height={100}
-                  src={"/emerald.svg"}
-                  alt="color"
-                  className={
+              {data.product_name.toLowerCase().includes("ledger") ? (
+                <>
+                  <div
+                    className={`${
+                      hasColor(data.product_details[0]) &&
+                      data.product_details[0].color
+                        .toLowerCase()
+                        .includes("emerald")
+                        ? "w-7 h-7 border-2 border-[#494949]"
+                        : "w-6 h-6"
+                    } flex justify-center items-center rounded-full`}
+                  >
+                    <Image
+                      width={100}
+                      height={100}
+                      src={"/emerald.svg"}
+                      alt="color"
+                      className={
+                        hasColor(data.product_details[0]) &&
+                        data.product_details[0].color
+                          .toLowerCase()
+                          .includes("emerald")
+                          ? `w-3/4 h-3/4 rounded-full`
+                          : ""
+                      }
+                    />
+                  </div>
+
+                  <div
+                    className={`${
+                      hasColor(data.product_details[0]) &&
+                      data.product_details[0].color
+                        .toLowerCase()
+                        .includes("gold")
+                        ? "w-7 h-7 border-2 border-[#494949]"
+                        : "w-6 h-6"
+                    } flex justify-center items-center rounded-full`}
+                  >
+                    <Image
+                      width={100}
+                      height={100}
+                      src={"/gold.svg"}
+                      alt="color"
+                      className={
+                        hasColor(data.product_details[0]) &&
+                        data.product_details[0].color
+                          .toLowerCase()
+                          .includes("gold")
+                          ? `w-3/4 h-3/4 rounded-full`
+                          : ""
+                      }
+                    />
+                  </div>
+                </>
+              ) : (
+                <div
+                  className={`${
                     hasColor(data.product_details[0]) &&
                     data.product_details[0].color
                       .toLowerCase()
-                      .includes("emerald")
-                      ? `w-3/4 h-3/4 rounded-full`
-                      : ""
-                  }
-                />
-              </div>
-
-              <div
-                className={`${
-                  hasColor(data.product_details[0]) &&
-                  data.product_details[0].color.toLowerCase().includes("gold")
-                    ? "w-7 h-7 border-2 border-[#494949]"
-                    : "w-6 h-6"
-                } flex justify-center items-center rounded-full`}
-              >
-                <Image
-                  width={100}
-                  height={100}
-                  src={"/gold.svg"}
-                  alt="color"
-                  className={
-                    hasColor(data.product_details[0]) &&
-                    data.product_details[0].color.toLowerCase().includes("gold")
-                      ? `w-3/4 h-3/4 rounded-full`
-                      : ""
-                  }
-                />
-              </div>
+                      .includes("black")
+                      ? "w-7 h-7 border-2 border-[#494949]"
+                      : "w-6 h-6"
+                  } flex justify-center items-center rounded-full`}
+                >
+                  <Image
+                    width={100}
+                    height={100}
+                    src={"/black.svg"}
+                    alt="color"
+                    className={
+                      hasColor(data.product_details[0]) &&
+                      data.product_details[0].color
+                        .toLowerCase()
+                        .includes("emerald")
+                        ? `w-3/4 h-3/4 rounded-full`
+                        : ""
+                    }
+                  />
+                </div>
+              )}
             </div>
 
             {data.product_details.map((value, index) => {

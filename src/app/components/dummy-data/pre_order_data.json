@@ -130,7 +130,13 @@
 
     "product_name": "Tangem Wallet-Stealth",
 
-    "product_images": ["/Tangem.svg"],
+    "product_images": [
+      "/Tangem.svg",
+      "/tangem2.svg",
+      "/tangem3.svg",
+      "/tangem4.svg",
+      "/tangem5.svg"
+    ],
 
     "outOfStock": true,
     "quantity": 5,
