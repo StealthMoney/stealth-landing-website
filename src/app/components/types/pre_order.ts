@@ -1,76 +1,41 @@
+export type ProductDetail =
+  | { icon: string; description: string }
+  | { color: string };
+
+export interface SpecsItem {
+  finish: string;
+  connectivity: string;
+  display: string;
+  security: string[];
+  "system requirements": string;
+  "Digital assets supported": string;
+  "size & weights": string;
+  "in the box": string[];
+}
+export interface SpecsItem2 {
+  "chip model": string;
+  "Fabrication process": string;
+  core: string;
+  "Flash Memory": string;
+  ROM: string;
+  RAM: string;
+  Interface: string;
+}
+
 export interface itemType {
   id: number;
   product_name: string;
   product_images: string[];
   outOfStock: boolean;
+  quantity: number;
   description: string;
-  product_details: {
-    icon: string;
-    description: string;
-  }[];
+  message: string;
+  product_details: ProductDetail[];
   price: number;
   specs: {
-    main_text: string;
-    sub_text: string;
-  };
-  glance: {
-    main_text: string;
-    items: {
-      icon: string;
-      header: string;
-      text: string;
-    }[];
-  };
-  security: {
-    main_text: string;
-    items: {
-      icon: string;
-      header: string;
-    }[];
-  };
-  privacy: {
-    main_text: string;
-    items: {
-      icon: string;
-      header: string;
-    }[];
-  };
-  backup: {
-    main_text: string;
-    items: {
-      icon: string;
-      header: string;
-    }[];
-  };
-  authentication: {
-    main_text: string;
-    items: {
-      icon: string;
-      header: string;
-    }[];
-  };
-  product_details2: {
-    main_text: string;
-    items: {
-      icon: string;
-      header: string;
-      text: string;
-    }[];
-  };
-  in_the_box: {
-    main_text: string;
-    items: {
-      icon: string;
-      header: string;
-    }[];
-  };
-  safety: {
-    main_text: string;
-    sub_text: string;
-  };
-  material: {
-    main_text: string;
-    sub_text: string;
+    main: string;
+    items?: SpecsItem[];
+    items2?: SpecsItem2[];
   };
 }
 

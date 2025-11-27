@@ -45,10 +45,10 @@ const HeroSection = () => {
           </Link>
         </button>
         <button
-          onClick={() => router.push("/pre_order")}
+          onClick={() => router.push("/order-wallet")}
           className="bg-black-600! border! text-center! cursor-pointer! border-black-700! font-Satoshi! hover:bg-black-500! text-[14px]! md:text-[16px]! leading-3! text-white-100! font-medium! h-[70px]! px-8! rounded!"
         >
-          <Link href={"/pre_order"}>Order Wallet</Link>
+          <Link href={"/order-wallet"}>Order Wallet</Link>
         </button>
       </div>
       <picture className="flex items-center">

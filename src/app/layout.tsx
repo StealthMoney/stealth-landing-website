@@ -7,6 +7,7 @@ import { twak_WIDGET_id, twak_property_id } from "@/config";
 import Twak from "./components/client/general/twak";
 import TanstackProvider from "./components/client/general/tanstack";
 import Navrender from "./components/client/general/navrender";
+import { OrderCleanup } from "./components/client/general/order-cleanup";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -88,6 +89,7 @@ export default function RootLayout({
             />
           </div>
         </TanstackProvider>
+        <OrderCleanup />
       </body>
     </html>
   );
