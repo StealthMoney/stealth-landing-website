@@ -161,10 +161,10 @@ const Footer = () => {
               <h1 className="font-bold">CONTACT US</h1>
               <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
                 <a
-                  href="mailto:info@stealth.money"
+                  href="mailto:hello@stealth.money"
                   className="text-sm hover:underline text-orange-100"
                 >
-                  info@stealth.money
+                  hello@stealth.money
                 </a>
               </div>
             </div>
