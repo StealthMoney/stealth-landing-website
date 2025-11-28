@@ -13,7 +13,7 @@ export default function Subroutes() {
   }, [url]);
 
   const pathRegex = /\/resources\/(\d+)/i;
-  const includeNumUrl = /\/pre_order\/(\d+)/i;
+  const includeNumUrl = /\/order-wallet\/(\d+)/i;
   const match = url.match(pathRegex);
   let number = match ? parseInt(match[1], 10) : 0;
 
@@ -46,7 +46,7 @@ export default function Subroutes() {
         </nav>
       )}
 
-      {url === "/pre_order" && (
+      {url === "/order-wallet" && (
         <nav className="flex mt-6 md:px-12 px-6 text-black-500 w-screen justify-start -py-4 items-end overflow-x-auto">
           <Link
             href="/"
@@ -55,17 +55,19 @@ export default function Subroutes() {
             Home <span className="mx-2">&gt;</span>
           </Link>
           <Link
-            href={`/pre_order`}
+            href={`/order-wallet`}
             className={`mx-2 text-nowrap hover:text-orange-100 py-4 ${
-              url === "/pre_order" ? "text-orange-100" : "text-white-100"
+              url === "/order-wallet" ? "text-orange-100" : "text-white-100"
             }`}
           >
-            Pre-order wallet
+            order wallet
           </Link>
         </nav>
       )}
 
-      {(url === "/pre_order/1" || url === "/pre_order/2") && (
+      {(url === "/order-wallet/1" ||
+        url === "/order-wallet/2" ||
+        url === "/order-wallet/3") && (
         <nav className="flex mt-6 md:px-12 px-6 text-black-500 w-screen justify-start -py-4 items-end overflow-x-auto">
           <Link
             href="/"
@@ -74,10 +76,10 @@ export default function Subroutes() {
             Home <span className="mx-2">&gt;</span>
           </Link>
           <Link
-            href={`/pre_order`}
+            href={`/order-wallet`}
             className={`mx-2 text-nowrap hover:text-orange-100 py-4`}
           >
-            Pre-order wallet <span className="mx-2">&gt;</span>
+            order wallet <span className="mx-2">&gt;</span>
           </Link>
           <Link
             href={`#`}
@@ -87,16 +89,20 @@ export default function Subroutes() {
             }`}
           >
             {url.match(includeNumUrl) &&
-              (url === "/pre_order/1"
-                ? "Trezor model one"
-                : url === "/pre_order/2"
-                ? "Trezor safe3"
+              (url === "/order-wallet/1"
+                ? "Ledger Nano S Plus (Emerald Green)"
+                : url === "/order-wallet/2"
+                ? "Ledger Nano S Plus (Gold)"
+                : url === "/order-wallet/3"
+                ? "Tangem Wallet - Stealth"
                 : "")}
           </Link>
         </nav>
       )}
 
-      {(url === "/pre_order/1/checkout" || url === "/pre_order/2/checkout") && (
+      {(url === "/order-wallet/1/checkout" ||
+        url === "/order-wallet/2/checkout" ||
+        url === "/order-wallet/3/checkout") && (
         <nav className="flex mt-6 md:px-12 px-6 text-black-500 w-screen justify-start -py-4 items-end overflow-x-auto">
           <Link
             href="/"
@@ -105,10 +111,10 @@ export default function Subroutes() {
             Home <span className="mx-2">&gt;</span>
           </Link>
           <Link
-            href={`/pre_order`}
+            href={`/order-wallet`}
             className={`mx-2 text-nowrap hover:text-orange-100 py-4`}
           >
-            Pre-order wallet <span className="mx-2">&gt;</span>
+            Order wallet <span className="mx-2">&gt;</span>
           </Link>
           <Link
             href={`#`}
@@ -116,19 +122,23 @@ export default function Subroutes() {
             className={`mx-2 text-nowrap hover:text-orange-100 py-4`}
           >
             {url.match(includeNumUrl) &&
-              (url === "/pre_order/1/checkout"
-                ? "Trezor model one"
-                : url === "/pre_order/2/checkout"
-                ? "Trezor safe3"
+              (url === "/order-wallet/1/checkout"
+                ? "Ledger Nano S Plus (Emerald Green)"
+                : url === "/order-wallet/2/checkout"
+                ? "Ledger Nano S Plus (Gold)"
+                : url === "/order-wallet/3/checkout"
+                ? "Tangem Wallet - Stealth"
                 : "")}
-                <span className="mx-2">&gt;</span>
+            <span className="mx-2">&gt;</span>
           </Link>
           <Link
-            href="#" onClick={() => router.refresh()}
+            href="#"
+            onClick={() => router.refresh()}
             className={`mx-2 text-nowrap hover:text-orange-100 py-4 ${
               url.match(includeNumUrl) &&
-              (url === "/pre_order/1/checkout" ||
-                url === "/pre_order/2/checkout")
+              (url === "/order-wallet/1/checkout" ||
+                url === "/order-wallet/2/checkout" ||
+                "/order-wallet/3/checkout")
                 ? "text-orange-100"
                 : "text-white-100"
             }`}

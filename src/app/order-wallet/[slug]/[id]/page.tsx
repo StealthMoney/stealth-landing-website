@@ -2,13 +2,14 @@
 import Image from "next/image";
 import { usePurchase } from "@/app/components/context/pre_order";
 import DialogBox from "@/app/components/shared/dialog";
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
 import { formValueTypes } from "@/app/components/types/pre_order";
 import axiosInstance from "../../../../../lib/axiosInstance";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-export default function Page() {
+export default function Page(props: { params: Promise<{ slug: string }> }) {
+  const params = use(props.params);
   const { purchaseItems = [], setPurchaseItems } = usePurchase();
   const [paymentsuccess, setpaymentSuccess] = useState<boolean>(false);
   const [itemValues, setItemvalues] = useState<{
@@ -23,10 +24,36 @@ export default function Page() {
 
   const router = useRouter();
 
-  // go back if purchaseItems can't be found
-  if (purchaseItems.length === 0 || !purchaseItems) {
-    router.back();
-  }
+  useEffect(() => {
+    const key = `orderitem-${params.slug}`;
+    const saved = localStorage.getItem(key);
+
+    if (!saved) {
+      router.push(`/order-wallet/${params.slug}`);
+      return;
+    }
+
+    const parsed = JSON.parse(saved);
+
+    // Restore UI values
+    setItemvalues(parsed);
+
+    // Restore purchaseItems if missing
+    if (purchaseItems.length === 0) {
+      const restored = [
+        {
+          id: parsed.id,
+          product_name: parsed.product_name,
+          amount: parsed.amount,
+          price: parsed.price,
+          complete: false,
+          image: parsed.image,
+        },
+      ];
+      setPurchaseItems(restored);
+    }
+  }, [params.slug, purchaseItems.length, setPurchaseItems, router]);
+
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [formValues, setFormValues] = useState<formValueTypes>({
@@ -127,6 +154,7 @@ export default function Page() {
 
   const closeModal = () => {
     setOpenModal(!openModal);
+    if (paymentsuccess && !error && !isPending && !isError) router.push(`/`);
   };
 
   const getStatusImage = () => {

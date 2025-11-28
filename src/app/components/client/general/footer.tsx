@@ -108,7 +108,7 @@ const Footer = () => {
               >
                 Bitcoin Education
               </Link>
-              <Link href="/pre_order" className="text-sm">
+              <Link href="/order-wallet" className="text-sm">
                 Buy your wallets
               </Link>
             </div>
@@ -155,29 +155,18 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4 md:mt-0 mt-4">
-            <div className="w-full flex flex-col md:gap-y-2 gap-y-4 text-white-300">
-              <h1 className="text-white-100 font-bold">GET STARTED</h1>
-              <fieldset className="flex flex-col gap-y-2">
-                <label htmlFor="mail" className="text-sm">
-                  Email
-                </label>
-                <input
-                  readOnly={true}
-                  title="mail"
-                  type="email"
-                  id="mail"
-                  className="py-3 border border-black-500 bg-[#111111] rounded-md lg:w-3/4 focus:border focus:border-[#F7931A] focus:outline-hidden"
-                />
-              </fieldset>
 
-              <button
-                disabled={true}
-                title="Signup"
-                className="!bg-[#F7931A] !py-4 !px-2 !rounded-md !text-white-100 lg:w-1/4! flex! !justify-center !items-center !font-semibold !font-Montserrat"
-              >
-                Sign Up
-              </button>
+          <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4">
+            <div className="w-full gap-x-4 flex flex-col gap-y-4">
+              <h1 className="font-bold">CONTACT US</h1>
+              <div className="flex flex-col md:gap-y-4 gap-y-6 text-white-300">
+                <a
+                  href="mailto:hello@stealth.money"
+                  className="text-sm hover:underline text-orange-100"
+                >
+                  hello@stealth.money
+                </a>
+              </div>
             </div>
           </div>
         </div>
