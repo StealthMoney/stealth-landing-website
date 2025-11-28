@@ -20,7 +20,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
     (item) => item.slug === params.slug
   );
 
-  const { data, isPending, isError } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["wallet", params.slug],
     queryFn: getWalletDetails,
     select: (values) => {
@@ -153,6 +153,15 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
     }
   }, [data, item?.product_images, params.slug]);
 
+  if (isLoading)
+    return (
+      <section className="min-h-screen w-full flex items-center justify-center">
+        <h1 className="text-2xl font-bold text-center text-white-100">
+          Loading...
+        </h1>
+      </section>
+    );
+
   if (!data) {
     return (
       <div className="text-white-100 text-center flex justify-center items-center w-screen h-screen text-4xl">
@@ -165,7 +174,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
     return "color" in detail;
   };
 
-  return isPending || !details ? (
+  return !details ? (
     <section className="min-h-screen w-full flex items-center justify-center">
       <h1 className="text-2xl font-bold text-center text-white-100">
         Loading...
