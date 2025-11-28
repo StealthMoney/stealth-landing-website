@@ -15,12 +15,13 @@ import VideoPlayer from "@/app/components/client/general/video-player";
 
 export default function Page(props: { params: Promise<{ slug: string }> }) {
   const params = use(props.params);
+
   const item: itemType | undefined = data1.find(
-    (item) => item.id.toString() === params.slug
+    (item) => item.slug === params.slug
   );
 
   const { data, isPending, isError } = useQuery({
-    queryKey: ["wallet"],
+    queryKey: ["wallet", params.slug],
     queryFn: getWalletDetails,
     select: (values) => {
       if (!item) return null;
@@ -32,6 +33,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
       return {
         ...item,
         id: walletData.id,
+        slug: item.slug,
         product_name: walletData.walletName,
         price: walletData.price,
         outOfStock: walletData.outOfStock,
@@ -104,12 +106,12 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
     });
   };
 
-  const saveValues = (value: number) => {
+  const saveValues = (slug: string) => {
     if (!details) return;
 
     addToCart(details);
 
-    router.push(`/order-wallet/${value}/checkout`);
+    router.push(`/order-wallet/${slug}/checkout`);
   };
   // End of update product details in state
 
@@ -121,14 +123,14 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
   useEffect(() => {
     if (!data || !details) return;
 
-    const key = `orderitem-${data.id}`;
+    const key = `orderitem-${params.slug}`;
     localStorage.setItem(key, JSON.stringify(details));
-  }, [details, data]);
+  }, [details, data, params.slug]);
 
   useEffect(() => {
     if (!data) return;
 
-    const key = `orderitem-${data.id}`;
+    const key = `orderitem-${params.slug}`;
     const saved = localStorage.getItem(key);
 
     if (saved) {
@@ -142,13 +144,14 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
       setDetails({
         id: data.id,
         amount: 1,
+        slug: data.slug,
         product_name: data.product_name,
         price: data.price,
         complete: false,
         image: item?.product_images?.[0] || "",
       });
     }
-  }, [data, item?.product_images]);
+  }, [data, item?.product_images, params.slug]);
 
   if (!data) {
     return (
@@ -398,7 +401,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
 
             <div className="my-2 px-4">
               <button
-                onClick={() => saveValues(details.id)}
+                onClick={() => saveValues(details.slug)}
                 className={`!w-full !inline-block !p-4 !text-center !text-[20px] !text-white-100 !font-bold !rounded-md ${
                   data.outOfStock
                     ? "!bg-gray-500 !cursor-not-allowed"

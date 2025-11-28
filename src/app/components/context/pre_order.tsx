@@ -45,6 +45,7 @@ export const PurchaseProvider: React.FC<PurchaseProviderProps> = ({
         ...updatedItems[existingItemIndex],
         amount: updatedItems[existingItemIndex].amount + item.amount,
         price: updatedItems[existingItemIndex].price + item.price,
+        slug: updatedItems[existingItemIndex].slug
       };
       setPurchaseItems(updatedItems);
     } else {

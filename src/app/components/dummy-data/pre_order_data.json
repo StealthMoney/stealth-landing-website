@@ -2,6 +2,7 @@
   {
     "id": 1,
 
+    "slug": "ledger-emerald",
     "product_name": "Ledger Nano S Plus (Emerald Green)",
 
     "product_images": [
@@ -64,6 +65,7 @@
   {
     "id": 2,
 
+    "slug": "ledger-gold",
     "product_name": "Ledger Nano S Plus (Gold)",
 
     "product_images": [
@@ -128,6 +130,7 @@
   {
     "id": 3,
 
+    "slug": "tangem-black",
     "product_name": "Tangem Wallet-Stealth",
 
     "product_images": [
@@ -141,7 +144,7 @@
     "outOfStock": true,
     "quantity": 5,
 
-    "description": "Unlock a world of crypto possibilities with Ledger’s classic backup signer. Powered by the Secure Element chip and Ledger OS™, it keeps your private keys safely offline, far from hackers’ reach.",
+    "description": "The easiest self custody solution. Tangem Wallet generates the private key that never leaves the card. 5 minutes setup with no wires or USB: No computer, no batteries, only your phone is required. 2 extra backup cards with 25 years warranty.",
     "message": "Keep your private keys securely offline and far from hackers’ reach with Ledger’s classic self-custody solution, powered by the Secure Element chip and Ledger OS™. Pair this signer with the Ledger Wallet™ (formerly Ledger Live™) app to manage your crypto transactions at home or at the office. Product colour may vary slightly from pictures due to manufacturing process.",
 
     "product_details": [
