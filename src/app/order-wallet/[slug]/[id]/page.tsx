@@ -247,17 +247,17 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           <div className="flex flex-col py-4 gap-y-4">
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
               <h1 className="font-bold text-2xl">Account Name:</h1>
-              <h1 className="text-xl">Stealth Money</h1>
+              <h1 className="text-xl">Stealthtech Solutions Limited </h1>
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-4">
               <h1 className="font-bold text-2xl">Account Number:</h1>
-              <h1 className="text-xl">8520573639</h1>
+              <h1 className="text-xl">3002979312</h1>
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
               <h1 className="font-bold text-2xl">Bank Name:</h1>
-              <h1 className="text-xl">Sterling Bank</h1>
+              <h1 className="text-xl">Kuda Bank</h1>
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">

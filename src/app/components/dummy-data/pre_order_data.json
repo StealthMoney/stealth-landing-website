@@ -79,7 +79,7 @@
     "outOfStock": true,
     "quantity": 5,
 
-    "description": "The newest Trezor hardware wallet with Secure-Element protection, open-source design, and on-device confirmation.",
+    "description": "The go-to choice for offline crypto security for over 10 years. A trusted, proven, and affordable hardware wallet that has stood the test of time.",
     "message": "Keep your private keys securely offline and far from hackers’ reach with Ledger’s classic self-custody solution, powered by the Secure Element chip and Ledger OS™. Pair this signer with the Ledger Wallet™ (formerly Ledger Live™) app to manage your crypto transactions at home or at the office. Product colour may vary slightly from pictures due to manufacturing process.",
 
     "product_details": [
@@ -130,7 +130,7 @@
   {
     "id": 3,
 
-    "slug": "tangem-black",
+    "slug": "tangem",
     "product_name": "Tangem Wallet-Stealth",
 
     "product_images": [

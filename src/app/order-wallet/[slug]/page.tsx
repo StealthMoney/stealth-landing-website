@@ -256,7 +256,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
             </div>
           </div>
 
-          <div className="md:w-2/4 w-full flex flex-col gap-4 leading-8 md:my-auto my-6">
+          <div className={`md:w-2/4 w-full flex flex-col gap-4 leading-8 md:my-auto my-6 ${data.id === 3 ? "gap-y-12" : ""}`}>
             <div className="flex items-center gap-x-4 md:flex-nowrap flex-wrap">
               <h1 className="text-2xl font-bold">{data.product_name}</h1>
               <span
@@ -277,7 +277,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
               {(data.product_details[0] as { color: string }).color}
             </p>
             <p className="text-[#D4D4D4] !text-[16px] !leading-[24px]">
-              {data.message}
+              {data.description}
             </p>
 
             <div className="flex gap-x-2">
@@ -365,7 +365,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
             </div>
 
             {data.product_details.map((value, index) => {
-              if ("icon" in value) {
+              if ("icon" in value && data.id !== 3) {
                 return (
                   <div key={index} className="flex gap-x-1 items-center">
                     <span className="">
