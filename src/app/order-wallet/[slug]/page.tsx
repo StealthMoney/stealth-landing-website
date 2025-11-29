@@ -450,14 +450,14 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
                         {value.map((v: string, i: number) => (
                           <li
                             key={i}
-                            className="!text-[#D4D4D4] md:text-[20px]! !text-[14px] !font-Nunito"
+                            className="!text-[#D4D4D4] md:text-[20px]! !text-[20px] !font-Nunito"
                           >
                             {v}
                           </li>
                         ))}
                       </ul>
                     ) : Array.isArray(value) ? (
-                      <small className="!text-[#D4D4D4] md:text-[20px]! !text-[14px] block !font-Nunito">
+                      <small className="!text-[#D4D4D4] md:text-[20px]! !text-[20px] block !font-Nunito">
                         {value.map((v, i) => (
                           <span key={i} className="block">
                             {v}
