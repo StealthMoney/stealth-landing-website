@@ -15,12 +15,13 @@ import VideoPlayer from "@/app/components/client/general/video-player";
 
 export default function Page(props: { params: Promise<{ slug: string }> }) {
   const params = use(props.params);
+
   const item: itemType | undefined = data1.find(
-    (item) => item.id.toString() === params.slug
+    (item) => item.slug === params.slug
   );
 
-  const { data, isPending, isError } = useQuery({
-    queryKey: ["wallet"],
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["wallet", params.slug],
     queryFn: getWalletDetails,
     select: (values) => {
       if (!item) return null;
@@ -32,6 +33,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
       return {
         ...item,
         id: walletData.id,
+        slug: item.slug,
         product_name: walletData.walletName,
         price: walletData.price,
         outOfStock: walletData.outOfStock,
@@ -104,12 +106,12 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
     });
   };
 
-  const saveValues = (value: number) => {
+  const saveValues = (slug: string) => {
     if (!details) return;
 
     addToCart(details);
 
-    router.push(`/order-wallet/${value}/checkout`);
+    router.push(`/order-wallet/${slug}/checkout`);
   };
   // End of update product details in state
 
@@ -121,14 +123,14 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
   useEffect(() => {
     if (!data || !details) return;
 
-    const key = `orderitem-${data.id}`;
+    const key = `orderitem-${params.slug}`;
     localStorage.setItem(key, JSON.stringify(details));
-  }, [details, data]);
+  }, [details, data, params.slug]);
 
   useEffect(() => {
     if (!data) return;
 
-    const key = `orderitem-${data.id}`;
+    const key = `orderitem-${params.slug}`;
     const saved = localStorage.getItem(key);
 
     if (saved) {
@@ -142,13 +144,23 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
       setDetails({
         id: data.id,
         amount: 1,
+        slug: data.slug,
         product_name: data.product_name,
         price: data.price,
         complete: false,
         image: item?.product_images?.[0] || "",
       });
     }
-  }, [data, item?.product_images]);
+  }, [data, item?.product_images, params.slug]);
+
+  if (isLoading)
+    return (
+      <section className="min-h-screen w-full flex items-center justify-center">
+        <h1 className="text-2xl font-bold text-center text-white-100">
+          Loading...
+        </h1>
+      </section>
+    );
 
   if (!data) {
     return (
@@ -162,7 +174,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
     return "color" in detail;
   };
 
-  return isPending || !details ? (
+  return !details ? (
     <section className="min-h-screen w-full flex items-center justify-center">
       <h1 className="text-2xl font-bold text-center text-white-100">
         Loading...
@@ -244,7 +256,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
             </div>
           </div>
 
-          <div className="md:w-2/4 w-full flex flex-col gap-4 leading-8 md:my-auto my-6">
+          <div className={`md:w-2/4 w-full flex flex-col gap-4 leading-8 md:my-auto my-6 ${data.id === 3 ? "gap-y-12" : ""}`}>
             <div className="flex items-center gap-x-4 md:flex-nowrap flex-wrap">
               <h1 className="text-2xl font-bold">{data.product_name}</h1>
               <span
@@ -265,7 +277,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
               {(data.product_details[0] as { color: string }).color}
             </p>
             <p className="text-[#D4D4D4] !text-[16px] !leading-[24px]">
-              {data.message}
+              {data.description}
             </p>
 
             <div className="flex gap-x-2">
@@ -353,7 +365,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
             </div>
 
             {data.product_details.map((value, index) => {
-              if ("icon" in value) {
+              if ("icon" in value && data.id !== 3) {
                 return (
                   <div key={index} className="flex gap-x-1 items-center">
                     <span className="">
@@ -398,7 +410,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
 
             <div className="my-2 px-4">
               <button
-                onClick={() => saveValues(details.id)}
+                onClick={() => saveValues(details.slug)}
                 className={`!w-full !inline-block !p-4 !text-center !text-[20px] !text-white-100 !font-bold !rounded-md ${
                   data.outOfStock
                     ? "!bg-gray-500 !cursor-not-allowed"

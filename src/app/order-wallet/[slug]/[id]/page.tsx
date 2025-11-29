@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { usePurchase } from "@/app/components/context/pre_order";
 import DialogBox from "@/app/components/shared/dialog";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, use, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { formValueTypes } from "@/app/components/types/pre_order";
 import axiosInstance from "../../../../../lib/axiosInstance";
@@ -23,8 +23,11 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
   });
 
   const router = useRouter();
+  const hasRestored = useRef(false);
 
   useEffect(() => {
+    if (hasRestored.current) return;
+
     const key = `orderitem-${params.slug}`;
     const saved = localStorage.getItem(key);
 
@@ -36,13 +39,18 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
     const parsed = JSON.parse(saved);
 
     // Restore UI values
-    setItemvalues(parsed);
+    setItemvalues({
+      walletName: parsed.product_name,
+      price: parsed.price,
+      amount: parsed.amount,
+    });
 
     // Restore purchaseItems if missing
     if (purchaseItems.length === 0) {
       const restored = [
         {
           id: parsed.id,
+          slug: params.slug,
           product_name: parsed.product_name,
           amount: parsed.amount,
           price: parsed.price,
@@ -52,7 +60,9 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
       ];
       setPurchaseItems(restored);
     }
-  }, [params.slug, purchaseItems.length, setPurchaseItems, router]);
+
+    hasRestored.current = true;
+  }, [params.slug, router, setPurchaseItems, purchaseItems.length]);
 
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -237,17 +247,17 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
           <div className="flex flex-col py-4 gap-y-4">
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
               <h1 className="font-bold text-2xl">Account Name:</h1>
-              <h1 className="text-xl">Stealth Money</h1>
+              <h1 className="text-xl">Stealthtech Solutions Limited </h1>
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-4">
               <h1 className="font-bold text-2xl">Account Number:</h1>
-              <h1 className="text-xl">8520573639</h1>
+              <h1 className="text-xl">3002979312</h1>
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">
               <h1 className="font-bold text-2xl">Bank Name:</h1>
-              <h1 className="text-xl">Sterling Bank</h1>
+              <h1 className="text-xl">Kuda Bank</h1>
             </div>
 
             <div className="flex md:flex-row flex-col md:items-center gap-y-2 gap-x-2">

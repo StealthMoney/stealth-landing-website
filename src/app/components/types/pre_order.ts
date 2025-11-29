@@ -24,6 +24,7 @@ export interface SpecsItem2 {
 
 export interface itemType {
   id: number;
+  slug: string;
   product_name: string;
   product_images: string[];
   outOfStock: boolean;
@@ -41,6 +42,7 @@ export interface itemType {
 
 export interface Item {
   id: number;
+  slug: string;
   product_name: string;
   price: number;
   amount: number;

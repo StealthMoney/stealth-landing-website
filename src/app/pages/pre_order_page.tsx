@@ -71,10 +71,10 @@ export default function Pre_order_page() {
   ) : (
     <section className="w-full md:px-12 px-6 py-2 text-white-100">
       <div className="w-full font-Satoshi flex flex-col gap-y-2">
-        <h1 className="text-center text-white text-[40px] font-bold">
+        <h1 className="text-center !text-white !text-[40px] font-bold">
           Order Wallet
         </h1>
-        <p className="text-center text-[#CCCCCC] text-[20px] font-Nunito">
+        <p className="text-center !text-[#CCCCCC] !text-[20px] font-Nunito">
           Order the best selling wallets from us
         </p>
 
@@ -83,12 +83,12 @@ export default function Pre_order_page() {
             <button
               onClick={() => handlDisplayFilter("all")}
               className={`
-        rounded-2xl border border-[#494949] p-2 px-4 cursor-pointer
-        transition-all duration-300 ease-in-out
+        !rounded-2xl !border !border-[#494949] !p-2 !px-4 !cursor-pointer
+        !transition-all !duration-300 !ease-in-out
         ${
           displayType === "all"
-            ? "bg-white text-[#090909]"
-            : "bg-[#111111] text-white hover:bg-white hover:text-black"
+            ? "!bg-white !text-[#090909]"
+            : "!bg-[#111111] !text-white hover:bg-white hover:text-black"
         }
       `}
             >
@@ -98,12 +98,12 @@ export default function Pre_order_page() {
             <button
               onClick={() => handlDisplayFilter("ledger")}
               className={`
-        rounded-2xl border border-[#494949] p-2 px-4 cursor-pointer
-        transition-all duration-300 ease-in-out
+        !rounded-2xl !border border-[#494949] !p-2 !px-4 !cursor-pointer
+        !transition-all !duration-300 !ease-in-out
         ${
           displayType === "ledger"
-            ? "bg-white text-[#090909]"
-            : "bg-[#111111] text-white hover:bg-white hover:text-black"
+            ? "!bg-white !text-[#090909]"
+            : "!bg-[#111111] !text-white hover:bg-white hover:text-black"
         }
       `}
             >
@@ -113,12 +113,12 @@ export default function Pre_order_page() {
             <button
               onClick={() => handlDisplayFilter("tangem")}
               className={`
-        rounded-2xl border border-[#494949] p-2 px-4 cursor-pointer
-        transition-all duration-300 ease-in-out
+        !rounded-2xl !border !border-[#494949] !p-2 !px-4 !cursor-pointer
+        !transition-all !duration-300 !ease-in-out
         ${
           displayType === "tangem"
-            ? "bg-white text-[#090909]"
-            : "bg-[#111111] text-white hover:bg-white hover:text-black"
+            ? "!bg-white !text-[#090909]"
+            : "!bg-[#111111] !text-white hover:bg-white hover:text-black"
         }
       `}
             >
@@ -134,11 +134,11 @@ export default function Pre_order_page() {
           filteredData.map((item, index) => (
             <div
               key={index}
-              className="bg-[#0D0D0D] md:w-[45%] w-full md:mx-2 my-6 flex flex-col justify-between
+              className="!bg-[#0D0D0D] md:w-[45%] w-full md:mx-2 my-6 flex flex-col justify-between
           transition-all duration-500 ease-in-out transform opacity-100 hover:scale-105"
             >
               <div className="w-full flex flex-col justify-center items-center p-4">
-                <div className="w-full flex flex-col justify-center items-center bg-[#161616]">
+                <div className="w-full flex flex-col justify-center items-center !bg-[#161616]">
                   <Image
                     src={item.product_images[0]}
                     alt="Trezor-wallet"
@@ -147,7 +147,7 @@ export default function Pre_order_page() {
                     className="w-2/4"
                   />
                 </div>
-                <div className="bg-[#0D0D0D] my-4">
+                <div className="!bg-[#0D0D0D] my-4">
                   <h1 className="text-lg font-bold !text-[24px]">
                     {item.product_name}
                   </h1>
@@ -159,7 +159,7 @@ export default function Pre_order_page() {
 
               <div className="my-2 px-4">
                 <Link
-                  href={`/order-wallet/${item.id}`}
+                  href={`/order-wallet/${item.slug}`}
                   className="!w-full !inline-block !p-4 !bg-orange-100 !text-center !text-[24px] !text-white-100 !font-bold !rounded-md"
                 >
                   Buy for NGN{" "}
