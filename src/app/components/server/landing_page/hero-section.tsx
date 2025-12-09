@@ -51,7 +51,7 @@ const HeroSection = () => {
           <Link href={"/order-wallet"}>Order Wallet</Link>
         </button>
       </div>
-      <picture className="flex items-center">
+      <div className="flex items-center">
         <Image
           src="/images/dashboard.png"
           alt="hero section"
@@ -59,7 +59,7 @@ const HeroSection = () => {
           height={500}
           priority
         />
-      </picture>
+      </div>
     </section>
   );
 };
