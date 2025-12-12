@@ -15,7 +15,7 @@ export default function Wallet() {
               width={100}
               height={100}
               alt="tangem"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className="w-full h-full"
             />
           </span>
@@ -26,7 +26,7 @@ export default function Wallet() {
               width={100}
               height={100}
               alt="tangem"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className="w-full h-full"
             />
           </span>

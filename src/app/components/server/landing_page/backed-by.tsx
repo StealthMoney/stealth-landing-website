@@ -12,7 +12,7 @@ export default function Backedby() {
             width={100}
             height={100}
             alt="recursive-capital"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
             className="lg:w-2/4 h-full"
           />
         </div>
