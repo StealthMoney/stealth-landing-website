@@ -12,8 +12,82 @@ import { OrderCleanup } from "./components/client/general/order-cleanup";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stealth Money",
-  description: "Stealth Money",
+  title: "Stealth Money | Simplified Bitcoin Savings & Self Custody",
+
+  description:
+    "Stealth Money helps individuals and businesses save Bitcoin securely with full self custody. Simple, private, and built for long-term Bitcoin holders.",
+
+  keywords: [
+    "Stealth Money",
+    "Bitcoin savings",
+    "Bitcoin self custody",
+    "Bitcoin wallet",
+    "secure Bitcoin storage",
+    "Bitcoin investment platform",
+    "Bitcoin custody alternative",
+    "crypto self custody",
+    "Bitcoin for long term savings",
+    "Bitcoin wealth management",
+  ],
+
+  authors: [{ name: "Stealth Money" }],
+  creator: "Stealth Money",
+  publisher: "Stealth Money",
+
+  metadataBase: new URL("https://www.stealth.money"),
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Stealth Money | Simplified Bitcoin Savings & Self Custody",
+    description:
+      "Save Bitcoin securely with full self custody. Stealth Money is built for individuals and businesses who want long-term Bitcoin ownership without complexity.",
+    url: "https://www.stealth.money",
+    siteName: "Stealth Money",
+    images: [
+      {
+        url: "", // need something
+        width: 1200,
+        height: 630,
+        alt: "Stealth Money - Simplified Bitcoin Savings & Self Custody",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Stealth Money | Simplified Bitcoin Savings & Self Custody",
+    description:
+      "Securely save Bitcoin with full self custody. Built for serious Bitcoin holders.",
+    images: [".."], // need something
+    creator: "@stealthmoney_",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+
+  manifest: "/site.webmanifest",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  category: "Finance",
 };
 
 const satoshiItalic = LocalFont({
