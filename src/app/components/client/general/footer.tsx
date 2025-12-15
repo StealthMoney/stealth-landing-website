@@ -1,7 +1,7 @@
 import { baseUrl } from "@/config";
 import Image from "next/image";
 import Link from "next/link";
-import WaitlistForm from "../../client/landing_page/waitlist-form";
+import * as Icons from "@radix-ui/react-icons";
 
 export type WaitlistFormData = {
   firstName: string;
@@ -46,13 +46,9 @@ const Footer = () => {
       id="waitlist"
     >
       <section className="flex flex-col justify-center items-center mt-10 w-full px-6">
-        {/* <fieldset className="max-w-[1000px]">
-          <WaitlistForm joinWaitlist={joinWaitlist} />
-        </fieldset> */}
-
         <div className="w-full flex md:flex-row flex-col md:gap-y-0 gap-y-6 md:px-4 md:items-start py-12 font-Nunito">
           <div className="lg:w-1/4 md:w-2/4 w-full gap-x-4 flex flex-col gap-y-4 justify-center items-center">
-            <div className="flex justify-center items-center w-full">
+            <div className="flex justify-center items-center w-fulsl">
               <Image
                 src={"/stealth-logo.svg"}
                 width={100}
@@ -60,31 +56,40 @@ const Footer = () => {
                 alt="logo"
               />
             </div>
-            <div className="lg:w-1/4 md:w-2/4 max-sm:w-1/4 flex justify-between items-center">
-              <button title="twitter">
-                <Link href={"https://x.com/stealthmoney_"} target="_blank">
-                  <Image
-                    src={"/twitter.svg"}
-                    width={30}
-                    height={100}
-                    alt="twitter-icon"
-                  />
-                </Link>
-              </button>
+            <div className="lg:w-3/4 md:w-full max-sm:w-2/4 flex justify-between items-center">
+              <Link
+                href="https://x.com/stealthmoney_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#FFFFFF33] flex items-center justify-center hover:bg-[#4a4a4a] transition-colors duration-300"
+                aria-label="Twitter"
+              >
+                <Image src={"/x.svg"} width={20} height={20} alt="" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/stealthmoney"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#FFFFFF33] flex items-center justify-center hover:bg-[#4a4a4a] transition-colors duration-300"
+                aria-label="LinkedIn"
+              >
+                <Icons.LinkedInLogoIcon className="w-5 h-5 text-white" />
+              </Link>
 
-              <button title="facebook">
-                <Link
-                  href={"https://Facebook.com/stealthmoney"}
-                  target="_blank"
-                >
-                  <Image
-                    src={"/facebook.svg"}
-                    width={30}
-                    height={100}
-                    alt="facebook-icon"
-                  />
-                </Link>
-              </button>
+              <Link
+                href="https://facebook.com/stealthmoney"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#FFFFFF33] flex items-center justify-center hover:bg-[#4a4a4a] transition-colors duration-300"
+                aria-label="facebook"
+              >
+                <Image
+                  src={"/facebook.svg"}
+                  width={20}
+                  height={20}
+                  alt="facebook"
+                />
+              </Link>
             </div>
           </div>
 
