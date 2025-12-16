@@ -3,19 +3,19 @@ export type ProductDetail =
   | { color: string };
 
 export interface SpecsItem {
-  finish: string;
-  connectivity: string;
-  display: string;
-  security: string[];
-  "system requirements": string;
+  Finish: string;
+  Connectivity: string;
+  Display: string;
+  Security: string[];
+  "System requirements": string;
   "Digital assets supported": string;
-  "size & weights": string;
-  "in the box": string[];
+  "Size & weights": string;
+  "In the box": string[];
 }
 export interface SpecsItem2 {
-  "chip model": string;
+  "Chip model": string;
   "Fabrication process": string;
-  core: string;
+  Core: string;
   "Flash Memory": string;
   ROM: string;
   RAM: string;
