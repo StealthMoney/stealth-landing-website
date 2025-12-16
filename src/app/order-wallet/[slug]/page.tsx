@@ -174,6 +174,9 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
     return "color" in detail;
   };
 
+  console.log(data.product_name, "jeje");
+  
+
   return !details ? (
     <section className="min-h-screen w-full flex items-center justify-center">
       <h1 className="text-2xl font-bold text-center text-white-100">
