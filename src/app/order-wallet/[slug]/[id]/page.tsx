@@ -436,7 +436,7 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
             </form>
           </div>
 
-          <div className="lg:w-2/4 w-full lg:mt-0 mt-12">
+          <div className="lg:w-2/4 w-full lg:mt-0 mt-12 overflow-y-auto">
             <h1 className="text-2xl">Your order</h1>
 
             <div className="w-full my-12">
@@ -498,6 +498,13 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
                           maximumFractionDigits: 2,
                         })}
                       </p>
+                    </div>
+
+                    <div className="flex justify-center items-center px-6 py-6 my-4 border-dashed border-b border-b-black-500">
+                      <small className="text-[#F7931A] text-lg">
+                        A lifetime investment for your impenetrable digital
+                        assets vault.
+                      </small>
                     </div>
 
                     <div className="w-full">
