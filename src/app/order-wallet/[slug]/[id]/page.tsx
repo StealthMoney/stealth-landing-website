@@ -269,6 +269,9 @@ export default function Page(props: { params: Promise<{ slug: string }> }) {
                 })}
               </h1>
             </div>
+            <small className="!text-[#F7931A] text-xl">
+              Use <span className="!text-white !font-bold">{formValues.firstName}</span> as narration
+            </small>
           </div>
         )}
 
