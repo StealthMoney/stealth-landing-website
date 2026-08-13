@@ -141,7 +141,7 @@ export default function Pre_order_page() {
                 <div className="w-full flex flex-col justify-center items-center !bg-[#161616]">
                   <Image
                     src={item.product_images[0]}
-                    alt="Trezor-wallet"
+                    alt="Tangem-wallet"
                     width={100}
                     height={60}
                     className="w-2/4"

@@ -177,8 +177,11 @@ export default function Terms_of_service_page() {
           </p>
           <p className="text-white/60 text-sm mt-2">
             Last updated:{" "}
-            {new Date().toLocaleString("default", { month: "long" })}{" "}
-            {new Date().getFullYear()}
+            {new Intl.DateTimeFormat("en-US", {
+              month: "long",
+              year: "numeric",
+              timeZone: "Africa/Lagos",
+            }).format(new Date())}
           </p>
         </div>
       </div>
