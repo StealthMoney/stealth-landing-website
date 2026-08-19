@@ -89,10 +89,10 @@ export default function Privacy_policy_page() {
             data; or (vi) request for data portability, please reach out to us
             at{" "}
             <a
-              href="mailto:compliance@stealth.money"
+              href="mailto:info@stealth.money"
               className="text-orange-100 hover:underline"
             >
-              compliance@stealth.money
+              info@stealth.money
             </a>
           </p>
         </div>
@@ -507,16 +507,19 @@ export default function Privacy_policy_page() {
           </p>
           <p className="text-white/60 text-sm mt-2">
             Last updated:{" "}
-            {new Date().toLocaleString("default", { month: "long" })}{" "}
-            {new Date().getFullYear()}
+            {new Intl.DateTimeFormat("en-US", {
+              month: "long",
+              year: "numeric",
+              timeZone: "Africa/Lagos",
+            }).format(new Date())}
           </p>
           <p className="text-white/60 text-sm mt-2">
             For questions, contact us at{" "}
             <a
-              href="mailto:compliance@stealth.money"
+              href="mailto:info@stealth.money"
               className="text-orange-100 hover:underline"
             >
-              compliance@stealth.money
+              info@stealth.money
             </a>
           </p>
         </div>

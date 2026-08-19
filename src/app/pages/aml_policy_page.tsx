@@ -257,8 +257,11 @@ export default function AML_policy_page() {
           </p>
           <p className="text-white/60 text-sm mt-2">
             Last updated:{" "}
-            {new Date().toLocaleString("default", { month: "long" })}{" "}
-            {new Date().getFullYear()}
+            {new Intl.DateTimeFormat("en-US", {
+              month: "long",
+              year: "numeric",
+              timeZone: "Africa/Lagos",
+            }).format(new Date())}
           </p>
           <p className="text-white/60 text-sm mt-2">
             This policy is subject to regular review and updates in accordance

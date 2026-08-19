@@ -178,7 +178,7 @@ const Footer = () => {
                   href="mailto:hello@stealth.money"
                   className="text-sm hover:underline text-orange-100"
                 >
-                  hello@stealth.money
+                  info@stealth.money
                 </a>
               </div>
             </div>
